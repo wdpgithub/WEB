@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="show">显示遮罩层</button>
+        <div :style="myStyle" v-if="isTrue" @click="hide"></div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    new Vue({
+        el:"#app",
+        data:{
+            myStyle:{
+                width:window.innerWidth+"px",
+                height:window.innerHeight +"px",
+                background:"red",
+                position:"absolute",
+                opacity:0.5,
+                top:0,
+                left:0
+            },
+           isTrue:false
+
+        },
+         methods:{
+                show(){
+                    this.isTrue=true
+                },
+                hide(){
+                    this.isTrue=false
+                }
+            }
+    })
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="jquery3.3.1.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            type: 'get',
+            url: './prize.json',
+            data: {
+                name: '黄忠'
+            },
+            success: function (resp) {
+                var x = JSON.parse(resp)
+                console.log(x)
+            }
+        })
+        // $.get('./person.json', function (data) {
+        //     console.log('data')
+        // })
+
+        //解决回调地狱
+        // $.ajax({
+        //     type:'get',
+        //     url:'./person.json'
+        // }).done(fucntion(){
+
+        // }).fail(function(){
+
+        // })
+
+
+
+        // $.ajax({type:'get',url:'./apli1'}).done(function(){
+        //     return $.ajax({url:'./pli2'})
+        // }).done(function(){
+        //     return $.ajax({url:'./pli3'})
+        // }).done(function(){
+        //     console.log('调用结束');
+        // })
+    </script>
+</body>
+
+</html>

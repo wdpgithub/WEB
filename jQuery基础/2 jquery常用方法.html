@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery常用方法</title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		1. 控制元素的显示和隐藏
+		<br />
+		<style type="text/css">
+			#box1 {
+				width: 100px;
+				height: 100px;
+				background: red;
+				display: none;
+			}
+		</style>
+		<button id="btn1">show()</button>
+		<button id="btn2">hide()</button>
+		<button id="btn0">toggle()</button>
+		<button id="btn3">slideUp()</button>
+		<button id="btn4">slideDown()</button>
+		<button id="btn5">slideToggle()</button>
+		<button id="btn6">fadeIn()</button>
+		<button id="btn7">fadeOut()</button>
+		<button id="btn8">fadeToggle()</button>
+		<button id="btn9">fadeTo()</button>
+		<div id="box1"></div>
+		括号里写数字代表动画的时间，默认500ms<br /> show/hide 从左上到右下显示，右下到左上消失<br /> slideDown/slideUp 从上往下显示，从下往上消失<br /> slideToggle 用slideDown/slideUp方法，切换显示/隐藏<br /> fadeIn/fadeOut 淡入/淡出<br /> fadeToggle 切换淡入/淡出<br /> fadeTo (不常用)指定元素的透明度（第二个参数）
+		<br />
+		<script type="text/javascript">
+			$("#btn1").click(function() {
+				$("#box1").show(1000)
+		})
+			$("#btn2").click(function() {
+				$("#box1").hide(1000)
+			})
+			$("#btn0").click(function() {
+				$("#box1").toggle(1000)
+			})
+			$("#btn3").click(function() {
+					$("#box1").slideUp(3000)
+					//这一类的方法，如果需要加时间，考虑到浏览器兼容，最好用1.8.3的jquery库
+				})
+			//$("#btn4").click(function(){$("#box1").slideDown()})
+			$("#btn5").click(function() {
+				$("#box1").slideToggle()
+			})
+			$("#btn6").click(function() {
+				$("#box1").fadeIn(2000)
+			})
+			$("#btn7").click(function() {
+				$("#box1").fadeOut(2000)
+			})
+			$("#btn8").click(function() {
+				$("#box1").fadeToggle()
+			})
+			$("#btn9").click(function() {
+				$("#box1").fadeTo(1000, 0.0)
+			})
+		</script>
+		<!--callback函数：回调函数，指一件事情做完了以后，要做什么-->
+		<script type="text/javascript">
+			$(function(){
+				$("#btn4").click(function() {
+				$("#box1").slideDown(1000, function() {
+//							$("#box1").css("background", "green")
+							$("#box1").css({
+									"background":"green",
+									 "width":"600px",
+									"height":600,
+								})
+						})
+				})
+			})
+			
+		</script>
+		<br />
+		<br /> 
+		<!--
+		2. 获取和设置元素的属性<br />
+		attr()方法，写一个参数，获取对应的属性，写两个参数，设置对应的属性<br />
+		val()方法，不写参数，获取值，写参数，设置值<br />
+		html() innerHTML
+		text() innerText
+		-->
+		<br />
+		
+		<input type="text"  id="wbk" value="" placeholder="请输入用户名" />
+		<button id="btn10">获取属性</button>
+		<button id="btn11">修改属性</button>
+		<button id="btn12">获取值value</button>
+		<button id="btn13">修改值value</button>
+		<p id="p1">离离原上草</p>
+		<button id="btn14">获取内部代码</button>
+		<button id="btn15">修改内部代码</button>
+		<script type="text/javascript">
+			$("#btn10").click(function() {
+				//getAttribute
+				console.log($("#wbk").attr("type"))
+			})
+			$("#btn11").click(function() {
+				//var tp=$("#wbk").attr("type");
+				if( $("#wbk").attr("type") == "text") {
+					$("#wbk").attr("type","password")
+				} else {
+					$("#wbk").attr("type", "text")
+				}
+			})
+			
+			$("#btn12").click(function(){
+				console.log("点击过后："+$("#wbk").val())
+			})
+			$("#btn13").click(function(){
+				$("#wbk").val("葛晨")
+				
+			})
+			$("#btn14").click(function(){
+				console.log($("#p1").html())
+			})
+			$("#btn15").click(function(){
+				$("#p1").html("一岁一枯荣")
+			})
+		</script>
+
+		<br />
+		CSS方法<br />
+		无动画效果，两种设置的方法<br />
+		width() 获取和设置css的宽，有参数设置，没有参数获取<br />
+		height() 
+		<div id="box2"></div>
+		<button id="btn16">修改box2的css</button>
+		<button id="btn17">获取box2的css</button>
+		<button id="btn18">修改box2的宽</button>
+		<button id="btn19">修改box2的高</button>
+		<script type="text/javascript">
+			
+			$("#btn16").click(function(){
+				//CSS第一种设置方式
+//				$("#box2").css("width",200)  //200 和 "200px"
+//				$("#box2").css("height",200)
+//				$("#box2").css("background","red")
+				
+				//CSS第二种设置方式
+				$("#box2").css({
+					//JSON格式
+					"width":200,
+					"height":150,
+					"background":"blue"
+				})
+			})
+			$("#btn17").click(function(){
+				console.log($("#box2").css("height"))
+			})
+			$("#btn18").click(function(){
+				$("#box2").width(300)
+			})
+			$("#btn19").click(function(){
+				$("#box2").height(300)
+			})
+			
+		</script>
+
+		
+
+
+
+
+
+
+		
+		1. 控制元素的显示和隐藏 10个
+		2. 获取和设置元素的属性  4个
+		3. 获取和设置元素的CSS，css()方法有两种写法
+		4. 设置jQuery动画
+		5. 链式反应
+		6. 停止动画和延时动画
+		
+
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+	</body>
+
+</html>

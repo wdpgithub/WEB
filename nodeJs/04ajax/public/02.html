@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>用户名：<input type="text" id="userName"></p>
+    <p>密码：<input type="text" id='pwd'></p>
+    <p><button id="btn">登录</button></p>
+
+    <script>
+        var userName=document.getElementById('userName');
+        var pwd=document.getElementById('pwd');
+        var btn=document.getElementById('btn');
+        btn.onclick=function(){
+            var xmlhttp;
+            if(window.XMLHttpRequest)
+            {
+                xmlhttp = new XMLHttpRequest();
+            }else{
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            };
+            var  data='userName='+userName.value+'&pwd='+pwd.value;
+            xmlhttp.open('post','/fc/login1',true);
+            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xmlhttp.send(data);
+            xmlhttp.onreadystatechange=function(){
+                if(xmlhttp.readyState==4&&xmlhttp.status==200){
+                    console.log(xmlhttp.responseText);
+                    
+                }
+            }
+
+
+        }
+
+
+    </script>
+
+</body>
+</html>

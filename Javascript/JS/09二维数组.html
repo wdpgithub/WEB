@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        /*
+            通过循环按行顺序为一个5x5的二维数组a赋1到25的自然数,然后输出该数组的左半下角;
+            1   2   3   4   5
+            6   7   8   9   10
+            11  12  13  14  15
+            16  17  18  19  20
+            21  22  23  24  25
+
+
+            [注]所谓二维数组,在数组中元素还为数组
+
+            var arr=[[],[],[],[],[]],;
+
+         */
+        var conut=0;//从1到25累加中间变量
+        var arr=[];
+        for (var i = 0; i < 5; i++) {//生成五个 数组,存储在arr中
+            var newArr=[];
+            //每一个newArr都有五个数
+            for (var j = 0; j < 5; j++) {
+                newArr.push(++conut);
+            };
+            arr.push(newArr);
+        };
+
+        //alert([0][0])
+
+            for (var i = 0; i < arr.length; i++) {
+                //每一行中打印的元素,和当前的行数相等
+                for(var j=0;j<=i;j++){
+                    document.write(arr[i][j]+"&ensp;&ensp;");
+                }
+                document.write("<br>")
+             };
+    </script>
+</head>
+<body>
+
+</body>
+</html>

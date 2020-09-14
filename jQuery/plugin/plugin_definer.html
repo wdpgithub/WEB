@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script src="../jquery3.3.1.js"></script>
+<script type="text/javascript">
+    //1.jquery的插件,定义在jQuery.fn的基础上的
+    //2.命名冲突的解决
+    //3.循环jQuery对象中的每个元素
+    //4.在函数中,将jQuery返回(this)
+
+//自定义随机颜色插件
+    (function($){
+        $.fn.extend({
+            randomColor:function(){
+                //this指向的就是我们通过$选择器选取到的所有元素组成的伪数组
+                function random(){
+                    var r = Math.floor(Math.random()*256)
+                    var g = Math.floor(Math.random()*256)
+                    var b = Math.floor(Math.random()*256)
+
+                    return 'rgb('+r+','+g+','+b+')'
+                }
+                this.each(function(index){
+                    $(this).css({
+                        backgroundColor:random()
+                    })
+                })
+                return this
+            }
+        })
+    })(jQuery)
+    $('div').randomColor();
+</script>
+</body>
+</html>

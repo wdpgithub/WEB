@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<style type="text/css">* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+		.main {
+			width: 800px;
+			margin: auto;
+		}
+		
+		ul.tab_ul {
+			width: 100%;
+			display: inline-block;
+		}
+		
+		ul.tab_ul li {
+			width: 100px;
+			float: left;
+			text-align: center;
+			margin-right: 10px;
+			background: #333;
+			color: #fff;
+			line-height: 50px;
+			cursor: pointer;
+		}
+		
+		.sco {
+			color: red;
+		}
+		
+		.contant_ul li {
+			width: 100%;
+			height: 100px;
+			background: #333;
+			color: #fff;
+		}
+		
+		.hide {
+			display: none;
+		}
+		
+		ul.tab_ul li.current {
+			background: paleturquoise;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<ul class="tab_ul">
+				<li class="current">tab1</li>
+				<li>tab2</li>
+				<li>tab3</li>
+			</ul>
+			<ul class="contant_ul">
+				<li>contant1</li>
+				<li class="hide">contant2</li>
+				<li class="hide">contant3</li>
+			</ul>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+			$(".tab_ul li").click(function(){
+				var i = $(this).index();
+				$(this).addClass("current").siblings().removeClass("current")
+//				$(".contant_ul li").eq(i).show().siblings().hide();	
+				$(".contant_ul li:eq("+i+")").show().siblings().hide();	
+			})
+			
+//			$(".tab_ul li").each(function(index){
+//				$(".tab_ul li").eq(index).click(function(){
+//					$(this).addClass("current").siblings().removeClass("current");
+//					//console.log(index)
+//					$(".contant_ul li").eq(index).show().siblings().hide()
+//				})
+//			})
+			
+			
+			
+			
+			
+		})
+	</script>
+</html>

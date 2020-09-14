@@ -1,0 +1,56 @@
+{
+	"goods":[
+		{
+			"imgSrc":"../images/special/1.jpg",
+			"text1":"小樽八音盒",
+			"text2":"推荐地点： 小樽音乐盒堂 "
+		},{
+			"imgSrc":"../images/special/2.jpg",
+			"text1":"北海道乳制品",
+			"text2":"推荐地点： 网走番屋"
+		},{
+			"imgSrc":"../images/special/3.jpg",
+			"text1":"白之恋人",
+			"text2":"推荐地点： 西武百货店"
+		},{
+			"imgSrc":"../images/special/4.jpg",
+			"text1":"生巧克力",
+			"text2":"推荐地点： 旭川机场 "	
+		},{
+			"imgSrc":"../images/special/5.jpg",
+			"text1":"薰衣草制品",
+			"text2":"推荐地点： 富良野 "
+		},{
+			"imgSrc":"../images/special/6.jpg",
+			"text1":"六花亭糖果",
+			"text2":"推荐地点： 六花亭 "
+		},{
+			"imgSrc":"../images/special/8.JPEG",
+			"text1":"哈密瓜果冻",
+			"text2":"推荐地点： 夕张 "
+		},{
+			"imgSrc":"../images/special/8.jpg",
+			"text1":"汤花",
+			"text2":"推荐地点：小樽天然温泉汤花手宫殿 "
+		},{
+			"imgSrc":"../images/special/9.jpg",
+			"text1":"八幡驹",
+			"text2":"推荐地点：八户—八幡神社 "
+		},{
+			"imgSrc":"../images/special/10.jpeg",
+			"text1":"白色布丁",
+			"text2":"推荐地点：布歌东京 "
+		},{
+			"imgSrc":"../images/special/11.jpg",
+			"text1":"北菓楼梦不可思议泡芙",
+			"text2":"推荐地点：小樽北菓楼 "
+		},{
+			"imgSrc":"../images/special/12.jpg",
+			"text1":"牛奶吐司",
+			"text2":"推荐地点：札幌市西区宫之泽"
+		}
+	
+	
+	]
+
+}

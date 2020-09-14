@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <bor1></bor1>
+        <bor2></bor2>
+    </div>
+    <template id="bor1">
+        <div>
+            <button @click="sendMessage">点击</button>
+        </div>
+    </template>
+    <template id="bor2">
+        <div>
+            <p>从bor1组件接收过来的数据:{{msg2}}</p>
+        </div>
+    </template>
+    <script type="text/javascript">
+    //兄弟组件传值步骤
+    //1.创建空实例:var event=new Vue({})
+    //2.在哥哥组件里面创建一个方法用于触发自定义事件并发送数据,数据先有康实例接收
+    //3.弟弟组件里面一旦接收到自定义事件触发,就用一个msg2来储存哥哥发送过来的数据
+    var event=new Vue({})
+        new Vue({
+            el:"#app",
+            data:{
+
+            },
+            components:{
+                bor1:{
+                    template:'#bor1',
+                    data(){
+                        return {
+                            msg1:"hello world"
+                        }
+                    },
+                    methods:{
+                        sendMessage(){
+                            event.$emit('haha',this.msg1)
+                        }
+                    }
+                },
+                bor2:{
+                    template:'#bor2',
+                    data(){
+                        return {
+                            msg2:""
+                        }
+                    },
+                    methods:{
+
+                    },
+                    mounted(){
+                        var _this=this
+                        event.$on('haha',function(a){
+                            _this.msg2=a
+
+                        })
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

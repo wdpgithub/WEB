@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        /*alert(window.location);
+        alert(location);
+        alert(window.document.location);*/
+        //alert(window.location==window.document.location);//true
+
+
+        /*
+            location 我们浏览器上的地址栏输入框
+            [注]它提供了与当前窗口中加载的文档有关的信息,还提供了一些导航功能
+         */
+
+        /*
+            location 中的属性
+
+            url  统一资源定位符(快递包上一个地址)
+         */
+        /*
+            location.hash  锚点   #1  实现页内跳转
+         */
+        // alert(location.hash);
+       /* window.onload = function(){
+            document.onclick = function(){
+                location.hash = "#3";
+            }
+        }*/
+
+        /*
+            host  主机名端口号   浏览器的端口号  默认8080
+
+            IP通过IP我们可以在全球范围内,找到我这台电脑所使用的网络的地址,
+            端口号   正在使用网络的软件, 在当前电脑内唯一的标识
+            IP:端口号
+         */
+
+        /*
+            hostname   主机名  域名/IP
+            [注]域名其实就是给IP器了一个好记的名字
+         */
+       //alert(location.hostname);
+
+       /*
+            href 整个url
+        */
+      //alert(location.href);
+
+      /*
+        pathname  路径名
+       */
+      // alert(location.pathname);
+
+      /*
+        port 端口号
+       */
+
+      /*
+        protocol  协议
+
+        http:网络协议
+        file:本地为文件协议
+       */
+      // alert(location.protocol);
+
+
+     /*
+        search 查询字符串
+
+        跟在?后面的部分
+        ?username=xxx&age=18
+      */
+     alert(location.search);
+     window.onload = function(){
+        document.onclick = function(){
+            location.search="?username=xxx&age=18";
+        }
+
+     }
+
+
+
+     /*
+        url  统一资源定位符
+
+        protocol (协议):host(主机名):port(端口号)/pathname(路径)?查询字符串(search)#锚点(hash)
+
+
+        http://www.baidu.com:8080/code/xxx.html?username=xxx&age=18
+      */
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+

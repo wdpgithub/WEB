@@ -1,0 +1,97 @@
+百度脑图
+http://naotu.baidu.com/
+幕布：https://mubu.com
+https://coggle.it
+https://www.processon.com
+https://www.gliffy.com/
+http://www.mindmanager.cc/
+http://www.xmindchina.net/
+http://www.mindlyapp.com/
+https://mindnode.com/
+https://www.mindmeister.com/zh
+
+
+
+终端
+Hyper：https://hyper.is/
+必备网址：
+https://hyper.is/
+https://github.com/zeit/hyper
+https://github.com/bnb/awesome-hyper
+https://github.com/wl9739/hyper-qing
+
+Cmder：http://cmder.net/
+MobaXterm:http://mobaxterm.mobatek.net/
+https://conemu.github.io/
+https://www.iterm2.com/
+https://github.com/vshatskyi/black-screen
+
+
+
+网站
+https://github.com/trending
+http://next.36kr.com/
+http://mindstore.io/
+https://www.producthunt.com/
+http://www.jobbole.com/
+http://gank.io/
+https://segmentfault.com/
+https://juejin.im
+http://www.oschina.net/
+
+
+游戏网址
+https://checkio.org/
+https://vim-adventures.com/
+https://screeps.com/
+https://codecombat.com/
+https://www.codingame.com/
+https://www.playcodemonkey.com/
+
+
+书签
+http://linkbuckets.com/
+http://www.36zhen.com/
+https://linnk.net/
+http://funp.in/
+http://lianpeng.me/
+http://shaozi.info/
+http://shouqu.me/
+https://raindrop.io/
+https://extensions.blockbyte.de/
+
+
+
+自学设计网址
+https://www.seeseed.com/
+https://www.yunrui.co/
+http://hao.shejidaren.com/index.html
+http://www.shejidaren.com/
+http://www.uisdc.com/
+http://shijue.me/
+
+共同学习，共同成长
+http://www.vmovier.com/
+https://vimeo.com/
+http://www.kaiyanapp.com/
+http://www.xinpianchang.com/
+
+
+
+软件
+果核剥壳 https://www.ghpym.com
+落尘之木 https://dwz.cn/6wvYVE5I
+懒得勤快 https://masuit.com
+nsaneforums https://dwz.cn/XzYLj4kx
+board4all https://www.board4all.biz
+novahax https://www.novahax.com
+龙轩导航 http://ilxdh.com
+异次元软件 https://www.iplaysoft.com
+
+kali linux网站
+https://www.offensive-security.com
+https://www.kali.org/
+https://www.parrotsec.org/
+https://kali.training/
+https://www.hackfun.org/kali-tools/kali-tools-zh.html
+https://wizardforcel.gitbooks.io/daxueba-kali-linux-tutorial/content/

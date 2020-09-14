@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+    <input type="text" v-model="msg">
+        <my-com1 v-bind:haha="msg"></my-com1>
+    </div>
+    <template id="com1">
+        <div>
+            <p>{{haha}}</p>
+        </div>
+    </template>
+    <script type="text/javascript">
+
+    //父传子步骤:
+    //1.在组件元素上面绑定一个自定义属性(haha)并把父级的值付给它:<com :haha="msg"><com>
+    //2.在子组件里面注册该自定义属性haha 比如:props:['haha']
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"hello world"
+            },
+            components:{
+                myCom1:{
+                    template:"#com1",
+                    data(){
+                        return{
+
+                        }
+                    },
+                    props:['haha']
+                }
+
+            }
+
+        })
+    </script>
+</body>
+</html>

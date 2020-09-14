@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        li{margin:10px;background:blue;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>
+<script type="text/javascript">
+    var oUl = document.getElementsByTagName("ul")[0];
+    var aLi = document.getElementsByTagName("li");
+    /*for (var i = 0; i < aLi.length; i++) {
+        aLi[i].onclick = function(){
+            console.log(this.innerHTML);
+        }
+    };*/
+
+
+    //事件委托
+
+    oUl.onclick = function(e){
+        //console.log("aa");
+        var evt = e || event;
+        var _target = evt.target || evt.srcElement;
+        if (_target.nodeName.toUpperCase() == "LI"){
+            console.log(_target.innerHTML);
+        };
+    }
+
+    for(var i = 0;i < 5; i++){
+        var oLi =  document.createElement("li");
+        oLi.innerHTML = i;
+        oUl.appendChild(oLi);
+    }
+</script>

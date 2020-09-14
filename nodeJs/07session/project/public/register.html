@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+</head>
+<body>
+    <p><input type="text" name="" id="userName"></p>
+    <p><input type="text" name="" id="pwd"></p>
+    <p><button id="btn">发送</button></p>
+    <script>
+        $('#btn').click(function(){
+            $.ajax({
+                type:'post',
+                url:'/VueHandler/register?action=ins',
+                data:{
+                    userName:$('#userName').val(),
+                    pwd:$('#pwd').val()
+                },
+                success:function(data){
+                    console.log(data);
+                    
+                }
+            })
+        })
+    
+    
+    </script>             
+</body>
+</html>

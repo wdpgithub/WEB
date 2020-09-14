@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script type="text/javascript">
+    alert(Math.floor(Math.random() * 100));
+    // 用JS的数学函数生成任意之间的随机数;
+
+    function myRadom(m, n) {
+        alert(Math.ceil(Math.random() * (n - m) + m));
+    }
+    myRadom(19, 30);
+    // 指定随机目标
+    function suiji(a, b, c, d) {
+        var num = Math.ceil(Math.random() * 4);
+        if (num == 1) {
+            alert(a);
+        };
+        if (num == 2) {
+            alert(b);
+        };
+        if (num == 3) {
+            alert(c);
+        };
+        if (num == 4) {
+            alert(d);
+        };
+
+    }
+    suiji("小明", "小张", "小王", "小赵")
+
+    alert(Math.max(2, 4, 6)); //取数组的最大值
+
+    Math.min(); //取数组的最小值
+
+    Math.round(); //四舍五入
+
+    var myDate = new Date();
+
+    alert(myDate.getFullYear()); //获取年份
+
+    myDate.getMonth() + 1; //获取月份
+
+    myDate.getDate(); //获取一个月中的第几天
+
+    myDate.getDay(); //获取一个周中的第几天
+
+    myDate.getHours(); //获取时
+
+    myDate.getMinutes(); //获取分
+
+    myDate.getSeconds(); //获取秒
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<ul class="ul_each">
+			<li class="zql">朱琪龙</li>
+			<li>祝晓波</li>
+			<li>顾成</li>
+			<li>刘永飞</li>
+			<li>肖华</li>
+			<li>潘辰羽</li>
+			<li>顶陈兰</li>
+			<li>江超</li>
+			<li>孙坚</li>
+			<li>孙尚香</li>
+			<li>刘备</li>
+			<li>毛泽东</li>
+		</ul>
+		<div class="text"></div>
+		<div style="height: 900px; width: 100%; background: red;"></div>
+		<p id="ppp">我到底了</p>
+		<div style="height: 900px; width: 100%; background: red;"></div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			
+				$(".ul_each li").click(function(){
+					var index = $(this).index();
+					
+					$(".text").html("你现在点的是第："+(index+1)+"个")
+				})
+				$(".zql").click(function(){
+					$("html,body").animate({scrollTop: $("#ppp").offset().top}, 1000)
+				})
+				//$("html,body").animate({scrollTop: $(id).offset().top}, 1000)
+				$("#ppp").click(function(){
+					$("html,body").animate({scrollTop: 	0}, 1000)
+				})
+			
+			
+		})
+	</script>
+</html>

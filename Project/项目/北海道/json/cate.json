@@ -1,0 +1,56 @@
+{
+	"cates":[
+		{
+			"imgSrc":"../images/food/top-1.jpg",
+			"text1":"海胆盖饭",
+			"text2":"推荐餐厅： 小樽運河食堂"
+		},{
+			"imgSrc":"../images/food/top-2.png",
+			"text1":"盖鲑鱼卵饭",
+			"text2":"推荐餐厅： 小樽運河食堂"
+		},{
+			"imgSrc":"../images/food/top-3.png",
+			"text1":"鱼贝类",
+			"text2":"推荐餐厅： 北方渔场"
+		},{
+			"imgSrc":"../images/food/top-4.jpg",
+			"text1":"味噌拉面",
+			"text2":"推荐餐厅： 小樽運河食堂"
+		},{
+			"imgSrc":"../images/food/top-5.jpg",
+			"text1":"白色恋人巧克力饼干",
+			"text2":"推荐餐厅： 出拔小路"
+		},{
+			"imgSrc":"../images/food/top-6.jpg",
+			"text1":"牛奶冰激凌",
+			"text2":"推荐餐厅： 出拔小路"
+		},{
+			"imgSrc":"../images/food/top-7.jpg",
+			"text1":"日式火锅",
+			"text2":"推荐餐厅：鱼亭"
+		},{
+			"imgSrc":"../images/food/top-8.jpg",
+			"text1":"怀石料理",
+			"text2":"推荐餐厅：鱼亭"
+		},{
+			"imgSrc":"../images/food/top-9.jpg",
+			"text1":"札幌啤酒",
+			"text2":"推荐餐厅：居酒屋 三善"
+		},{
+			"imgSrc":"../images/food/top-10.jpg",
+			"text1":"刺身",
+			"text2":"推荐餐厅：北方渔场"
+		},{
+			"imgSrc":"../images/food/top-11.jpg",
+			"text1":"成吉思汗烤肉",
+			"text2":"推荐餐厅：Bier Keller札幌开拓使餐厅"
+		},{
+			"imgSrc":"../images/food/top-12.jpg",
+			"text1":"汤咖喱",
+			"text2":"推荐餐厅：小樽運河食堂"
+		}
+
+	]
+	
+	
+}

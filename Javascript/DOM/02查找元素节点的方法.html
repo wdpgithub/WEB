@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        document.getElementById(id);
+        通过当前元素节点的id,获取对应的元素节点
+
+
+        元素节点属性
+            通过这个节点对象,访问它的一系列属性
+            tagname    获取元素节点的标签名
+            innerHTML   获取元素节点标签间的内容   解析标签。
+
+
+
+        HTML属性的属性
+            id
+            title
+            style
+            className  在获取class，不能直接class，必须使用className。
+        访问这些元素
+     */
+    window.onload = function(){//在页面加载完成以后执行的函数
+        var oDiv=document.getElementById("div1");
+        // alert(oDiv.tagName);
+        // alert(oDiv.innerHTML);
+        // oDiv.innerHTML="<h1>世界</h1>";
+
+
+
+       /* alert(oDiv.title);
+        alert(oDiv.id);
+        alert(oDiv.className);*/
+
+        //修改样式
+       /* oDiv.title="world";
+       oDiv.className="box1";*/
+
+       // alert(oDiv.style); //[object CSSStyleDeclaration]样式对象
+       // alert(oDiv.style.width);
+       // oDiv.style.width="200px";
+
+
+
+      /*
+        在style样式中
+        background-color 使用-链接的属性
+        访问的时候,需要将-去掉,然后将后续单词的首字母大写
+       */
+      alert(oDiv.style.backgroundColor);
+    }
+    </script>
+</head>
+<body>
+    <div id="div1" title="hello" style="width: 100px;height: 100px;background-color:red;"class="box"><em>协议</em></div>
+</body>
+</html>

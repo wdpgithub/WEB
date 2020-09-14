@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>about</title>
+		<link rel="stylesheet" type="text/css" href="css/about.css"/>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/animate.min.css">
+	</head>
+	<body>
+		<div id="Header"></div>
+		<section id="home">
+		  <div class="container">
+		    <div class="row">
+		      	<div style="margin:-85px 0 0 -100px;">
+			        <h1 class="wow animated bounceInLeft rotate" style="font-size: 55px;margin-left: 12px;">ABOUT US</h1>
+			        <p class="wow animated bounceInRight" style="padding:20px 0 0 145px;letter-spacing: 2px;width: 400px;">They're sick, they're homeless, they don't have enough food to feed themselves, and we have to do something to save these poor children.</p>
+		        </div>
+		    </div>
+		  </div>
+		</section>
+		<div class="con">
+			<div class="about-box">
+				<div class="about-bg"></div>
+				<p style="margin: auto;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur sunt excepturi dicta ex, placeat ab esse, iure harum eaque fuga asperiores distinctio amet temporibus enim illum molestiae neque ad similique possimus repellendus velit! Quaerat nihil nemo, aliquam consectetur debitis illum. Excepturi cum, quaerat minus odit dolorem recusandae, debitis reprehenderit voluptate?</p>
+			</div>
+
+			<h1 style="text-align: center;color: #212121;height: 150px;line-height: 150px;">WHAT WE PROVIDE</h1>
+			<div class="con-service">
+			<img src="images/about/heart.png" />
+			<ul class="con-service-left icon-box">
+				<li>
+					<div class="con-service-text">
+						<div class="con-service-Title">
+							<b>FOOD & DRINK</b>
+						</div>
+						<div class="con-service-Text">
+							<p>Provide them with bread, water and other food </p>
+						</div>
+					</div>
+					<div class="con-service-pic">
+						<i class="fa fa-heart"></i>
+					</div>
+				</li>
+				<li>
+					<div class="con-service-text">
+						<div class="con-service-Title">
+							<b>HOME</b>
+						</div>
+						<div class="con-service-Text">
+							<p>Give them a warm, sheltered home</p>
+						</div>
+					</div>
+					<div class="con-service-pic">
+						<i class="fa fa-home"></i>
+					</div>
+				</li>
+				<li>
+					<div class="con-service-text">
+						<div class="con-service-Title">
+							<b>EDUCATION</b>
+						</div>
+						<div class="con-service-Text">
+							<p>Teach them to read and write, and teach them to be a good human.</p>
+						</div>
+					</div>
+					<div class="con-service-pic">
+						<i class="fa fa-graduation-cap"></i>
+					</div>
+				</li>
+			</ul>
+			<ul class="con-service-right icon-box">
+				<li>
+					<div class="con-service-pic">
+						<i class="fa fa-music"></i>
+					</div>
+					<div class="con-service-text-two">
+						<div class="con-service-Title">
+							<b>ABILITY</b>
+						</div>
+						<div class="con-service-Text">
+							<p>We also develop their abilities so that they can live on their own hands in the future.</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="con-service-pic">
+						<i class="fa fa-umbrella"></i>
+					</div>
+					<div class="con-service-text-two">
+						<div class="con-service-Title">
+							<b>PROTECTION</b>
+						</div>
+						<div class="con-service-Text">
+							<p>Mentally and physically, we protect them from harm</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="con-service-pic">
+						<i class="fa fa-hospital-o"></i>
+					</div>
+					<div class="con-service-text-two">
+						<div class="con-service-Title">
+							<b>HEALTH</b>
+						</div>
+						<div class="con-service-Text">
+							<p>For those children with congenital diseases, we will do our best to help them.</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+			<div class="success-sto">
+				<div style="width: 1400px;height: 100%;">
+					<div class="success-pic"></div>
+					<div class="success-details">
+						<p>SUCCESSFUL STORIES</p>
+						<span>A Tennessee couple has adopted eight orphans from an orphanage in Africa because they want a big family. Due to Mrs Jones had emergency cesarean section she couldn't realize this desire, so they decided to adopt, along with their two children, now the Jones family is a family of ten children.</span><br />
+						<br />
+						<span>Mrs. Joan say they are a family, I decided to put them all back, the children came back, my working a lot more and I want to learn cooking, cleaning, education and the children learn together. Although we are financially strapped, our happiness is doubling.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$("#Header").load("header.html");
+		$("#footer").load("footer.html");
+		$(".con .icon-box li .con-service-pic").hover(function(){
+			$(this).css({
+				"background":"#FF5722"
+			})
+			$(this).children("i").css({
+				"transform":"rotate(360deg)"
+			})
+		},function(){
+			$(this).css({
+				"background":"#000"
+			})
+			$(this).children("i").css({
+				"transform":"rotate(0deg)"
+			})
+		})
+		
+		
+		
+		
+		
+		
+	})
+</script>

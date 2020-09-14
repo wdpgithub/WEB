@@ -1,0 +1,113 @@
+
+/* 文章css*/
+.articalContainer{
+  width: 100%;
+  height: 360rpx;
+  }
+.articalContainer image{
+  width: 100%; 
+  height: 100%;
+  }
+.course{
+  width: 100%;
+  height: 100rpx;
+  background: #000;
+  display: block;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  margin-top: 20rpx;
+}
+.cour_box{
+  width: 100%;
+  height: 400rpx;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.cour{
+  width: 40%;
+  height: 300rpx;
+  border-radius: 5%;
+}
+.cour image{
+  width: 100%;
+  height: 100%;
+}
+.sportK text{
+  font-size: 30rpx;
+  text-align: center;
+  display: block;
+}
+.hj{
+  width: 100%;
+  background: red;
+  margin-top: 40rpx;
+  height: 400rpx;
+  margin-bottom: 20rpx;
+}
+.hj image{
+  width: 100%;
+  height: 100%;
+}
+.jl{
+  margin-top:24rp;
+  width: 100%;
+  height: 515rpx;
+}
+.jl_txt{
+  margin-top: 40rpx;
+  display: block;
+}
+.jl image{
+  width: 200rpx;
+  height: 200rpx;
+  margin-left: 36%;
+  margin-top: 10rpx;
+  border-radius: 50%;
+}
+.coac{
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+.jl_name{
+  text-align: center;
+   height: 100rpx;
+   line-height: 100rpx;
+}
+.jl_details{
+  font-size: 30rpx;
+}
+.contact{
+  margin-top:55rpx;
+  display:block;
+}
+.contact_det{
+  width: 100%;
+  height: 260rpx;
+  background: black;
+}
+.con_b{
+  width: 70%;
+  margin-left: 25%;
+  margin-bottom: 20rpx;
+  padding-top: 20rpx;
+  display: flex;
+  vertical-align: middle;
+}
+.con_b text{
+  color: white;
+  padding-left: 35rpx;
+  font-size: 30rpx;
+}
+.con_b image{
+  width: 40rpx;
+  height: 50rpx;
+}
+.my{
+  height: 380rpx;
+  overflow: auto
+}
+
+.my::-webkit-scrollbar { width: 0 !important }

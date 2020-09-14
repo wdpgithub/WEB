@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="height:29000px"></div>
+    <input type="button" id="btn" value="点击回到底部" style="position: fixed;right:0;bottom:0;display:none;" name="">
+</body>
+
+</html>
+<script type="text/javascript">
+    var btn = document.getElementById("btn");
+    var speed = 100;
+    btn.onclick = function () {
+        var timer = setInterval(function () {
+            if (document.documentElement.scrollTop == 0 && document.body.scrollTop == 0) {
+                clearInterval(timer);
+            }
+            document.documentElement.scrollTop -= speed;
+            document.body.scrollTop -= speed;
+        }, 10) ;
+        speed++;
+    }
+    window.onscroll = function () {
+        if (document.documentElement.scrollTop > 1000 || document.body.scrollTop > 1000) {
+            btn.style.display = "inline";
+        } else {
+            btn.style.display = "none";
+        }
+    }
+</script>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        node.getElementsByClassName()
+        功能:获取node节点下,所有符合条件的元素节点
+        参数:class
+        返回值:所有符合条件的元素节点组成的数组
+
+        [注]getElementsByClassName在顶版本IE浏览器不支持
+     */
+    window.onload = function(){
+       // var nodes = document.getElementsByClassName("box");
+        // alert(nodes.length);//[object HTMLCollection]
+
+
+        //获取ul下的class为box的元素节点
+       /* var  oUl = document.getElementById("ul1");
+        var nodes = ul1.getElementsByClassName("box");
+         for(var i = 0;i < nodes.length; i++){
+        alert(nodes[i].innerHTML);
+       }*/
+
+       var  oUl = document.getElementById("ul1");
+       var nodes = elementByClassName(oUl,"box");
+
+       for(var i = 0;i < nodes.length; i++){
+            alert(nodes[i].innerHTML);
+       }
+
+    }
+
+
+
+    /*
+        封装函数,封装一个兼容的方法
+
+        *通配符  任意类型的元素节点
+     */
+    function elementByClassName(parent,classStr){
+        //<1>找到parent下所有的元素节点
+        var nodes = parent.getElementsByTagName('*')
+        var result = [];//用记录符合条件的元素节点
+        for (var i = 0; i < nodes.length; i++) {
+            //<2>如果符合条件,添加到数组中
+            if (nodes[i].className==classStr) {
+                result.push(nodes[i]);
+            };
+        };
+        return result;
+    }
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <li>1</li>
+        <li class="box">2</li>
+        <li>3</li>
+        <li class="box">4</li>
+    </ul>
+    <ol>
+        <li>2</li>
+        <li class="box">3</li>
+        <li>4</li>
+        <li class="box">5</li>
+    </ol>
+</body>
+</html>

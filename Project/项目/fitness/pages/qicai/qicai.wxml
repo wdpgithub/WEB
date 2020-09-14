@@ -1,0 +1,8 @@
+<!--pages/qicai/qicai.wxml-->
+<view wx:for="{{items}}"  wx:for-item="item" class='qc'>
+    <image src='{{item.url}}'></image>
+    <view class='det_box'>
+      <text class='blo tit'>{{item.title}}</text>
+      <text class='blo det'>{{item.details}}</text>
+    </view>   
+</view>

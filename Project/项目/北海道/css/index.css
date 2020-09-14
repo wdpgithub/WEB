@@ -1,0 +1,340 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.swiper-slide img{
+	width: 100%;
+	height: 760px;
+}
+
+
+
+/*轮播*/
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+.optionsArea{
+	background-color: #ccc;
+	width:650px;
+	padding:2px 10px;
+	margin-bottom: 10px;
+}
+p{
+	margin-top:5px;
+	margin-bottom: 5px;
+}
+.rotateBanner{
+	position: relative;
+	cursor: pointer;
+}
+
+.middle_con{
+	width: 1100px;
+	height: 3345px;
+	margin: 95px auto;
+}
+.gs_box{
+	margin: auto;
+	width: 178px;
+	height: 25px;
+}
+.gs_box span{
+	display: inline-block;
+	float: left;
+	line-height: 24px;
+}
+.xl_box{
+	width:48px;
+	height: 48px;
+	background: url(../images/logo/gray-an.png) no-repeat;
+	float: left;
+	margin: -14px 1px 0 13px;
+	cursor: pointer;
+}
+.middle_con .gs_text{
+	width: 1100px;
+	height: 30px;
+	color: rgb(102,102,102);
+	display: none;
+}
+.middle_con>ul:nth-of-type(1){
+	width: 1100px;
+	height: 250px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 60px;
+}
+.middle_con>ul>li{
+	width: 330px;
+	height: 250px;
+	overflow: hidden;
+	cursor: pointer;
+	border-radius: 5%;
+	position: relative;
+}
+.middle_con>ul:nth-of-type(1)>li .mask_one{
+	width: 100%;
+	height: 100%;
+	background: black;
+	position: absolute;
+	opacity: 0.6;
+}
+.middle_con>ul:nth-of-type(1)>li:nth-of-type(1){
+	background: url(../images/attr/jsp.jpeg);
+	background-size:cover ;
+}
+.middle_con>ul:nth-of-type(1)>li:nth-of-type(2){
+	background: url(../images/attr/zsp.jpg);
+	background-size:cover ;
+}
+.middle_con>ul:nth-of-type(1)>li:nth-of-type(3){
+	background: url(../images/attr/msp.jpg);
+	background-size:cover ;
+}
+.middle_con>ul li .jsp_box{
+	width: 190px;
+	height: 94px;
+	margin:82px auto;
+	background: #000;
+	opacity: 0.7;
+	position: relative;
+	
+}
+.middle_con>ul li .jsp_box .jsp_text{
+	width: 190px;
+	height: 94px;
+	position: absolute;
+	padding: 1px;
+	border-radius: 10%;
+}
+.middle_con>ul li .jsp_box .jsp_text a{
+	width: 175px;
+	height: 78px;
+	border: 1px solid #FFFFFF;
+	margin: 6px auto;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 78px;
+	font-size: 30px;
+	display: block;
+	text-decoration: none;
+}
+.middle_con .eat_box{
+	width: 1100px;
+	height: 840px;
+	margin-top: 40px;
+}
+.middle_con .eat_box a{
+	width: 174px;
+	height: 58px;
+	display: block;
+}
+.middle_con .eat_box>ul{
+	width: 1100px;
+	height: 800px;
+	margin-top: 10px;
+}
+.middle_con .eat_box>ul li{
+	border-radius: 5%;
+	cursor: pointer;
+	position: relative;
+}
+.middle_con .eat_box>ul li .food_mask{
+	width: 100%;
+	height: 100%;
+	background: black;
+	position: absolute;
+	opacity: 0.6;
+}
+.middle_con .eat_box>ul:nth-of-type(1)>li{
+	float: left;
+	width: 30%;
+	height: 350px;
+	margin: 0 35px 25px 0;
+}
+.middle_con .eat_box>ul li:nth-of-type(1){
+	background: url(../images/food/cate-hdgf.jpg);
+	background-size:cover ;
+}
+.middle_con .eat_box>ul li:nth-of-type(2){
+	background: url(../images/food/cate-lm.jpg);
+	background-size:cover ;
+}
+.middle_con .eat_box>ul li:nth-of-type(3){
+	background: url(../images/food/cate-kr.jpg);
+	background-size:cover ;
+}
+.middle_con .eat_box>ul li:nth-of-type(4){
+	background: url(../images/food/cate-ssg.jpg);
+	background-size:cover ;
+}
+.middle_con .eat_box>ul li:nth-of-type(5){
+	background: url(../images/food/cate-tgl2.jpg);
+	background-size:cover ;
+}
+.middle_con .eat_box>ul li:nth-of-type(6){
+	background: url(../images/food/cate-ss.jpg);
+	background-size:cover ;
+}
+.middle_con .eat_box>ul:nth-of-type(1) li .eat_mask{
+	width: 78%;
+	height: 45px;
+/*	background: deepskyblue;*/
+	margin-top: 175px;
+	margin-left: 38px;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 45px;
+	font-size: 20px;
+	border-radius: 5%;
+	display: none;
+	position: relative;
+	z-index: 100;
+}
+/*.middle_con .eat_box>ul:nth-of-type(1) li:hover .eat_mask{
+	display: block;
+}*/
+.play_box{
+	width: 1100px;
+	height: 400px;
+	border: 1px solid #000000;
+	overflow: hidden;
+	margin: 25px auto;
+	position: relative;
+}
+.play_box img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 890px;
+	height: 400px;
+}
+.middle_con .spe_box{
+	width: 1100px;
+	height: 670px;
+}
+.middle_con ul:nth-of-type(2) li{
+	width: 49%;
+	height: 300px;
+	cursor: pointer;
+	float: left;
+	margin-bottom: 40px;
+}
+.middle_con ul:nth-of-type(3) li{
+	width: 500px;
+	height: 300px;
+	cursor: pointer;
+}
+.middle_con .spe_box li .tj_box{
+	width: 100px;
+	height: 300px;
+	opacity: 0.5;
+	background: rgb(75,70,81);
+	text-align: center;
+	font-size: 35px;
+	float: left;
+	line-height: 50px;
+}
+.middle_con .spe_box li .tj_box a{
+	text-decoration:none;
+	color: #FFFFFF;
+}
+.middle_con .spe_box li .tj_pic{
+	position: relative;
+	overflow: hidden;
+}
+.middle_con .spe_box li .tj_pic img{
+	width: 400px;
+	height: 300px;
+	float: left;
+}
+.middle_con .spe_box li:hover .tj_pic img{
+	transform: scale(1.3);
+	transition: all 2s;
+}
+.middle_con .yj_box{
+	width: 1100px;
+	height: 98px;
+	position: relative;
+}
+.middle_con .yj_box .yj_box-line{
+	width: 1100px;
+	height: 57px;
+	border-bottom: solid 1px cadetblue;
+}
+.middle_con .yj_box .yj_box-title{
+	width: 180px;
+	height: 54px;
+	text-align: center;
+	background: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin:35px auto;
+	font-size: 30px;
+	color: #0B5861;
+}
+
+
+
+
+
+
+
+.middle_con .itin_box{
+	width: 1100px;
+	height: 260px;
+	margin: 20px 0 0 20px;
+}
+.middle_con .itin_box img{
+	float: left;
+	border-radius: 5%;
+}
+.middle_con .itin_box img:nth-of-type(2){
+	width: 320px;
+	height: 180px;
+}
+.middle_con .itin_box .itin_text{
+	width: 690px;
+	height: 180px;
+	float: left;
+	margin-left: 40px;
+}
+.middle_con .itin_box .itin_text p{
+	font-size: 15px;
+	color: rgb(102,102,102);
+}
+.middle_con .itin_box .itin_text h2{
+	color: rgb(51,51,51);
+}
+.middle_con .itin_box .itin_text .wri_box{
+	width: 120px;
+	height: 30px;
+	border-radius: 50%;
+	float: right;
+	margin-top: 35px;
+}
+.middle_con .itin_box .itin_text .wri_box img{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	
+}
+.middle_con .itin_box .itin_text .wri_box span{
+	color: rgb(82,195,63);
+	font-size: 15px;
+	margin-left: 8px;
+}
+
+
+
+

@@ -1,0 +1,25 @@
+@import url("global.css");
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+/*publci statr*/
+
+.clear_both_20 {
+	clear: both;
+	height: 20px;
+}
+
+.fl_left {
+	float: left;
+}
+
+.fl_right {
+	float: right;
+}
+
+

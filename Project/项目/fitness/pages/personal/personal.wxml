@@ -1,0 +1,53 @@
+<!--pages/personal/personal.wxml-->
+<view class='per'>
+  <view class='per_top'>
+    <view class='aaa'>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class='my_details'>
+      <text class='my_name'>喵星人</text>
+      <view class='my_addr'>
+        <image src='../images/addr.png'></image>
+        <text class='my_info'>无锡  天秤座</text>
+      </view>
+    </view>
+  </view>
+  <view class='per_bot'>
+    <view class='per_fle'>
+      <text class='tx_1'>520</text>
+      <text class='tx_2'>发表</text>
+    </view>
+    <view class='per_fle'>
+      <text class='tx_1'>1520</text>
+      <text class='tx_2'>关注</text>
+    </view>
+    <view class='per_fle'>
+      <text class='tx_1'>1000</text>
+      <text class='tx_2'>粉丝</text>
+    </view>
+    <view class='per_fle'>
+      <text class='tx_1'>50</text>
+      <text class='tx_2'>收藏</text>
+    </view>
+  </view>
+</view>
+<view class='collect'>
+  <image src='../images/collect.png'></image>
+  <text class='cou_1'>预约课程</text>
+  <text class='cou_2'>最新课程 ▷ </text>
+</view>
+<view class='collect'>
+  <image src='../images/collect.png'></image>
+  <text class='cou_1'>今日课程</text>
+  <text class='cou_2'>▷</text>
+</view>
+<view class='collect'>
+  <image src='../images/advice.png'></image>
+  <text class='cou_1'>意见反馈</text>
+  <text class='cou_2'>▷</text>
+</view>
+<view class='collect'>
+  <image src='../images/set.png'></image>
+  <text class='cou_1'>设置</text>
+  <text class='cou_2'>▷</text>
+</view>

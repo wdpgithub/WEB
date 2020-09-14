@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        //字符串提取
+        substring()
+        [格式]字符串.substring(start,end);
+        作用:字符串提取,在指定范围内提取字符串,生成新字符串。
+        返回值:生成的新字符串。[注]不包含结束位置的。
+     */
+    var str ="helloworld";
+    alert(str.substring(1, 3));
+
+
+
+    /*
+        //字符串分割
+        split()
+        [格式]字符串.split(分割符,生成的数组的长度);
+        返回值:通过分割符,分割成的装有子串的数组
+        [注]1.分割符,整体
+            2.会分割出空个字符串
+            3.如果分割符是空字符"",那么我们字符串会分割成单个字符
+            4.字符串=>数组split      数组=>字符串 join
+     */
+    var str ="This is a box";
+    //var arr =str.split(" ",2);
+    //var arr =str.split("  ");
+    //var arr =str.split(" ");
+    var arr =str.split("");
+    alert(arr);
+    alert(arr.join("="));
+
+
+
+    //字符串的大小写方法
+    var str ="HELLO world";
+    alert(str.toLowerCase());//全大写
+    alert(str.toUpperCase());//全小写
+    </script>
+</head>
+<body>
+
+</body>
+</html>

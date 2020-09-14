@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+     *{margin:0;padding:0;}
+     ul{list-style: none;}
+     .silder{width: 700px;height: 400px;border:5px solid red;position:relative;overflow: hidden;}
+     .silder .list {position: absolute;}
+     .silder .list .item{width: 700px;height: 400px;float: left;}
+     .silder .list .item  img{width: 700px;height:400px;display: block;}
+     .silder .next,.silder .prev{position: absolute;top: 230px;opacity: .4;}
+     .silder .next{right: 0;}
+     .silder .pagination{position: relative;top: 370px;left: 240px;}
+     .silder .pagination .bullet{width: 10px;height: 10px;background-color:white;float: left;cursor: pointer;border-radius:50%;margin-left: 20px;z-index: 999;}
+     .focus{background-color:#f0f !important;}
+ </style>
+</head>
+<body>
+  <div class="silder">
+      <ul class="list">
+          <li class="item"><img src="01.jpg" alt="" /></li>
+          <li class="item"><img src="02.jpg" alt="" /></li>
+          <li class="item"><img src="03.jpg" alt="" /></li>
+          <li class="item"><img src="04.jpg" alt="" /></li>
+      </ul>
+      <button class="prev">上一张</button>
+      <button class="next">下一张</button>
+      <ul class="pagination">
+        <li class="bullet focus"></li>
+        <li class="bullet"></li>
+        <li class="bullet"></li>
+        <li class="bullet"></li>
+    </ul>
+</div>
+</body>
+</html>
+<script src="../动画函数封装/animate.js"></script>
+<script type="text/javascript">
+    (function(){
+        var currIndex;
+        var lis;
+        var liwidth;
+        var len;
+        var id;
+
+        init();
+
+
+
+        function init(){
+            currIndex = 1;
+            var li_1 = document.querySelector('.silder .list .item:first-of-type');
+            var copy_1 =li_1.cloneNode(true);
+            var li_last = document.querySelector('.silder .list .item:last-of-type');
+            var copy_last = li_last.cloneNode(true);
+
+            var list = document.querySelector('.silder .list');
+            list.appendChild(copy_1);
+            list.insertBefore(copy_last , li_1);
+
+            lis = document.querySelectorAll('.list .item');
+            liwidth = lis[0].offsetWidth;
+            len = lis.length;
+
+            list.style.width = liwidth * len + 'px';
+
+            list.style.left = -liwidth + 'px';
+
+            document.querySelector('.prev').onclick = function(){
+                silderPrev();
+            }
+            document.querySelector('.next').onclick = function(){
+                silderNext();
+            }
+
+
+            var bullets = document.querySelectorAll('.silder .pagination .bullet');
+            for(var i=0;i<bullets.length;i++){
+                bullets[i].index =i;
+                bullets[i].onclick = function(){
+                currIndex = this.index +1;
+                silderTo(currIndex);
+            }
+        }
+
+         var silder = document.querySelector('.silder');
+            silder.onmouseover = function(){
+                stop();
+            }
+            silder.onmouseout = function(){
+                auto();
+            }
+            auto();
+
+    }
+
+        function silderNext(){
+            currIndex++;
+            silderTo(currIndex);
+        }
+
+        function silderPrev(){
+            currIndex--;
+            silderTo(currIndex);
+        }
+
+
+        function silderTo(index){
+            var list = document.querySelector('.silder .list');
+            if (index===len) {
+                currIndex = index =2;
+                list.style.left = -liwidth + 'px';
+            }
+            if (index===-1) {
+                currIndex = index = len -3;
+                list.style.left =-(len-2)*liwidth + 'px';
+            };
+
+            var focusIndex;
+            var bullets= document.querySelectorAll('.pagination .bullet');
+            if(index===0){
+                focusIndex = bullets.length -1;
+            }else if(index===len -1){
+                focusIndex =0;
+            }else{
+                focusIndex=index-1;
+            }
+
+
+            document.querySelector('.focus').className ='bullet';
+            bullets[focusIndex].className ='bullet focus';
+
+
+
+            var left = -index*liwidth;
+            animate(list,{
+                left:left
+            })
+        }
+
+        function auto(){
+             clearInterval(id);
+            id = setInterval(function(){
+                silderNext();
+            },2500)
+        }
+
+        function stop(){
+            clearInterval(id);
+        }
+    })()
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.wrap{
+				width: 592px;
+				margin: 0 auto;
+			}
+			.small{
+				float: left;
+				width: 128px;
+				height: 102px;
+				border:2px solid #000;
+				margin: 8px;
+				transition: all 500ms;
+				position: relative;
+			}
+			.small img{
+				width: 128px;
+				height: 102px;
+			}
+			.big img{
+				width: 572px;
+				border: 2px solid #000;
+				margin: 8px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="small"><img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D200/sign=c500ce7803f79052f01f403e3cf2d738/77094b36acaf2edd4668f482871001e9380193c4.jpg" alt="" /></div>
+			<div class="small"><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2244509710,2107187041&fm=26&gp=0.jpg" alt="" /></div>
+			<div class="small"><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1350170849,2849447111&fm=26&gp=0.jpg" alt="" /></div>
+			<div class="small"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3479390118,2569491654&fm=26&gp=0.jpg" alt="" /></div>
+			<div style="clear: both;"></div>
+			<div class="big"><img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D200/sign=c500ce7803f79052f01f403e3cf2d738/77094b36acaf2edd4668f482871001e9380193c4.jpg" /></div>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(".small img").click(function(){
+				$(".big img").attr("src",$(this).attr("src"))
+			})
+			
+			$(".small").hover(function(){
+				$(this).css("z-index","10")
+				$(this).css("transform","scale(1.4)")
+//				$(this).css({"width":"150px","height":"120px"})  
+			},function(){
+				$(this).css("transform","scale(1)")
+//				$(this).css({"width":"128px","height":"102px"})
+				$(this).css("z-index","1")
+			})
+			
+		</script>
+	</body>
+
+</html>

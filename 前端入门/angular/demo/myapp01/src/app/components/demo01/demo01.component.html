@@ -1,0 +1,21 @@
+<input type="text" [(ngModel)]="demo_msg01" (keyup)="getD($event)">
+<h1>**************************************</h1>
+<ul *ngIf="demo_msg02.length>0">
+    <li *ngFor="let mylist of demo_msg02; let i=index" [hidden]="mylist.state==1">
+            <span>{{mylist.msg}}</span>
+            <font color="red">{{i}}</font>
+            <button (click)="del(i)">×</button>
+            <span (click)="change(i,1)">{{mylist.state}}</span>
+    </li>
+</ul>
+<h1>**************************************</h1>
+<ul *ngIf="demo_msg02.length>0">
+    <li *ngFor="let mylist of demo_msg02; let i=index" [hidden]="!mylist.state==1">
+            <span>{{mylist.msg}}</span>
+            <font color="red">{{i}}</font>
+            <button (click)="del(i)">×</button>
+            <span (click)="change(i,0)">{{mylist.state}}</span>
+    </li>
+</ul>
+<!-- <p style="color:red" *ngIf="demo_msg02.length==0" >请添加数据</p> -->
+<p style="color:red" [hidden]="!demo_msg02.length==0" >请添加数据</p>

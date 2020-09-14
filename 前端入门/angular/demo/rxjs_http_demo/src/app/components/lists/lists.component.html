@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 [hidden]="!list.length==0">请耐心等待数据加载...</h1>
+  <ul [hidden]="list.length==0" class="row">
+    <li *ngFor="let f of list; let i=index" class="col-xs-12	col-sm-12	col-md-12	col-lg-12">
+      <div class="row">
+        <div class="col-xs-12	col-sm-12	col-md-2	col-lg-2">
+          <img src="{{f.HeadFace}}" />
+        </div>
+        <div class="col-xs-12	col-sm-12	col-md-10	col-lg-10 line_hei_40">
+          <h3 class="text-left">{{f.ContentTitle}}</h3>
+          <h5 class="text-left">{{f.UserNickName}}</h5>
+        </div>
+      </div>
+      <div class="row mar_body">
+        <p class="lead">
+          {{f.ContentSummary}}
+        </p>
+
+      </div>
+
+    </li>
+  </ul>
+</div>

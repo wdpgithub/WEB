@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="time">时间还剩下10S</p>
+		
+		<p></p>
+		
+		<a></a>
+		<a></a>
+		<a></a>
+		<a></a>
+		<a></a>	
+
+		<p id="score">答对了0次</p>
+		
+		<button id="startGame">开始</button>
+	</body>
+</html>
+<script>
+	var time=document.getElementById("time");
+	var startGame=document.getElementById("startGame");
+	var thisTime=10;
+	
+	var m=["红","绿","黄","蓝","黑"];
+	var tagA=document.getElementsByTagName("a");
+	var Xaa=0;
+	var socreText=document.getElementById("score");
+	var score=0;
+	
+	startGame.onclick=function(){
+			timeRun();
+	        begin();	
+	}
+
+	
+	function timeRun(){
+		var timer=setInterval(function(){
+			if(thisTime>0){
+				thisTime--;	
+				time.innerHTML="时间还剩下"+thisTime+"S";
+			}else{
+				clearInterval(timer);
+			}
+		},1000)
+	}
+	
+	//如果时间允许  我们就允许
+	
+	function  begin(){
+		var p=document.getElementsByTagName("p")[1];
+	    var randomNum=0;
+		var x=["红","绿","黄","蓝","黑"];
+		var xLength=x.length;
+	    var y=["red","green","yellow","blue","black"];
+		p.innerHTML=x[Math.floor(Math.random()*x.length)];
+		Xaa=Math.floor(Math.random()*y.length)
+		p.style.color=y[Xaa];
+		for(var i=0;i<xLength;i++){
+			randomNum=Math.floor(Math.random()*x.length);
+			var randoColor=Math.floor(Math.random()*y.length);
+			tagA[i].innerHTML=x[randomNum];
+			tagA[i].style.color=y[randoColor];
+			x.splice(randomNum,1);
+			y.splice(randoColor,1);
+		}
+	}
+	for(var i=0;i<tagA.length;i++){ 
+        tagA[i].onclick=function(){
+        	
+        	if(thisTime>0){
+        		if(this.innerHTML==m[Xaa]){	
+	        		score++;
+	        		thisTime+=2;
+	        		socreText.innerHTML="答对了"+score+"次";
+	        		begin();	
+	        	}
+        	}else{
+        		time.innerHTML="游戏已经结束了";
+        	}
+        	
+        	
+        }	
+	}
+	
+	
+	
+	
+	
+	
+</script>
+
+

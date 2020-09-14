@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="搜索：如何高效的学习Ionic开发"></ion-searchbar>
+    <ion-icon name="text" class="top_header" (tap)="gotochat()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="floatmenu">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4 text-center>
+          <div (tap)="gotoQuestion()">
+
+            <ion-icon name="create"></ion-icon> 提问
+          </div>
+
+        </ion-col>
+
+        <ion-col col-4 text-center>
+          <div><span class="mi">|</span>
+            <ion-icon name="albums"></ion-icon> 回答
+          </div>
+
+        </ion-col>
+
+        <ion-col col-4 text-center>
+          <div (tap)="gotoQuestion()"><span class="mi">|</span>
+            <ion-icon name="share-alt"></ion-icon> 分享
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-card *ngFor="let f of feeds" (click)="gotoDetails(f.IdentityId)">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{f.HeadFace}}" />
+      </ion-avatar>
+      <p>{{f.UserNickName}}回答了该问题
+        <ion-icon name="more" class="more_button"></ion-icon>
+      </p>
+    </ion-item>
+    <h2>{{f.ContentTitle}}</h2>
+    <ion-card-content>
+      <p>{{f.ContentSummary}}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col col-8 center text-left>
+        <ion-note>
+          {{f.LikeCount}} 赞同 ·  {{f.CommentCount}}评论 · 关注问题
+        </ion-note>
+      </ion-col>
+      <ion-col col-4>
+
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>

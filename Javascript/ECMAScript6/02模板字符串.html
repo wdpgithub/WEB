@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        模板字符串
+        将变量或表达式直接嵌入字符串
+
+
+        使用反引号(``)拼接多行字符串
+     */
+
+
+    //ES5
+    /*var  obj = {"name":"john","age":20};
+    var name = obj.name;
+    var age = obj.age;
+    console.log(name+"的年龄是"+age);*/
+
+    //ES6
+    // let obj = {"name":"john","age":20};
+    // let {name,age} = obj;
+    // console.log(`${name}的年龄是${age}`);
+    </script>
+</head>
+<body>
+    <ul id="text"></ul>
+</body>
+</html>
+
+<script type="text/javascript">
+    var arr = [0,1,2,3,4];
+
+    let oUl =document.getElementById("text");
+    var html = "";
+    /*for(var i in arr){
+        html+="<li>"+arr[i]+"</li>"
+    }*/
+
+    //ES6写法
+    for(var i in arr){
+        html+=`<li>
+            <a href="#">${arr[i]}</a>
+            <p>1</p>
+            <i>2</i>
+        </li>`
+    }
+    oUl.innerHTML = html;
+</script>

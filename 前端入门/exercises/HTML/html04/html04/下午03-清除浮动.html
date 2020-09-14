@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+
+		/*
+		 * 京东
+		 * .clearfix:after{visibility:hidden;clear:both;display:block;content:".";height:0}.clearfix{*zoom:1}
+		 *
+		 * */
+
+		*{margin: 0;padding: 0;}
+
+		.container1{
+			width: 600px;margin: 0 auto;border: 1px solid red;
+			/*height: 600px; 方案2: 给父标签添加高度!!!!!!*/
+			overflow: hidden;  /*方案4: 父标签添加超出隐藏*/ }
+		.box{width: 200px;height: 200px;}
+		.left{background-color: red;float: left;}
+		.center{background-color: green;float: left;}
+		.right{background-color: blue;float: left;}
+		.footer{
+			margin-top: 100px;
+			/*clear: both;方案1: 清空浮动, 缺点: margin外间距不起作用!!!!*/
+			width: 600px;
+			height: 50px;
+			background-color: #ccc;margin: 0 auto;
+		}
+		.clear{clear: both;}
+	</style>
+</head>
+<body>
+	<div class="container1">
+		<div class="left box"></div>
+		<div class="center box"></div>
+		<div class="right box"></div>
+	</div>
+	<!--方案3: 隔墙法
+	<div class="clear"></div>
+	-->
+	<div class="footer">底部</div>
+</body>
+</html>

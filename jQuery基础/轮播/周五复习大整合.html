@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.slider {
+				width: 800px;
+				height: 800px;
+				background: red;
+				margin: 200px auto;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.slider ul li,
+			.slider ul li img {
+				width: 800px;
+				height: 800px;
+			}
+			
+			.slider ul li {
+				float: left;
+			}
+			
+			.slider ul {
+				width: 2400px;
+				position: relative;
+			}
+			
+			.next {
+				position: absolute;
+				right: 0px;
+				top: 30%;
+				width: 150px;
+				height: 80px;
+				line-height: 80px;
+				background: #333;
+				color: #fff;
+				font-size: 30px;
+				text-align: center;
+				cursor: pointer;
+			}
+			.pre {
+				position: absolute;
+				left: 0px;
+				top: 30%;
+				width: 150px;
+				height: 80px;
+				line-height: 80px;
+				background: #333;
+				color: #fff;
+				font-size: 30px;
+				text-align: center;
+				cursor: pointer;
+			}
+			ol{ width: 110px; height: 30px; position: absolute; bottom: 10px; left: 50%; margin-left: -55px;}
+			ol li{ float: left; width: 30px; margin-right:10px ; height: 30px; background: #333; color: #fff; cursor: pointer; text-align: center; line-height: 30px;}
+			ol li:last-child{ margin-right: 0px;}
+			.active{ background: red;}
+		</style>
+		<script src="JS/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="slider">
+			<ul>
+				<li><img src="images/images04.jpg" /></li>
+				<li><img src="images/images05.jpg" /></li>
+				<li><img src="images/images06.jpg" /></li>
+			</ul>
+			<div class="pre">上一页</div>
+			<div class="next">下一页</div>
+			<ol>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ol>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			var index = 0;
+			var time = null;
+			$(".slider ol li").eq(0).addClass("active")
+			function gucheng() {
+				index++;
+				if(index > 2) {
+					index = 0;
+				}
+				
+				$(".slider ul").animate({
+					left: -800 * index
+				}, 1000)
+				
+				$(".slider ol li").eq(index).addClass("active").siblings().removeClass("active")
+			}
+			time=setInterval(gucheng, 5000)
+			$(".next").click(function(){
+				
+				index++;
+				if(index > 2) {
+					index = 0;
+				}
+				$(".slider ol li").eq(index).addClass("active").siblings().removeClass("active")
+				$(".slider ul").animate({
+					left: -800 * index
+				}, 1000)
+				clearInterval(time)
+				time=setInterval(gucheng, 5000)
+			})
+			$(".pre").click(function(){
+				index--;
+				if(index < 0) {
+					index = 2;
+				}
+				$(".slider ol li").eq(index).addClass("active").siblings().removeClass("active")
+				$(".slider ul").animate({
+					left: -800 * index
+				}, 1000)
+				clearInterval(time)
+				time=setInterval(gucheng, 5000)
+			})
+			$(".slider ol li").click(function(){
+				//guchengdesuoyinzhi=$(this).index()
+				index=$(this).index()
+				clearInterval(time)
+				$(".slider ul").animate({
+					left: -800 * index
+				}, 1000)
+				time=setInterval(gucheng, 5000)
+				
+				$(this).addClass("active").siblings().removeClass("active") 	
+			})
+		})
+		
+	</script>
+
+</html>

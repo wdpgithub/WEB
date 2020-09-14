@@ -1,0 +1,13 @@
+/*注释*/
+button{
+	background-color: red;
+}
+
+.box1{
+	background-color: yellow;
+}
+.box2{
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+}

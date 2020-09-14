@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+<script type="text/javascript">
+    //查询cookie
+    console.log(document.cookie);
+    //设置cookie
+    //document.cookie = "username=honny";
+   /* var oDate = new Date();
+    oDate.setDate(oDate.getDate()+3);//cookie三天后过期
+    document.cookie = "username=honny;expires="+oDate;*/
+    //修改cookie
+    document.cookie = "username=honny";
+    document.cookie = "username=honny1";
+    //删除cookie
+     var oDate = new Date();
+    oDate.setDate(oDate.getDate()-1);
+    document.cookie = "username=honny;expires="+oDate
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<!-- HTTP:超文本传输协议,用于web服务器传输超文本到本地浏览器的传输协议,它是一个无状态的协议 -->
+<!-- cookie:是指缓存在本地客户端的数据-->
+<!-- cookie基本操作包括增、删、改、查四部分 -->

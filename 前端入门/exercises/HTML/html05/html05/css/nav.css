@@ -1,0 +1,42 @@
+/*导航样式*/
+h1{font-size: 30px;font-weight: bold;}
+a{text-decoration: none;color:#000;}
+/*普通导航*/
+.nav1 {
+	width: 600px;
+	height: 70px;
+	border: 1px solid red;
+	margin: 0 auto;
+	line-height: 70px;
+	text-align: center;
+}
+.nav1 a{padding: 0 20px;}
+.nav1 a:hover{color: red;}
+
+/*2:标准导航*/
+.nav2{
+	width: 600px;
+	height: 45px;
+	margin: 0 auto;
+	background-image: url(../img/bg1.jpg);/*背景图*/
+}
+.nav2 ul li{
+	float: left;
+	line-height: 45px;
+	width: 100px;
+	height: 45px;
+	text-align: center;
+	background: url(../img/bg2.jpg) no-repeat right;
+}
+.nav2 ul li:last-child{
+	background: none;
+}
+.nav2 ul li a{
+	display: block;
+	width: 100px;
+	height: 45px;
+}
+.nav2 ul li a:hover{
+	/*background-color: red;*/
+	background: url(../img/bg3.jpg) no-repeat center;
+}

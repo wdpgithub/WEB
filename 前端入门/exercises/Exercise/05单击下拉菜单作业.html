@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+    *{margin:0;padding:0;list-style:none;}
+    li li,li a{width:200px;height:60px;background:black;color:white;text-align: center;line-height:60px;display: block;border-bottom:1px solid black;}
+    #home_li{display: none;}
+    #home_li1{display: none;}
+    li a{background:green;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a id="home">主页</a>
+            <ul id="home_li">
+                <li>内容一</li>
+                <li>内容二</li>
+            </ul>
+        </li>
+       <li>
+            <a id="home1">会员</a>
+            <ul id="home_li1">
+                <li>会员内容一</li>
+                <li>会员内容二</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
+<script type="text/javascript">
+    var home=document.getElementById("home");
+    var home_li=document.getElementById("home_li");
+    var index=false;
+
+    home.onclick=function(){
+        if(index==false){
+            home_li.style.display="block";
+         }else{
+            home_li.style.display="none";
+         }
+         index=!index;
+    }
+     var home1=document.getElementById("home1");
+    var home_li1=document.getElementById("home_li1");
+    var index=false;
+
+    home1.onclick=function(){
+        if(index==false){
+            home_li1.style.display="block";
+         }else{
+            home_li1.style.display="none";
+         }
+         index=!index;
+    }
+
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>工资<input type="text" v-model.number="money"/></p>
+        <p>税率<input type="text" v-model.number="result"/></p>
+    </div>
+    <script type="text/javascript">
+    new Vue({
+        el:"#app",
+        data:{
+            money:0
+        },
+        computed:{
+            result:{
+                get(){
+                    return this.money*0.05
+                },
+                set(val){
+                    this.money=val/0.05
+                }
+            }
+        },
+        aa(){
+            return "a"
+        }
+    })
+    </script>
+</body>
+</html>

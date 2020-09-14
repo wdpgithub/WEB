@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <com></com>
+        <com2></com2>
+    </div>
+    <template id="box">
+        <div>
+            <button  @click="sendMessage">发送数据</button>
+        </div>
+    </template>
+    <template id="box1">
+        <div>
+            <p>从com发送过来的数据:{{msg2}}</p>
+        </div>
+    </template>
+    <script type="text/javascript">
+    var event=new Vue({})
+    new Vue({
+        el:'#app',
+        data:{
+
+        },
+        components:{
+            com:{
+                template:'#box',
+                data(){
+                    return {
+                        msg:'哈哈哈'
+                    }
+                },
+                methods:{
+                    sendMessage(){
+                        event.$emit('help',this.msg)
+                    }
+                }
+            },
+            com2:{
+                template:'#box1',
+                data(){
+                    return{
+                        msg2:''
+                    }
+                },
+                mounted(){
+                    var _this=this
+                    event.$on('help',function(val){
+                        _this.msg2=val
+                    })
+                }
+            }
+        }
+    })
+    </script>
+</body>
+</html>

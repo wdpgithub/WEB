@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #div1{width:100px;height: 100px;background:yellow;}
+    </style>
+</head>
+<body>
+    <div id="div1">事件对象</div>
+</body>
+</html>
+<script type="text/javascript">
+/*
+    通过事件绑定的执行函数是可以得到一个隐藏参数的.说明浏览器会自动分配一个函数,这个参数叫做event对象
+
+
+    event对象获取方式
+
+    Event事件:e.clientX,e.clientY、e.pageX，e.pageY等
+ */
+var oDiv = document.getElementById("div1");
+oDiv.onclick = function(e){
+    // console.log(e);
+    // console.log(window.event);
+    var evt = e || event;//IE兼容问题
+    // console.log(evt.clientX,evt.clientY);//可视区域
+    // console.log(evt.pageX,evt.pageY);//整个页面包含滚动条
+    console.log(evt.offsetX,evt.offsetY);//整个元素范围内
+}
+</script>

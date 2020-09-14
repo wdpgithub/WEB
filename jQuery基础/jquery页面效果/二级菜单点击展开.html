@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			dl {
+				width: 200px;
+				border: 1px solid #ccc;
+				font-size: 14px;
+			}
+			
+			dt {
+				background: #eee;
+				text-indent: 1em;
+				line-height: 30px;
+				border-bottom: 1px solid #ccc;
+			}
+			
+			dt span {
+				font-size: 24px;
+				float: right;
+				margin-right: 10px;
+			}
+			
+			dd {
+				line-height: 30px;
+				text-indent: 1em;
+				border-bottom: 1px solid #ccc;
+			}
+			
+			div {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<dl>
+			<dt>哲学<span>+</span></dt>
+			<div>
+				<dd>科学技术哲学</dd>
+				<dd>宗教学</dd>
+				<dd>美学</dd>
+				<dd>伦理学</dd>
+				<dd>逻辑学</dd>
+				<dd>外国哲学</dd>
+				<dd>中国哲学</dd>
+				<dd>马克思主义哲学</dd>
+			</div>
+		</dl>
+		<dl>
+			<dt>经济学<span>+</span></dt>
+			<div>
+				<dd>应用经济学</dd>
+				<dd>理论经济学</dd>
+				<dd>国民经济学</dd>
+				<dd>区域经济学</dd>
+				<dd>产业经济学</dd>
+				<dd>国际贸易学</dd>
+				<dd>劳动经济学</dd>
+				<dd>政治经济学</dd>
+			</div>
+		</dl>
+		<dl>
+			<dt>法学<span>+</span></dt>
+			<div>
+				<dd>宗教学</dd>
+				<dd>美学</dd>
+				<dd>伦理学</dd>
+				<dd>逻辑学</dd>
+				<dd>外国哲学</dd>
+				<dd>中国哲学</dd>
+			</div>
+		</dl>
+		<dl>
+			<dt>教育学<span>+</span></dt>
+			<div>
+				<dd>伦理学</dd>
+				<dd>逻辑学</dd>
+				<dd>外国哲学</dd>
+				<dd>中国哲学</dd>
+			</div>
+		</dl>
+		<dl>
+			<dt>工学<span>+</span></dt>
+			<div>
+				<dd>伦理学</dd>
+				<dd>逻辑学</dd>
+				<dd>外国哲学</dd>
+				<dd>中国哲学</dd>
+			</div>
+		</dl>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$("dt").click(function() {
+			$(this).next().slideToggle().parent().siblings().find("div").slideUp()
+			if($(this).children().text() == "+") {
+				$(this).children().text("-").parent().parent().siblings().find("span").text("+")
+			}else{
+				$(this).parent().find("span").text("+")
+			}
+		})
+
+		//		$("dt").hover(function(){
+		//			$(this).next().stop().slideDown().parent().siblings().find("div").stop().slideUp()
+		//			$(this).children().text("-").parent().parent().siblings().find("span").text("+")
+		//		})
+	</script>
+
+</html>

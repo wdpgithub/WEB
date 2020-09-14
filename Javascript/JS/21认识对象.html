@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        对象也是是数据类型
+
+
+        分析：数据存储的历程
+                变量（单个数据）=>数组(批量数据)=>对象(数据，函数)
+
+        [注]什么是对象，其实就是一种类型，即[引用]类型，而对象就是[引用类型]的实例，在ECMAscript中引用类型是一种[数据类型]，用于将[数据和功能]组织在一起。
+    */
+
+   /*
+        对象的创建
+        对象中存储的数据，我们叫做对象的属性
+        对象中存储的函数，我们叫做对象的方法
+    */
+    //1.使用new运算符创建对象
+   /* var person = new Object();
+    //给该对象添加数据/属性
+    person.name ="xxx";
+    person.age = 18;
+    //给该对象添加函数/方法
+    person.showName =function(){
+        alert(person.name);
+    }*/
+
+
+    //如果我们想要访问上述对象的属性和函数
+    //alert(person.name)；
+    //调用对象的方法
+    //person.shoeName();
+
+
+
+    //2.new运算符可以省略
+    //var person=Object();
+
+    //3.使用常量/字面量去创建对象
+    //第一种
+   /* var person ={};
+    person.name ="xxx";
+    person.age = 18;
+    person.showName =function(){
+        alert(person.name);
+    }
+    person.showName();
+*/
+
+    //第二种
+    var person ={};
+    person["name"]="xxx";
+    person["age"]=18;
+    person["showName"]=function(){
+        alert(person["name"]);
+    }
+    person.showName();
+
+
+
+
+
+
+/*
+    delete 删除对象的属性
+ */
+
+    alert(person.name);
+    delete person.name;
+    alert(person.name);
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

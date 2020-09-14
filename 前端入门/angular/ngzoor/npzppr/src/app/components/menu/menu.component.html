@@ -1,0 +1,42 @@
+<div style="width: 240px;">
+  <button nz-button [nzType]="'black'" (click)="toggleCollapsed()" style="margin-bottom: 10px;">
+    <i class="anticon" [class.anticon-menu-unfold]="isCollapsed" [class.anticon-menu-fold]="!isCollapsed">
+    </i>
+  </button>
+  <ul nz-menu [nzMode]="'inline'" nzTheme='dark' [nzInlineCollapsed]="isCollapsed">
+    <li  nz-menu-item nz-tooltip nzPlacement="right" [nzTitle]="isCollapsed ? 'Navigation One' : ''">
+      <span title routerLink="/home">
+        <i class="anticon anticon-mail"></i>
+        <span>home</span>
+      </span>
+    </li>
+    <li nz-submenu>
+      <span title>
+        <i class="anticon anticon-appstore"></i>
+        <span>selsect下级菜单</span>
+      </span>
+      <ul>
+        <li nz-menu-item routerLink="/about">about</li>
+        <li nz-menu-item routerLink="/news">news</li>
+        <li nz-submenu>
+          <span title>Submenu</span>
+          <ul>
+            <li nz-menu-item>Option 7</li>
+            <li nz-menu-item>Option 8</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li nz-submenu>
+      <span title>
+        <i class="anticon anticon-setting"></i>
+        <span>Navigation Three</span>
+      </span>
+      <ul>
+        <li nz-menu-item>Option 9</li>
+        <li nz-menu-item>Option 10</li>
+        <li nz-menu-item>Option 11</li>
+      </ul>
+    </li>
+  </ul>
+</div>

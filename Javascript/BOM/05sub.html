@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+   <style type="text/css">
+       body{background-color:blue;}
+   </style>
+   <script type="text/javascript">
+    /*//先打开sup点击出现sub[注]用火狐打开才有用
+        opener  打开当前窗口的父窗口的window对象
+     */
+    window.onload = function(){
+        var oBtn = document.getElementById("btn");
+        oBtn.onclick = function(){
+            // alert(opener);
+            opener.document.write("子窗口让我输出的");
+        }
+    }
+   </script>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn" name="">
+</body>
+</html>

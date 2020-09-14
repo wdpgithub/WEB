@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1 {
+				width: 200px;
+				height: 200px;
+				position: relative;
+				background: hotpink;
+				left: 20px;
+			}
+			
+			#box2 {
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top: 0px;
+				left: 20px;
+				background: deepskyblue;
+			}
+			
+			#box3,
+			#box4,
+			.box5 {
+				width: 100px;
+				height: 100px;
+			}
+			
+			.red {
+				background: red;
+			}
+			
+			.green {
+				background: green;
+			}
+			.yellow{
+				background: yellow;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<!--
+		offset()，获取元素离屏幕左上角的距离，返回的是一个对象
+		用.top和.left可以分开获取
+		
+		position()，获取元素离有定位属性的父元素(body)的距离，返回的是一个对象
+		用.top和.left可以分开获取
+		-->
+
+		<div id="box1">
+			<div id="box2"></div>
+		</div>
+		<script type="text/javascript">
+			console.log($("#box1").offset())
+			console.log($("#box1").offset().top)
+			console.log($("#box1").offset().left)
+			console.log($("#box2").offset())
+			console.log($("#box2").offset().top)
+			console.log($("#box2").offset().left)
+
+			console.log($("#box1").position())
+			console.log($("#box1").position().top)
+			console.log($("#box1").position().left)
+			console.log($("#box2").position())
+			console.log($("#box2").position().top)
+			console.log($("#box2").position().left)
+		</script>
+
+		<!--
+			addClass removeClass toggleClass
+			添加/删除/切换元素的class类
+			
+		-->
+
+		<div class="red" id="box3"></div>
+		<div class="green" id="box4"></div>
+		<div class="box5 red"></div>
+		<button id="btn1">第一个变绿</button>
+		<button id="btn2">第二个变红</button>
+		<button id="btn3">红变绿绿变红</button>
+		<button class="zhuxiaobo">来回变</button>
+		<script type="text/javascript">
+			$(function() {
+				$("#btn1").click(function() {
+//					$("#box3").addClass("green")
+//					$("#box3").removeClass("red")
+					$("#box3").addClass("green")
+					$("#box3").removeClass("red")
+				})
+				$("#btn2").click(function() {
+					$("#box4").addClass("red")
+					$("#box4").removeClass("green")
+				})
+				$("#btn3").click(function() {
+					$("#box3").toggleClass("red green")
+					$("#box4").toggleClass("red green")
+				})
+				$(".zhuxiaobo").click(function(){
+					$(".box5").toggleClass("green red")
+					
+				})
+			})
+		</script>
+
+		<!--
+		元素的筛选 .eq()从0开始，找到匹配元素中的第几个 两种写法，
+		一种直接写在CSS选择器里，一种跟在后面作为方法
+		-->
+		<style type="text/css">
+			.boy {
+				color: blue
+			}
+			
+			.girl {
+				color: deeppink
+			}
+		</style>
+		<p class="boy">薛绍东</p>
+		<p class="boy">顶陈兰</p>
+		<p class="boy">朱琪龙</p>
+		<p class="girl">管苇倩</p>
+		<p class="boy">顾成</p>
+		<p class="girl">潘辰羽</p>
+		<p class="boy">张衡</p>
+		<p class="girl">杨柳</p>
+		<script type="text/javascript">
+			//$("p") 选择所有的p
+			//$("p:nth-child(5)") 选择作为第五个子元素的p
+			//document.getElementsByTagName("p")[5]
+			console.log("eq类似css写法："+$("p:eq(5)").html())
+
+			$("p").eq(index).html()
+			//console.log($("p").eq(5))
+//			$("p:eq(1)").css("color","red")
+//			$("p").eq(2).css("color","green")
+		</script>
+
+		<!--.first() :first :first-child .last() :last-->
+
+		<script type="text/javascript">
+			console.log($("p:first"))
+			console.log($("p:last"))
+		</script>
+
+		.index() 获取元素作为父元素的第几个子元素(从0开始数)
+
+		<script type="text/javascript">
+			$("p").click(function() {
+				console.log($(this).index())
+			})
+		</script>
+
+		<!--.filter() 元素过滤器，括号里写css选择器，满足这个条件的执行后面的东西 
+		.not() 不满足-->
+		<script type="text/javascript">
+			$("p").filter(".boy").click(function() {
+				console.log("我是男的")
+			})
+			$("p").not(".boy").click(function() {
+				console.log("我是吕孩纸")
+			})
+		</script>
+
+		<br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br />
+	</body>
+
+</html>

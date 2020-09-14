@@ -1,0 +1,13 @@
+html{font: 13px/1.5 \5FAE\8F6F\96C5\9ED1,simsun,sans-serif}
+.clearfix:after{visibility: hidden;clear: both;display: block;content: ".";height: 0;}
+.clearfix{*zoom: 1; }
+.right{float: right;}
+.left{float: left;}
+.mg_r_5{margin-right: 5px;}
+.mg_r_10{margin-right: 10px;}
+.mg_r_15{margin-right: 15px;}
+.mg_r_20{margin-right: 20px;}
+.mg_l_5{margin-left: 5px;}
+.mg_l_10{margin-left: 10px;}
+.padding_r_5{padding-right: 5px;}
+a{text-decoration: none;color: #000;}

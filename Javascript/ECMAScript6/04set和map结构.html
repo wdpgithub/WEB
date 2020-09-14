@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        set结构
+
+        set = new Set([1,2,3,4,4]);//构造函数,值不重复
+
+        [...set]//...扩展运算符，将类数组对象转换逗号分割的序列
+
+        for  of //遍历
+
+        set.size //长度 set.add(value)//添加  set.delete(value)//移除  set.has(value)//在set中是否存在  set.clear(0)//移除Set对象内的所有元素
+
+
+        key():返回键名的遍历器 for(let item of set key()){console.log(item);}
+        value():返回键值的遍历器
+        entries():返回键值对的遍历器
+        forEach()：使用回调函数遍历每个成员set.forEach(value,key)=>console.log(value*2)
+     */
+
+     //map结构
+     /*let map = new Map([["name","john"],["age",30]]);
+
+     map.set(1,1);
+
+     map.size//长度
+
+     map.set(key.value); map.get(key); map.delete(key); map.has(key); map.clear();
+
+    key()://返回键名的遍历器
+    value()://返回键值的遍历器
+    entries()://返回键值对的遍历器
+    forEach()：//使用回调函数遍历每个成员map.forEach(value,key)=>console.log(value*2)*/
+
+    //set
+    let set = new Set([1,2,3,4,4]);
+    console.log(set);
+
+    //扩展运算符
+    var arr = [...set];
+   /* console.log(arr);
+    for(let i of set){
+        console.log(i);
+    }
+    for(let i of arr){
+        console.log(i);
+    }*/
+
+   /* console.log(set.has(1));//true
+    set.add(0);
+    console.log(set);// {1, 2, 3, 4, 0}
+    set.delete(1);
+    console.log(set);//{2, 3, 4, 0}
+    set.clear();
+    console.log(set,set.size);//{} 0*/
+
+    for(let item of set.keys()){
+        console.log(item);
+    }
+
+    for(let item of set.values()){
+        console.log(item);
+    }
+
+    for(let [key,item] of set.entries()){
+        console.log(key,item);
+    }
+    set.forEach((item,key)=>console.log(item*2,key*2));
+
+
+    //map
+    var map = new Map([["name","john"],["age",20]]);
+    console.log(map);
+    map.set("sexy","male");
+    console.log(map);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

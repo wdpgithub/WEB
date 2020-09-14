@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <p>用户名：<input type="text" id="userName"></p>
+    <p>密码：<input type="text" id="pwd"></p>
+    <button id="btn">登录</button>
+
+    <script>
+        $('#btn').click(function(){
+            $.ajax({
+                type:'post',
+                url:'/VueHandler/AdminLoginAndRegHandler?action=login',
+                data:{
+                    userName:$('#userName').val(),
+                    pwd:$('#pwd').val()
+                },
+                success:function(data){
+                    if(data=='登陆成功'){
+                        window.location.href='./returnInfor.html'
+                    }else{
+                        alert(data)
+                    }
+                }
+            })
+
+
+
+
+        })
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

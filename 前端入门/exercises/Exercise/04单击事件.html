@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #box{width:200px;height: 200px;background:red;}
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
+<script type="text/javascript">
+    //开关概念
+    // var x=false;    //用false表示盒子是蓝色的
+    //                 //用true表示盒子是红色的
+    // var box=document.getElementById("box");
+    // //单击事件
+    // box.onclick=function(){
+    //     if (x==false) {
+    //         box.style.background="red";
+    //     }else{
+    //         box.style.background="blue";
+    //     }
+    //     x=!x;
+    // }
+
+    //红  绿  蓝 三种颜色的切换
+    var  box=document.getElementById("box");
+    var index=0;//表示是红色
+    box.onclick=function(){
+        //颜色改变
+        if(index==2){
+            index=0;
+        }else{
+            index++;
+        }
+        if(index==1){
+            box.style.background="green";
+        }
+        if(index==2){
+            box.style.background="blue";
+        }
+        if(index==0){
+            box.style.background="red";
+        }
+    }
+</script>

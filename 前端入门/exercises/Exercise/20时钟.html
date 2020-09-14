@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #clock{width: 400px;height:200px;background:gray;margin:0 auto;text-align:center;line-height:200px;font-size:100px;}
+    </style>
+
+</head>
+<body>
+    <div id="clock"></div>
+</body>
+</html>
+<script type="text/javascript">
+changetime();
+function   changetime(){
+    var settime=document.getElementById("clock");
+    var nowtime= new Date();
+    settime.innerHTML=nowtime.toLocaleTimeString();
+    alert(nowtime);
+}
+setInterval(changetime,1000)
+</script>

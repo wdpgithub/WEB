@@ -1,0 +1,218 @@
+(JS四大基本数据类型：字符串   数值    布尔    对象)     Null  undefined
+
+		复合数据类型：Object  数组
+JAVAscript里面有两个宿主（对象）：
+1.window     BOM --> Broswer   Object   Model    浏览器对象模型
+如果是window开头的对象，window可以省略
+window.alert（）；//表示是一个方法
+window.alert； //表示是一个属性                 
+2.document   DOM --> Document  Object   Model     文档对象模型
+JS操作HTML元素的三种方法:
+	document.getElementById("ID名")
+	document.getElementByTagName("标签名")
+	document.getElementByClassName("class名")
+JS获取DOM元素的值
+1.获取CSS样式		注意:只能获取行内样式的值
+	例:console.log(xx.style.width);
+2.获取元素的文本的值
+	例:console.log(xx.innerHTML);
+3.获取表单的值
+	例:console.log(myInput.value);
+
+JS中的函数     function
+
+为了完成某个功能所准备的一段代码
+
+函数的定义
+
+function 函数名称(参数){该函数被调用时执行的代码
+[注]函数时不会自动执行的,只有在主动调用后才能执行.
+
+参数随着调用时所给的参数的变化而变化-------这种叫做形参
+具有实际意义,并且不会发生改变的参数-----这种叫做实参
+
+函数的调用     =>函数名()
+
+函数()    方法()     功能()------>function
+
+JS自带的的对象
+1.数学对象	Math
+<1>获取随机数	(0,1]
+	Math.random()
+<2>取整
+(1)向上取整	1.2---->2	Math.ceil()
+(2)向下取整	1.2---->1	Math.floor()
+
+数组的基本操作
+1.数组元素的添加
+push()		//向数组的末尾添加一个数据
+unshift()	//向数组的头部添加一个数据
+
+2.数组元素的删除
+pop()		//向数组的末尾删除一个数据
+shift()		//向数组的头部删除一个数据
+
+reverse:倒序
+
+sort:正序[注]在比较数值大小排序的时候是不靠谱的但在去重时候较实用
+
+3.数组的删除或添加
+splice()----->arr.splice(需要操作的下标,需要操作的长度,添加的内容)
+
+4.数组的删除
+slice()----->arr.slice[开始位置,结束位置)
+[注]它会返回一个新的数组,而不会改变原有数组
+
+
+一>鼠标事件
+1.单击事件---->onclick
+2.双击事件---->ondblclick
+
+this----->当前对象
+
+onmouseover--->移出事件
+onmouseout---->移入事件
+onmousedown---->按下事件
+onmouseup---->抬起事件
+onmousemove--->移动事件
+
+获取鼠标位置
+1.相对于浏览器可视区大的鼠标坐标;event.clientX,event.clientY,
+2.相对于电脑屏幕的鼠标坐标;event.screenX,event.screenY,
+3.[重点]相对于整个页面的鼠标坐标,包含滚动条;event.pageX,event.pageY,
+
+
+
+JS中绑定事件的方法
+1.直接绑定
+对象名.事件名=function(e){}
+
+2.函数间接绑定---->绑定给了标签
+<p onclick ="funct01()"></p>
+
+3.事件监听
+对象名.addEventListener("事件名(click)",function){
+	alert("监听到一个事件")
+}
+
+
+BOM
+
+1.JS中有两种定时器：
+循环定时器				单次定时器
+setInterval(执行的函数，时间间隔)	setTimeout(执行的函数，时间间隔)	
+
+终止循环定时器:clearInterval(填写定时器名称)
+终止单次定时器:clearTimeout(填写定时器名称)
+
+2.关于浏览器的窗口位置
+console.log(window.screenLeft)
+console.log(window.screenX)
+consoe.log(window.screenTop)
+console.log(window.screenY)
+
+
+3.窗口大小
+console.log("当前浏览器的宽度"+window.outerwidth)
+cosole.log("当前浏览器的高度"+window.outerheight)
+
+4.location位置属性
+console.log(window.location.href)
+
+5.窗口的实际大小
+console.log(window.screen.width)
+console.log(window.screen.height)
+
+
+history    历史记录
+
+6.浏览器存储数据的方式有哪几种,它们有什么区别
+(1)cookie    缓存
+生命周期----是可以人为设置
+(2)sessionStorage    临时存储
+生命周期----是打开浏览器的那段时间,关闭浏览器就会清楚
+(3)localStorage      本地化存储
+生命周期-----除非用户手动清楚,否则永远存在
+
+
+AJAX请求分五步走
+1.创建一个ajax对象
+var ajxa= new XMLHttpRequest();
+2.发起请求
+ajxa.open("GET",products.json);
+3.发送请求
+ajxa.send();
+4.监听请求的状态
+ajxa.onreadystatechange=function(){
+	5.判断请求状态的结果,从而决定请求是否成功
+	if(ajxa.readyState==4&&ajxa.status==200){
+		var results=JSON.parse(res.target.responseText)
+			
+		console.log(results.products[2].name);
+
+	}
+}
+
+回到顶部 ---- onscroll(滚轮事件)
+
+
+1.js创建节点
+
+var newDiv = document.createElement("div")
+newDiv.clssName = "box";
+newDiv.innerHTML = "";
+
+2.插入节点
+
+父节点.appendchild("需要插入的子节点")
+
+3.删除节点
+
+removechild();
+
+//等待页面全部加载完成后,在执行相关代码
+window.onload = function(){
+    var myp = document.getElementById('p');
+    myp.innerHTML='哈哈哈哈'
+
+}
+$(document).ready(function(){
+            //开始写jQuery代码
+})
+$(function(){
+        //开始写jQuery代码
+})
+
+jQuery添加和删除
+
+    元素的添加
+    appendTO() - 在被选元素的结尾插入内容
+    perpendTO() - 在被选元素的开头插入内容
+    after() - 在被元素之后插入内容
+    before() - 在被选元素之前插入内容
+
+    元素删除
+    remove() - 删除被选元素(及其子元素)
+    empty() - 从被选元素中删除子元素
+
+
+jQuery的遍历
+ parent()方法返回被选元素的直接父元素
+ parents()方法返回返回被选元素的所有祖先元素,它一路向上直到文档的根目录(<html>)
+ childern()方法返回被选元素的所有直接子元素
+ find()方法返回被选元素的后代元素,一路向下直到最后一个后代
+ siblings方法返回被选元素的所有同胞元素
+ next()/prev()方法返回被选元素的下一个/上一个同胞元素
+ nextAll()/prevAll方法返回被元素的所有下面/上面的同胞元素
+
+jQuery的过滤
+ first()方法返回被选元素的首个元素
+ last()方法返回被选元素的最后一个元素
+ eq()方法返回被选元素中带有指定索引号的元素
+ filter()方法返回允许规定一个标准.不匹配这个标准的元素会从集合中删除,匹配元素会被返回
+ not()方法返回不匹配标准的所有元素
+
+
+
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>从子组件接收的数据:{{msg}}</p>
+        <com @haha="getMessage"></com>
+
+    </div>
+    <template id="box">
+        <div>
+            <button @click='sendMessage'>点击</button>
+        </div>
+    </template>
+    <script type="text/javascript">
+        new Vue({
+            el:'#app',
+            data:{
+                msg:''
+            },
+            methods:{
+                getMessage(val){
+                    this.msg=val
+                }
+            },
+            components:{
+                com:{
+                    template:'#box',
+                    data(){
+                        return{
+                            msg1:'火狐'
+                        }
+                    },
+                    methods:{
+                        sendMessage(){
+                            this.$emit('haha',this.msg1)
+                    // this.$emit(function haha(this.msg1))
+                }
+            }
+        }
+    }
+})
+</script>
+</body>
+</html>

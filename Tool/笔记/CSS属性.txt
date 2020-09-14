@@ -1,0 +1,160 @@
+CSS:层叠样式表
+语法
+ （1）选择器{
+        属性一:值;属性二:值;......
+      }
+     写在头部<head></head>里，用<style></style>包裹
+ （2）style=”属性一:值;属性二:值;......”
+
+
+选择器的种类
+CSS选择器的优先级:标签选择器  < class选择器(类选择器) < id选择器
+标签名{ ...} 
+.类名{...} 
+#id名{...}  
+
+特殊的选择器	伪类选择器（LVHA）
+      a标签的几种状态:
+	      1.link状态:表示为链接的状态
+	      2.visited:表示被点过后的状态  缓存（cookie）
+	      3.hover:表示鼠标移过时的状态    **********
+	      4.active:表示鼠标被按下时的状态
+     语法:
+     标签名:状态名{.......}
+     
+在网页中应用CSS的方法
+  (1)头部嵌套法  <style></style>
+  (2)直接写在标签之中
+     注:(1)(2)两种应用方法称为行内样式，行内样式的权级最高
+  (3)外部链接套用（外联样式）
+     <link  rel=“stylesheet” type=“text/css” href=“文件名.css">
+  (4)@import url(文件名.css);
+
+CSS样式的组合、继承和关联性
+  (1)组合:把具有相同声明定义的选择符组合在一起，并用逗号隔开。
+      p,td,.c1{font-size:12pt;font-family:黑体;color:red}
+  (2)继承:若子元素未定义，则它将继承上级元素的样式的定义。但存在少数属性不能继承。
+  (3)关联:样式表的关联性指在某些样式定义中，可以定义某样式仅在某个特定元素范围内才有效
+	分级属性 ：ul li p a{ color: white}
+
+样式表的6类常用属性
+
+字体属性 ：字体、字号、行距等。
+	font-family:指定文字的字体。h1{font-family:”华文彩云”} 微软雅黑/宋体/黑体
+	font-style：指定文字是否加粗或使用斜体。取值：normal（正常）、italic（斜体）
+	font-size：指定文字的大小。font-weight:bold（加粗）;
+	color:字体的颜色
+	text-decoration：设置底线、顶线、闪烁等文字效果。
+
+颜色及背景属性 ：背景颜色、背景图片等。     
+           background-color（背景色 ）
+           background-image（背景图 ）
+           background-repeat（背景图重复方式 ）
+           background-position（水平位置的偏移量、垂直位置的偏移量）
+			repeat-x  repeat-y  no-repeat   repeat（平铺）（default）
+           background （缩写形式）
+            
+文本属性：对齐方式等
+	text-indent: 2em;首行缩进2个汉字
+	text-transform: uppercase; 大小写转换
+	text-overflow: ellipsis; 超出文本显示为省略号
+	text-align:指定文字的水平对齐方式。值为：left,right,center
+	line-height:行高（让行高等于其父元素的高度，那么它就会在父容器中垂直居中）
+	vertical-align:文字相对图片的环绕方式。值为:top,middle,bottom
+
+区块属性 ：边框粗细等。
+定义边界，取值为：长度|百分比|auto
+	上边距：margin-top；下边距：margin-bottom
+	左边距：margin-left：右边距：margin-right
+简写:margin:上   右   下  左
+
+	上边距：padding-top；下边距：padding-bottom
+	左边距：padding-left：右边距：padding-right
+简写:padding:上   右   下  左
+
+定义边框：
+	上边框：border-top；下边框：border-bottom
+	左边框：border-left：右边框：border-right
+	
+	border-color  边框的颜色
+	border-width  边框的宽度
+	border-style  边框的样式
+简写:border:宽度   样式  颜色  border:1px solid #ccc
+
+鼠标属性 ：鼠标形状等。
+	cursor属性，取值如下
+		pointer手指型
+		wait：等待
+盒子模型	盒子实际宽度 = 内容宽度 + 内边距 + 边框  	
+(1)margin:外边距(margin-top、margin-right、margin-bottom、margin-left)：外边距顺序依次是上、右、下、左
+(2)padding:内边距(padding-top、padding-right、padding-bottom、padding-left)：内边距指文本边框与文本之间的距离，顺序依次是上、右、下、左
+
+布局中的主要样式:
+属性名			含义
+line-height		行高
+margin			外边距
+padding			内编剧
+border			边框
+text-align		文字对齐方式
+float			浮动方式（行标签使用浮动可以设置宽高）
+clear			清除浮动
+display			显示类型
+position		定位
+z-index			层级(必须在分非普通文档流下才有用)
+
+浮动和清除浮动  
+文档流  
+	1.先来后到  2.块元素和行内元素有自己的规范
+
+清除浮动
+1.clear：both；缺点: margin外间距不起作用	2.给父标签添加高度	3. 隔墙法	4.overflow：hidden；父标签添加超出隐藏
+定位的四种情况:
+	position（属性名）
+		1.相对定位:relative      (非普通文档流)相对于它自身在普通文档流中的原始位置的定位
+		2.绝对定位:absolute      (非普通文档流)相对于其最近的非普通文档流的父元素而言
+		3.固定定位:fixed         (非普通文档流)
+		4.静态定位(默认值):static(普通文档流)
+z-index(层级)
+
+补充:
+1.Class 和 id的命名规范
+
+一般以字母、下划线开头，不能以数字开头,
+    尽量不能（一定）以HTML中的关键字命名（name id class input）
+推荐两种命名方式:
+----使用“_”分割 如：header_nav     (class推荐)
+----驼峰式命名 如：headerNav         (id推荐)
+
+2.常用class名　
+   wrap		用于最外层包裹层
+   header	用于头部主要内容
+   main		用于主体内容（中部）左侧
+   main_left	左侧布局右侧
+   main_right	右侧布局导航条
+   nav		网页菜单导航条内容
+   content	用于网页中部主体底部
+   footer	用于底部
+   banner	轮播图
+
+HTML中标签的种类
+   1.块元素:独占一行的元素  
+            ------允许直接设置宽度和高度   
+            h p ul li dl dd dt ol table form  div
+   2.行内元素:允许多个标签放在同一行的元素
+            a  span b img input
+   
+开发网页之前必须先重置浏览器的默认样式
+   *{
+      margin:0;
+      padding:0;
+      list-style:none;
+   }
+
+
+
+CSS 精灵的优点：
+1、减少图片的字节
+2、减少了网页的http请求，从而大大的提高了页面的性能
+3、解决了网页设计师在图片命名上的困扰，只需对一张集合的图片上命名就可以了，不需要对每一个小元素进行命名，从而提高了网页的制作效率。
+4、更换风格方便，只需要在一张或少张图片上修改图片的颜色或样式，整个网页的风格就可以改变。维护起来更加方便。
+   

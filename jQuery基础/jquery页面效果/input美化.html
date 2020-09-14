@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+    <style>  
+        .box{  
+            position: relative;  
+            width:119px;  
+            height:37px;  
+            background-color: #53AD3F;  
+            line-height: 37px;  
+            text-align: center;  
+            color: #fff;  
+            cursor: pointer;  
+            overflow: hidden;  
+            z-index: 1;  
+        }  
+        .box input{  
+            position: absolute;  
+            width: 119px;  
+            height: 40px;  
+            line-height:40px;  
+            font-size:23px;  
+            /*opacity:0;  */
+            filter: "alpha(opacity:0)";  
+            filter: alpha(opacity:0);  
+            left:-5px;  
+            top:-2px;  
+            cursor: pointer;  
+            z-index: 2;  
+  
+        }  
+    </style>  
+</head>
+
+<body>
+<form id="form1" method="post" >  
+    <div>  
+        <div class="box">  
+        	<div>w shi img</div>
+            <input type="file" name="f" id="f"/>  
+        </div> 
+        
+    </div>  
+  
+</form>  
+</body>
+</html>

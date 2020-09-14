@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="checkbox" v-model="isTrue" >
+        <p>{{isTrue}}</p>
+        <input type="checkbox" v-model="subject" value="语文">
+        <input type="checkbox" v-model="subject" value="数学">
+        <p>{{subject}}</p>
+        <input type="radio" v-model="sex" name="sex" value="女"/>女
+        <input type="radio" v-model="sex"  name="sex" value="男" />男
+        <p>{{sex}}</p>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el:'#app',
+            data:{
+                isTrue:true,
+                subject:[],
+                sex:''
+            }
+        })
+    </script>
+</body>
+</html>

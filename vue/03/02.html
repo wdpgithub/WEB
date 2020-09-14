@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <he></he>
+        <ha></ha>
+    </div>
+</body>
+<template id="box">
+    <div>
+        <h2>hello world</h2>
+    </div>
+</template>
+<template id="box2">
+    <div>
+        {{msg}}
+        <p>
+            <fc-zu></fc-zu>
+        </p>
+    </div>
+</template>
+<template id="box3">
+    <div>
+        {{msg}}
+    </div>
+</template>
+<script type="text/javascript">
+    var a = {
+        template: "#box"
+    }
+
+    new Vue({
+        el: "#app",
+        data: {
+
+        },
+        components: {
+            "he": a,
+            "ha": { //创建组件的一种常用方法
+                template: "#box2",
+                data() {
+                    return {
+                        msg: "你好 世界"
+                    }
+                },
+                components: {
+                    "FcZu": {
+                        template: "#box3",
+                        data() {
+                            return {
+                                msg: "你好"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    })
+</script>
+
+</html>

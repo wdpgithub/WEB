@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+
+</head>
+<body>
+<script type="text/javascript">
+    /*
+         Ajax的同源策略
+             1.什么是同源策略
+
+            2.解决跨越问题
+                1.JSONP
+                2.CORS
+     */
+
+     function Gate(date){
+        console.log(date);
+     }
+     var script = document.createElement('script');
+     script.id = 'jsonp';
+     script.src = 'jsonp.js';
+     document.body.appendChild(script);
+    </script>
+</body>
+</html>

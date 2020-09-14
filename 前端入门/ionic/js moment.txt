@@ -1,0 +1,16 @@
+
+npm install  moment --save
+
+
+
+组件使用：
+import * as moment from 'moment';
+
+
+能够将时间进行处理，多少秒之前...
+
+
+transform(value: string, ...args) {
+    //return value.toLowerCase();
+    return moment(value).toNow();
+  }

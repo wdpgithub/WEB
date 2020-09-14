@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.wrap{
+				width: 480px;
+				height: 800px;
+				position: relative;
+				margin: 50px auto;
+				overflow: hidden;
+			}
+			.content{
+				width:1440px;
+				height: 800px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.content li{
+				float: left;
+			}
+			#next,#prev{
+				width: 100px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				color: white;
+				background: black;
+				opacity: 0.4;
+				position: absolute;
+				top: 50%;
+				margin-top: -30px;
+			}
+			#next:hover,#prev:hover{
+				opacity: 1;
+				cursor: pointer;
+			}
+			#next{
+				right: 0;
+			}
+			.icon_wrap{
+				width:200px;
+				height: 20px;
+				position: absolute;
+				bottom: 10px;
+				left: 50%;
+				margin-left: -100px;
+			}
+			.icon_wrap li{
+				width: 20px;
+				height: 20px;
+				background: deepskyblue;
+				border-radius: 50%;
+				margin-right: 40px;
+				float: left;
+			}
+			.icon_wrap .active{
+				background: blueviolet;
+			}
+			.icon{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<ul class="content">
+				<li><img src="timg.jpeg"/></li>
+				<li><img src="timg1.jpeg"/></li>
+				<li><img src="timg3.jpeg"/></li>
+			</ul>
+			<div id="next">下一张</div>
+			<div id="prev">上一张</div>
+			<ul class="icon_wrap">
+				<li index="0" class="active icon"></li>
+				<li index="1" class="icon"></li>
+				<li index="2" class="icon"></li>
+			</ul>
+		</div>
+
+
+	</body>
+</html>
+<script>
+	var wrap=document.getElementsByClassName("wrap")[0];
+	var content=document.getElementsByClassName("content")[0];
+	var next=document.getElementById("next");
+	var prev=document.getElementById("prev");
+	var icons=document.getElementsByClassName("icon");
+	var index=0;
+	var timer=null;
+
+	//轮播开始
+	autoPlay();
+
+	//给每个小圆钮添加点击事件
+	for(var i=0;i<icons.length;i++){
+		icons[i].onclick=function(){
+
+			var myIndex=this.getAttribute("index");
+			index=myIndex;
+			change();
+
+		}
+	}
+	//鼠标移入,暂停轮播
+	wrap.onmouseover=function(){
+		stopPlay()
+	}
+	//鼠标移出,开始轮播
+	wrap.onmouseout=function(){
+		autoPlay()
+	}
+	//下一张图片
+	next.onclick=function(){
+		if(index==2){
+			index=0
+		}else{
+			index++;
+		}
+        change()
+	}
+	//上一张图片
+	prev.onclick=function(){
+		if(index==0){
+			index=2
+		}else{
+			index--;
+		}
+		change()
+	}
+	//切换图片及按钮的样式
+	function change(){
+		for(var i=0;i<icons.length;i++){
+			icons[i].className="icon";
+		}
+		icons[index].className="active icon";
+		content.style.left=-index*480+"px";
+	}
+	//自动轮播的函数
+	function  autoPlay(){
+		timer=setInterval(function(){
+			next.onclick();
+		},2000)
+	}
+	//暂停轮播的函数
+	function stopPlay(){
+		clearInterval(timer);
+	}
+
+
+
+
+
+
+
+
+
+</script>

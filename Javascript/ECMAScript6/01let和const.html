@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        let的使用
+        用来声明变量,它的用法类似于var,但是所声明的变量,只在let命令所在的代码块内有效.
+
+        1.存在块级作用域
+        2.不存在变量声明提升
+        3.不允许重复声明(包含普通函数和函数参数)
+
+
+        const的使用
+        用来声明常量,不要视图改变常量的值,其他语法参照let
+     */
+       /* let a = 10;
+        console.log(a);
+        if (a > 5) {
+            let b = 20;
+        };
+        function foo(){
+            let c = 20;
+        }
+        console.log(b);//不存在变量声明提升
+        foo();
+        console.log(c);*/
+
+        //conset a = 10;
+
+
+
+
+        //解构赋值:按照一定模式,从数组和对象中提取,对变量进行赋值.
+        //数组
+        /*let [a,b,c] = [1,2,3];
+        console.log(a,b,c);*/
+
+        /*let [a=3,b] = [2];
+        console.log(a,b);//2 undefined*/
+
+        /*let c;
+        let [a=2] =[c];
+        console.log(a);//2*/
+        //对象
+       /* let {a,b} = {a:"11",b:"22"};
+        console.log(a);//11*/
+
+        /*let {a:b} ={a:"111"};
+        console.log(b);//111*/
+
+       /* let {a,b=5} = {a:"1"};
+        console.log(a,b);//1  5*/
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

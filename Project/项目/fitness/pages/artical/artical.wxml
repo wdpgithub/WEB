@@ -1,0 +1,99 @@
+<!--  文章页面 -->
+<view class='articalContainer'>
+    <!-- 轮播 是否显示圆点, 自动播放, 无缝滚动, 间隔, 选中点的颜色... -->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}"  interval="{{interval}}" 
+    indicator-active-color="#E52B30">
+       <block wx:for="{{imgUrls}}" wx:for-item="item" wx:key>
+        <swiper-item><image src='{{item}}'></image></swiper-item>
+      </block>
+    </swiper>
+</view>
+<text class='course'>课程项目</text>
+<view class='cour_box'>
+  <view class='cour' bindtap='goDetails'>
+    <image src='../images/yj.png'></image>
+    <view class='sportK'>
+      <text>瑜伽</text>
+    </view>
+  </view>
+  <view class='cour' bindtap='goDetails'>
+    <image src='../images/jmc.png'></image>
+     <view class='sportK'>
+      <text>健美操</text>
+    </view>
+  </view>
+</view>
+<view class='cour_box'>
+  <view class='cour' bindtap='goDetails'>
+    <image src='../images/tqd.png'></image>
+    <view class='sportK'>
+      <text>少儿跆拳道</text>
+    </view>
+  </view>
+  <view class='cour' bindtap='goDetails'>
+    <image src='../images/wd.png'></image>
+     <view class='sportK'>
+      <text>少儿舞蹈</text>
+    </view>
+  </view>
+</view>
+<view class='cour_box'>
+  <view class='cour' bindtap='goDetails'>
+    <image src='../images/yy.png'></image>
+    <view class='sportK'>
+      <text>游泳</text>
+    </view>
+  </view>
+  <view class='cour' bindtap='goDetails'>
+    <image src='../images/dgdc.png'></image>
+     <view class='sportK'>
+      <text>动感单车</text>
+    </view>
+  </view>
+</view>
+<view class='cour_box'>
+  <view class='cour' bindtap='goDetails'>
+    <image src='../images/jw.png'></image>
+    <view class='sportK'>
+      <text>少儿街舞</text>
+    </view>
+  </view>
+  <view class='cour' bindtap='goDetails'>
+    <image src='../images/bl.png'></image>
+     <view class='sportK'>
+      <text>少儿芭蕾</text>
+    </view>
+  </view>
+</view>
+<text class='course'>健身环境</text>
+<view wx:for="{{items}}"  wx:for-item="item" class='hj'>
+    <image src='{{item.url}}'></image>
+</view>
+<text class='course jl_txt'>健身教练</text>
+<view class='my'>
+  <view wx:for="{{coaches}}"  wx:for-item="item" class='jl'>
+    <image src='{{item.urll}}'></image>
+    <view class='jl_box'>
+      <text class='coac jl_name'>{{item.title}}</text>
+      <text class='coac jl_details'>{{item.details}}</text>
+    </view>   
+  </view>
+</view>
+<text class='course contact'>联系我们</text>
+<view class='contact_det'>
+  <view class='con_b'>
+    <image src='../images/addr.png'></image>
+    <text>无锡市锡山区XX镇XX区</text>
+  </view>
+  <view class='con_b'>
+    <image src='../images/phone.png'></image>
+    <text>0510-3265 4673</text>
+  </view>
+  <view class='con_b'>
+    <image src='../images/qq.png'></image>
+    <text>0510-3265 4673</text>
+  </view>
+</view>
+
+
+

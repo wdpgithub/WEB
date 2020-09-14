@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        id  document.getElementById()
+
+        tagName    node.getElementsByTagName()
+
+        name  document.getElementsByName()
+
+        className  document.getElementsByClassName()
+     */
+    /*
+        通过封装函数  简化上述的操作
+        封装一个函数,可以拥有上述几种获取元素节点的功能
+        [注]css 选择器
+            #id         通过id获取元素节点
+            .class      通过className获取元素节点
+            tagName     通过tagName获取元素节点
+            name=xxx    通过name获取元素节点
+     */
+
+    function $(vArg){
+        //<1>对参数进行区分
+        switch(vArg[0]){
+            case "#": //id
+                return document.getElementById(vArg.substring(1));
+                break;
+            case "."://className
+                return elementByClassName(document,vArg.substring(1));
+                break;
+            default:
+                //对参数的前五个字符,进行判断
+                var str = vArg.substring(0,5);
+                if (str == "name=") {//name
+                    return document.getElementsByName(vArg.substring(5));
+                }else{//tagName
+                    return document.getElementsByTagName(vArg);
+                }
+                break;
+
+        }
+    }
+    function elementByClassName(parent,classStr){
+        //<1>找到parent下所有的元素节点
+        var nodes = parent.getElementsByTagName('*')
+        var result = [];//用记录符合条件的元素节点
+        for (var i = 0; i < nodes.length; i++) {
+            //<2>如果符合条件,添加到数组中
+            if (nodes[i].className==classStr) {
+                result.push(nodes[i]);
+            };
+        };
+        return result;
+    }
+
+
+
+
+    window.onload = function(){
+        //id
+        //alert($("#div1").innerHTML);//1111
+        //className
+        alert($(".box").length);//2
+        alert($(".box")[0].innerHTML);//2222
+
+        //tagName
+        alert($("div").length);//4
+
+        //name
+        alert($("name=hello")[0].innerHTML);//4444
+        alert($("name=hello").length);//1
+    }
+    </script>
+</head>
+<body>
+    <div id="div1">1111</div>
+    <div class="box">2222</div>
+    <div class="box">3333</div>
+    <div name="hello">4444</div>
+</body>
+</html>

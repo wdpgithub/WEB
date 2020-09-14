@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #div1{width:100px;height:100px;background:yellow;}
+    </style>
+
+</head>
+<body>
+    <div id="div1">事件</div>
+    <form action="">
+        <input type="text" name="">
+        <input type="submit" value="提交" name="">
+    </form>
+</body>
+</html>
+ <script type="text/javascript">
+    /*
+        javaScript可以处理的事件类型:鼠标事件、键盘事件、HTML事件
+        所有的事件处理函数都有两部分组成：on +事件名称
+
+     */
+        var oDiv = document.getElementById("div1");
+        var oForm = document.getElementsByTagName("form")[0];
+        var aInput = document.getElementsByTagName("input");
+       /* oDiv.onclick = function(){
+            console.log("点击事件");
+        }
+        oDiv.onmouseover = function(){
+            console.log("鼠标移入事件");
+        }
+         oDiv.onmouseout = function(){
+            console.log("鼠标移出事件");
+        }
+         oDiv.onmousedown = function(){
+            alert("鼠标按下事件")
+        }
+         oDiv.onmouseup = function(){
+            alert("鼠标抬起事件")
+        }*/
+        /*oForm.onsubmit = function(){
+            console.log("submit");
+            return false;
+        }*/
+        aInput[0].onfocus = function(){
+            console.log("获取焦点");
+        }
+        aInput[0].onblur = function(){
+            console.log("失去焦点");
+        }
+        aInput[0].onchange = function(){
+            console.log("捕获焦点");//不仅能改变焦点而且失去焦点
+        }
+        aInput[0].oninput = function(){
+            console.log("改变焦点");
+        }
+</script>

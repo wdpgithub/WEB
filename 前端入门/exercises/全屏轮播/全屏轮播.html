@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.banner{
+				width: 100%;
+			    min-height: 500px;
+			    position: relative;
+			    cursor: pointer;
+			}
+			.banner>li{
+				width: 100%;
+				min-height:500px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.banner>li p,.banner>li font{
+				position: absolute;
+			}
+			.banner>li p{
+				top:100px;
+				left:500px;
+				font-size: 60px;
+				color: white;
+				display: none;
+			}
+			.banner>li font{
+				top:200px;
+				left:500px;
+				font-size: 60px;
+				color: white;
+				display: none;
+			}
+			.banner>li:first-child{
+				background: url(images/banner01.jpeg) no-repeat center top;
+				background-size: cover;
+				z-index: 3;
+			}
+			.banner>li:nth-child(2){
+				background: url(images/banner02.jpg) no-repeat center top;
+				background-size: cover;
+				z-index: 2;
+			}
+			.banner>li:nth-child(3){
+				background: url(images/banner03.jpg) no-repeat center top;
+				background-size: cover;
+				z-index: 1;
+			}
+			.banner>li:nth-child(4){
+				background:url(images/banner04.jpg) no-repeat center top;
+				background-size: cover;
+				z-index: 0;
+			}
+			.icon_wrap{
+				width: 240px;
+				height: 30px;
+				position: absolute;
+				bottom: 20px;
+				left:50%;
+				margin-left:-100px;
+				z-index: 4;
+			}
+			.icon_wrap li{
+				width: 30px;
+				height: 30px;
+				margin-right: 10px;
+				float: left;
+				line-height: 30px;
+				text-align: center;
+				cursor: pointer;
+				background: black;
+				color: white;
+			}
+			.icon_wrap .active{
+				background: deepskyblue;
+			}
+		</style>
+		<link rel="stylesheet" href="utils/animate.css" />
+	</head>
+	<body>
+		<!--轮播图的思路
+		1.通过位置偏移                  (它一般用于做非全屏轮播)
+		2.通过图片的显示隐藏      (它做全屏轮播比较方便)-->
+		<ul class="banner">
+			<li>
+				<p>这是一个文字</p>
+				<font>文字文字!!!</font>
+			</li>
+			<li>
+				<p>这是一个文字xxx</p>
+				<font>文字文字!!!xxxxx</font>
+			</li>
+			<li>
+				<p>这是一个文字000000</p>
+				<font>文字文字!!!00000</font>
+			</li>
+			<li>
+				<p>这是一个文字~~~~</p>
+				<font>文字文字~~~~~</font>
+			</li>
+			<ul class="icon_wrap">
+				<li class="prev"><</li>
+				<li class="active icon"></li>
+				<li class="icon"></li>
+				<li class="icon"></li>
+				<li class="icon"></li>
+				<li class="next">></li>
+			</ul>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript" src="utils/jquery3.3.1.js" ></script>
+<script>
+	$(function(){
+//		    点击下一张:
+//		    第er张消失   第san张出现
+
+          var index=0;
+          var playSpeed=1500;
+          var timer=null;
+          $(".next").click(function(){
+          	  if(index==$(".banner>li").length-1){
+          	  	index=0;
+          	  }else{
+          	  	index++;
+          	  }
+          	  changeStatus()
+          })
+          $(".prev").click(function(){
+          	  if(index==0){
+          	  	index=$(".banner>li").length-1;
+          	  }else{
+          	  	index--;
+          	  }
+          	  changeStatus()
+          })
+          $(".icon").click(function(){
+          	  index=$(this).index(".icon");
+          	  changeStatus();
+          })
+          $(".banner").hover(function(){
+          	  stopPlay();
+          },function(){
+          	  autoPlay();
+          })
+          function changeStatus(){
+          	  $(".icon_wrap li").removeClass("active");
+          	  $(".icon_wrap li").eq(index+1).addClass("active")
+          	  $(".banner>li").hide();
+          	  $(".banner>li").eq(index).fadeIn();
+              changeText();
+          }
+          function changeText(){
+          	  $(".banner>li").children().removeClass("animated bounceInLeft").hide();
+          	  setTimeout(function(){
+          	  	$(".banner>li").eq(index).children("p").show().addClass("animated bounceInLeft")
+          	  },100)
+          	  setTimeout(function(){
+          	  	 $(".banner>li").eq(index).children("font").show().addClass("animated bounceInLeft")
+          	  },200)
+          }
+          function autoPlay(){
+          	 timer=setInterval(function(){
+          	 	$(".next").click()
+          	 },playSpeed)
+          }
+          function stopPlay(){
+          	 clearInterval(timer);
+          }
+          autoPlay();
+          changeText();
+	})
+
+
+
+</script>

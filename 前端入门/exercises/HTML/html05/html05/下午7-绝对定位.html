@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<style type="text/css">
+		.container{
+			width: 500px;
+			height: 500px;
+			border: 3px solid red;
+			margin: 300px;
+			position: relative; /* 一旦上层/祖先标签有定位! 子标签决定定位参考位置发生变化!!*/
+		}
+		.pub{width: 100px;height: 100px;}
+		.box1{background-color: red;}
+		.box2{background-color: blue;
+			/*绝对定位!相对于当前页面坐标!!!*/
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -50px;
+			margin-top: -50px;
+			z-index: 10;
+		}
+		.box3{background-color: green;
+			position: absolute; 
+			top: 50%; 
+			left: 50%; 
+			margin-left: -20px; 
+			margin-top: -30px;
+			z-index: 9; /*层次调整:数字大的靠前!!*/
+		} 
+	</style>
+</head>
+<body>
+	<h1>aaaaaaaaaaaaaaaaa</h1>
+	<h1>aaaaaaaaaaaaaaaaa</h1>
+	<h1>aaaaaaaaaaaaaaaaa</h1>
+	<h1>aaaaaaaaaaaaaaaaa</h1>
+	<h1>aaaaaaaaaaaaaaaaa</h1>
+	<div class="container">
+		<div class="pub box1"></div>
+		<div class="pub box2"></div>
+		<div class="pub box3"></div>
+	</div>
+</body>
+</html>

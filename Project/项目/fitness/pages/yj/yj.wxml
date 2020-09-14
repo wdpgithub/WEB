@@ -1,0 +1,15 @@
+<!--pages/yj/yj.wxml-->
+<view class='yj_box'>
+  <image src='../images/yj_1.png'></image>
+  <image src='../images/yj_2.png'></image>
+  <image src='../images/yj_3.png'></image>
+  <image src='../images/yj_1.png'></image>
+  <image src='../images/yj_2.png'></image>
+  <image src='../images/yj_3.png'></image>
+  <image src='../images/yj_1.png'></image>
+  <image src='../images/yj_2.png'></image>
+  <image src='../images/yj_3.png'></image>
+  <image src='../images/yj_1.png'></image>
+  <image src='../images/yj_2.png'></image>
+  <image src='../images/yj_3.png'></image>
+</view>

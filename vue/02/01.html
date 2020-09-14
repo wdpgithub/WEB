@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        .box1{
+            width: 100px;
+            height: 100px;
+            background:red;
+        }
+        .box2{
+            border-radius:50%;
+        }
+    </style>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- v-bind:数据绑定(主要是绑定元素的属性) -->
+        <!-- v-bind:  等同于  : -->
+        <input type="text" v-bind:value="msg">
+        <p v-html="msg"></p>
+        <p v-text='msg'></p>
+        <a :href="url">百度一下</a>
+        <img :src="imgSrc" alt="">
+        <div :class="{box1:true,box2:isTrue}" @click="change"></div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    new Vue({
+        el:"#app",
+        data:{
+            msg:'hello world',
+            url:'https://www.baidu.com/',
+            imgSrc:"http://c.hiphotos.baidu.com/image/h%3D300/sign=87d6daed02f41bd5c553eef461d881a0/f9198618367adab4b025268587d4b31c8601e47b.jpg",
+            isTrue:true
+        },
+        methods:{
+            change(){
+                this.isTrue=!this.isTrue
+            }
+        }
+    })
+</script>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>每日一点 - MRYD.com</title>
+	<meta name="viewport" content="width=100%; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+	<script type="text/javascript" src="themes/js/jquery.min.js"></script>
+	<script type="text/javascript" src="themes/js/swiper-3.4.0.jquery.min.js"></script>
+	<link href="favicon.ico" type="image/x-icon" rel="icon">
+	<link rel="stylesheet" href="themes/css/aui.css"/>
+	<script type="text/javascript">
+        $(function(){
+            $('.tabPanel ul li').click(function(){
+                $(this).addClass('hit').siblings().removeClass('hit');
+                $('.panes>div:eq('+$(this).index()+')').show().siblings().hide();
+            })
+        })
+	</script>
+
+</head>
+<body>
+	<header class="aui-bar aui-bar-nav aui-bar-light">
+		<a href="javascript:" onclick="history.back(); " class="aui-pull-left aui-btn" >
+			<span class="aui-iconfont aui-icon-left"></span>
+		</a>
+		<div class="aui-title aui-font-size-14" style="color:#fff">我的收藏</div>
+	</header>
+	<div style="padding-top:55px;">
+		<div class="tabPanel">
+			<ul>
+				<li class="hit">文章</li>
+				<li>专题</li>
+				<li>跟帖</li>
+			</ul>
+			<div class="panes">
+				<div class="pane" style="display:block;">
+					<ol>
+						<li class=""><a href="#">1.【感悟】一篇股民应该天天看的文章！</a></li>
+						<li><a href="#">2.媒体调查：全球40万研究人员在虚假科学期刊上发表文章</a></li>
+						<li><a href="#">3.习近平在卢旺达媒体发表署名文章：中卢友谊情比山高</a></li>
+						<li><a href="#">4.连发9篇解读文章，十九大后首轮中央巡视有什么“看点”</a></li>
+						<li><a href="#">5.笑力认为好文章分享:杀贪官才能反腐败</a></li>
+						<li><a href="#">6.关于检修热水器你该知道的一切，都在这篇文章里了！</a></li>
+						<li><a href="#">7.震惊，同一篇文章竟发两个SCI杂志！作者还完全不同！</a></li>
+						<li><a href="#">8.“大爷大妈，求求你们别出国了！”一篇文章刷爆华人朋友圈</a></li>
+						<li><a href="#">9.马伊琍公开不离婚原因，姚笛是受害者，文章洗白无望</a></li>
+					</ol>
+				</div>
+				<div class="pane">
+					<ol>
+						<li class=""><a href="#">1.【感悟】一篇股民应该天天看的文章！</a></li>
+						<li><a href="#">2.媒体调查：全球40万研究人员在虚假科学期刊上发表文章</a></li>
+						<li><a href="#">3.习近平在卢旺达媒体发表署名文章：中卢友谊情比山高</a></li>
+						<li><a href="#">4.连发9篇解读文章，十九大后首轮中央巡视有什么“看点”</a></li>
+						<li><a href="#">5.笑力认为好文章分享:杀贪官才能反腐败</a></li>
+						<li><a href="#">6.关于检修热水器你该知道的一切，都在这篇文章里了！</a></li>
+						<li><a href="#">7.震惊，同一篇文章竟发两个SCI杂志！作者还完全不同！</a></li>
+						<li><a href="#">8.“大爷大妈，求求你们别出国了！”一篇文章刷爆华人朋友圈</a></li>
+						<li><a href="#">9.马伊琍公开不离婚原因，姚笛是受害者，文章洗白无望</a></li>
+					</ol>
+				</div>
+				<div class="pane">
+					<ol>
+						<li class=""><a href="#">1.【感悟】一篇股民应该天天看的文章！</a></li>
+						<li><a href="#">2.媒体调查：全球40万研究人员在虚假科学期刊上发表文章</a></li>
+						<li><a href="#">3.习近平在卢旺达媒体发表署名文章：中卢友谊情比山高</a></li>
+						<li><a href="#">4.连发9篇解读文章，十九大后首轮中央巡视有什么“看点”</a></li>
+						<li><a href="#">5.笑力认为好文章分享:杀贪官才能反腐败</a></li>
+						<li><a href="#">6.关于检修热水器你该知道的一切，都在这篇文章里了！</a></li>
+						<li><a href="#">7.震惊，同一篇文章竟发两个SCI杂志！作者还完全不同！</a></li>
+						<li><a href="#">8.“大爷大妈，求求你们别出国了！”一篇文章刷爆华人朋友圈</a></li>
+						<li><a href="#">9.马伊琍公开不离婚原因，姚笛是受害者，文章洗白无望</a></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

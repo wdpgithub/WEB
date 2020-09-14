@@ -1,0 +1,61 @@
+﻿CSS 精灵的优点：
+     1、减少图片的字节
+     2、减少了网页的http请求，从而大大的提高了页面的性能
+     3、解决了网页设计师在图片命名上的困扰，只需对一张集合的图片上命名就可以了，不需要对每一个小元素进行命名，从而提高了网页的制作效率。
+     4、更换风格方便，只需要在一张或少张图片上修改图片的颜色或样式，整个网页的风格就可以改变。维护起来更加方便。
+
+框架属性：<iframe name="名字" src="默认页面" frameborder="" width="" height="" scrolling=""><iframe>
+ iframe:内嵌/内联框架--可实现页面复用或在一个区域引入不同页面
+name：框架名    frameborder：边框   scrolling="no/yes"：是否显示滚动条
+
+媒体查询
+语法一：@media mediatype and/not/only（media feature）{css-Code}
+语法二：针对不同的媒体使用不同style sheets
+<link rel="stylesheets" media=" mediatype and/not/only（media feature）"href="xx.css"
+
+移动端布局：1.百分比（弹性）布局2.rem（等比缩放）布局
+
+1、宽度自适应
+元素宽度设置为100%。（块元素宽度默认为100%）
+2、元素具备最小高度的自适应
+min-height属性：最小高度；
+说明：IE6浏览器不识别该属性，height属性在IE6里就类似min-height作用。
+hack1：min-height：value；_height：value；
+hack2：min-height：value；height：auto！important；height：value；
+注：IE6及以下版本不识别该组属性
+min-height/width（最小高度/宽度）max-height/width（最大高度/宽度）
+3、高度自适应
+1.元素高度自适应窗口高度
+设置方法：html，body{height：100%}需要自适应的元素：height：100%；
+2.自适应元素高度：
+父元素：height：value；需要自适应高度的子元素：height：100%;
+height:auto;是根据块内内容自动调节高度。height：100%，是指其相对父块高度而定义的高度，也就是按照离它最近且有定义高度的父层的高度来定义高度。
+
+浏览器的兼容
+IE6常见css解析Bug及hack
+1、div中的图片间隙（该bug出现在IE6及更多版本中）描述：在div中插入图片时，图片会将下方撑大三个像素。
+hack：将<img>转为块元素，给<img>添加声明：display：block；
+2、双倍浮动（双倍边距）描述：当IE6及更低版本浏览器在解析浮动元素时，会错误地把浮向边界加倍显示。
+hack：给浮动元素添加声明：display：inline；
+3、默认高度（IE6）描述：在IE6及以下版本中，部分元素拥有默认高度（低于18px高度）
+hack1;给元素添加声明：font-size：0；hack2：给元素添加声明：overflow;hidden;
+4、表单元素行高不一致（IE,MOZ,C,O,S）描述：表单元素行高对齐方式不一致
+hack;给表单元素添加声明：float：left；
+5、按钮元素大小不一    描述：各浏览器中按钮元素大小不一致
+hack1：统一大小/（用a标记模拟）hack2;在input上写按钮的样式，一定要把input的边框去掉。hack3;如果这个按钮是一个图片，直接把图片作为按钮的背景图即可。
+6、百分比bug  描述：在IE6及以下版本中解析百分比时，会按四舍五入方法计算从而导致50%加50%大于100%的情况。
+hack：给右面的浮动元素添加声明：clear：right；
+7、鼠标指针bug  描述：cursor属性的hand属性值只有IE浏览器识别，其它浏览器不识别该声明，cursor属性的pointer属性值IE6.0以上版本及其它内核浏览器都识别该声明。
+hack：如统一某一元素鼠标形状为手型，应添加声明那个：cursor：pointer；
+8、透明属性        IE浏览器写法：filter：alpha（opacity=value）；取值范围1-100    兼容其他浏览器写法：opacity：value；（value的取值范围0-1，0.1-0.9）
+过滤器（filter）
+1、下划线属性过滤器                 语法：选择器{_属性：属性值；}
+当在一个属性前而增加了一个下划线后，由于符合标准的浏览器不能识别带有下化划线的属性而忽略这个声明，但是在IE及更低版本浏览器中会继续解析这个规则。
+2、！important关键字过滤器          语法：选择器{属性：属性值！important；} 
+它表示所附加的声明具有最高优先级的意思。但由于IE6及更低版本不能识别它，我们可以利用IE6的这个bug作为兼容IE6和其它标准浏览器。
+3、*属性过滤器                      语法：选择器{*属性：属性值；}
+当在一个属性前面增加了*后，该属性只能被IE7浏览器识别，其它浏览器混略该属性的作用。
+
+作业中出现的问题
+1、inline-block元素设置overflow:hidden属性导致相邻行内元素向下偏移
+hack：为上述inline-block元素添加vertical-align: bottom；

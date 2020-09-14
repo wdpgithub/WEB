@@ -1,0 +1,84 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.footer_wrap{
+	width: 100%;
+	height: 300px;
+}
+.footer_top{
+	width: 100%;
+	height: 240px;
+	background: #252525;
+}
+.footer_top_box{
+	width: 1150px;
+	height: 200px;
+	margin: auto;
+	padding-top: 30px;
+}
+.footer_top_box ul{
+	width: 800px;
+	height: 100%;
+	float: left;
+	display: flex;
+	justify-content: space-between;
+	
+}
+.footer_top_box ul li{
+	height: 100%;
+}
+.footer_top_box ul li img{
+	height: 10px;
+	width: 10px;
+}
+.footer_top_box ul li i{
+	color: #A0A0A0;
+	font-size: 13px;
+	text-align: left;
+}
+.footer_top_box ul span{
+	display: block;
+	color: #FFFFFF;
+	font-size: 16px;
+	margin-bottom: 30px;
+	text-align: left;
+}
+.footer_top_box ul a{
+	display: block;
+	margin-bottom:30px;
+	text-decoration: none;
+	color: #A0A0A0;
+	font-size: 13px;
+	text-align: left;
+}
+.footer_top_box .QR_box{
+	width: 110px;
+	float: right;
+	height: 110px;
+	cursor: pointer;
+}
+.footer_top_box .QR_box img{
+	width: 110px;
+	height: 110px;
+}
+.footer_top_box .QR_box span{
+	color: #A0A0A0;
+	font-size: 14px;
+	text-align: center;
+	display: block;
+	letter-spacing: 3px;
+	line-height: 36px;
+}
+.footer_bottom{
+	width: 100%;
+	height: 60px;
+	background: #1C1C1C;
+}
+.footer_bottom p{
+	color: #BBBBBB;
+	font-size: 14px;
+	text-align: center;
+	line-height: 58px;
+}

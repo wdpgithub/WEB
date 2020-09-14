@@ -1,0 +1,7 @@
+<!-- 首页布局-->
+<view class='container' catchtap='fn1'>
+    <image class='logo' src='../images/logo.png'></image>
+    <view class='keep'>
+      <image src='../images/text.png'></image>
+    </view>
+</view>

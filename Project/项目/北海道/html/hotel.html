@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>北海道住宿篇</title>
+		<link type="text/css" href="../css/hotel.css" rel="stylesheet" />
+		<script type="text/javascript" src="../js/jquery-1.8.3.min.js">
+			
+		</script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="hotel_box">
+			<div class="hotel_bg">
+				<p style="padding-top: 250px;">北海道の住宿篇</p>	
+			</div>
+			<div style="margin:50px 0 20px 0;">
+				<img src="../images/logo/top.png" />
+			</div>
+			<!--<div class="range_box">
+				<img src="../images/酒店/top-1.jpg" />
+				<h1>Top1新雪谷旅簇姆吉背包客旅馆</h1>
+				<p>北海道地区614家酒店中 排名第 1 ， 3家 倶知安町酒店中 排名第1。干净的住宿环境，热情友善的老板，安静又有秩序，舒适又保留了日本特色，为您提供愉快的住宿体验。</p>
+				<hr />
+				<p>“民宿主人非常幫忙，建議遊玩地方之餘，知道就沒車，便車我到境點...”</p>
+				<p>“乾淨的住宿環境，熱情的老闆”</p>
+				<p>“很愉快的住宿体验”</p>
+			</div>-->
+		</div>
+		<div id="common"></div>
+		<div id="Footer"></div>
+	</body>
+	
+	<script type="text/javascript">
+		$(function(){
+			$("#header").load("header.html");
+			$("#common").load("public.html");
+			$("#Footer").load("footer.html");
+			$.get("../json/hotel-information.json",function(data){
+				for(var i = 0;i < data.hotels.length;i++){
+					$("<div class='range_box'><img src='"+data.hotels[i].imgSrc+"' /><h1>"+data.hotels[i].text1+"</h1><p>"+data.hotels[i].text2+"</p><hr /><p>"+data.hotels[i].text3+"</p><p>"+data.hotels[i].text4+"</p><p>"+data.hotels[i].text5+"</p></div>").appendTo(".hotel_box")
+				}
+				
+				
+			})
+			
+			
+		})
+	</script>
+</html>

@@ -1,0 +1,41 @@
+this is a test file.
+you can see the content if the ajax get request is successful.
+
+
+<!--
+        Ajax 全称:Asynchronous Javascript And XML（异步 JavaScript 和 XML）
+
+        Ajax = 异步 JavaScript 和 XML（标准通用标记语言的子集）。
+
+        Ajax 是一种用于创建快速动态网页的技术。
+
+        Ajax 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术
+
+
+        Ajax的核心对象:XMLHTTPRequest
+
+        Ajax方式:GET  POST
+
+        get和post的区别
+        1. get是从服务器上获取数据，post是向服务器传送数据。
+        2. get是把参数数据队列加到提交表单的ACTION属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。post是通过HTTP post机制，将表单内各个字段与其内容放置在HTML HEADER内一起传送到ACTION属性所指的URL地址。用户看不到这个过程。
+        3. 对于get方式，服务器端用Request.QueryString获取变量的值，对于post方式，服务器端用Request.Form获取提交的数据。
+        4. get传送的数据量较小，不能大于2KB。post传送的数据量较大，一般被默认为不受限制。但理论上，IIS4中最大量为80KB，IIS5中为100KB。
+        5. get安全性非常低，post安全性较高。但是执行效率却比Post方法好。
+
+        建议：
+        1、get方式的安全性较Post方式要差些，包含机密信息的话，建议用Post数据提交方式；
+        2、在做数据查询时，建议用Get方式；而在做数据添加、修改或删除时，建议用Post方式；
+
+
+
+        Get：是以实体的方式得到由请求URL所指定资源的信息，如果请求URL只是一个数据产生过程，那么最终要在响应实体中返回的是处理过程的结果所指向的资源，而不是处理过程的描述。
+        Post：用来向目的服务器发出请求，要求它接受被附在请求后的实体，并把它当作请求队列中请求URL所指定资源的附加新子项，Post被设计成用统一的方法实现下列功能：
+        　　1：对现有资源的解释
+        　　2：向电子公告栏、新闻组、邮件列表或类似讨论组发信息。
+        　　3：提交数据块
+        　　4：通过附加操作来扩展数据库
+
+        　　从上面描述可以看出，Get是向服务器发索取数据的一种请求；而Post是向服务器提交数据的一种请求，要提交的数据位于信息头后面的实体中。
+
+     -->

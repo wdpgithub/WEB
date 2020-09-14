@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+<p></p>
+</body>
+</html>
+<script src="utils/jquery3.3.1.js"></script>
+<script>
+    $(function(){
+        var x= window.location.href;
+        var parmas = x[x.length-1];
+        $.get("students.json",function(data){
+            var y = JSON.parse(data)
+            $('p').html(y.students[parmas].name + '的分数'+ y.students[parmas].score)
+        })
+    })
+</script>

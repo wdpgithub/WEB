@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+</head>
+
+<body>
+    <p>
+        <input type="text" placeholder="请输入验证码" id="veriInp">
+        <span id="veri"></span>
+    </p>
+    <p>
+        <button id="btn">校验验证码</button>
+    </p>
+    <script>
+        function getveri() {
+            $.ajax({
+                type: 'get',
+                url: '/VueHandler/AdminLoginAndRegHandler?action=verification',
+                success: function (data) {
+                    $('#veri').html(data)
+                }
+            })
+        }
+
+        function checkVeri() {
+            $.ajax({
+                type: 'get',
+                url: '/VueHandler/AdminLoginAndRegHandler?action=checkVerification',
+                data: {
+                    veri: $('#veriInp').val()
+                },
+                success: function (data) {
+                    if (data == '校验失败') {
+                        alert(data)
+                        getveri();
+                        $('#veriInp').val('');
+                    } else {
+                        alert(data)
+                    }
+
+                }
+            })
+        }
+        getveri();
+        $('#btn').click(function () {
+            checkVeri()
+        })
+        document.onkeydown = function (ev) {
+            console.log(ev);
+            if (ev.keyCode == '13') {
+                checkVeri();
+            }
+        }
+    </script>
+</body>
+
+</html>

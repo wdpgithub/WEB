@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+	<!--
+		属性:
+		action="表单数据提交地址"
+		method="get/post" 表单数据提交的方法!!
+		get/post区别: get会地址栏中明文显示数据! 不安全!
+		表单元素大多语法
+		<input type="不同各类型" name="名字必须,传递数据依靠name属性">
+		单选按钮: 名字相同的为一组,一组只能选1个!
+	-->
+	<form action="01表格.html" method="get">
+		<!-- 隐藏域hidden:作用,悄悄的向后台传递数据!-->
+		学号: <input type="hidden"  name="id" value="10001"/>
+		用户名: <input type="text"  name="uname" value="请输入用户名" style="color:#ccc;" size="30" maxlength="6"/><br />
+		密码: <input type="password" name="pwd"   maxlength="6"  /><br />
+		性别: <input type="radio" name="sex" value="男" checked />男
+			<input type="radio" name="sex" value="女" /> 女<br />
+		爱好: <input type="checkbox" value="chi" checked="true"  name="hobby"/>吃饭
+		 	<input type="checkbox" value="shui" name="hobby" checked="checked" />睡觉
+		  	<input type="checkbox" value="doudou" name="hobby" checked="true" />打豆豆<br />
+		头像:<input type="file" name="f1"  /><br />
+		地址: <select name="addr">
+	               <option value="">--请选择--</option>
+	               <option value="sd">山东</option>
+	               <option value="sx" selected>山西</option>
+			</select><br />
+		协议: <textarea rows="5" cols="30" readonly >注册就叫100元!</textarea><br />
+		<input type="submit" value="点我提交数据1111" disabled="disabled"/>
+		<input type="reset" value="重置" />
+		<br />
+		<input type="button" value="点我" style="width: 100px;height: 40px;border: 0;background-color: yellow;" />
+		<!-- button和image 都跳转                                                                                                                                                   功能!-->
+		<button>点我2</button>
+		<input type="image" src="img/img1.png" />
+	</form>
+</body>
+</html>

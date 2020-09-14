@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="jquery3.3.1.js"></script>
+
+    <script src="echarts.min.js"></script>
+    <script src="mycah.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+
+        $(function(){
+            $.get('data.json',function(res){
+                var x= JSON.parse(res)
+                Echarts(x.shuju);
+
+            })
+        })
+
+    </script>
+
+</body>
+</html>

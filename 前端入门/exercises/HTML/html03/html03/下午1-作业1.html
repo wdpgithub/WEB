@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		/*任何效果之前,必须添加初始化样式!*/
+		*{margin: 0;padding: 0;}
+		.container1{
+			width: 600px;
+			height: 50px;
+			border: 1px solid red;
+			margin: 0 auto;
+		}
+		.container1 .left{
+			width: 200px;
+			height: 50px;
+			background-color: #7DE8D4;	
+			float: left;
+		}
+		.container1 .center{
+			width: 200px;
+			height: 50px;
+			background-color: #FFBE4A;
+			float: left;	
+		}
+		
+		.container1 .right{
+			width: 200px;
+			height: 50px;
+			float: left;	
+		}
+		.container1 .right .top{
+			width: 200px;
+			height: 25px;
+			background-color: #FEA09E;
+		}
+		.container1 .right .bottom{
+			width: 200px;
+			height: 25px;
+			background-color: red;
+		}
+		/*第4行*/
+		.container4{
+			width: 600px;
+			height: 500px;
+			border: 1px solid red;
+			margin: 0 auto;
+		}
+		.container4 .left{
+			width: 400px;
+			height: 500px;
+			float: left;
+			background-color: #5C5BF5;
+		}
+		.container4 .right{ width: 200px; height: 500px; float: right;
+		 background-color: yellow; }
+		
+	</style>
+</head>
+<body>
+	
+	<!--最外层容器-->
+	<div class="container1">
+		<div class="left"></div>
+		<div class="center"></div>
+		<div class="right">
+			<div class="top"></div>
+			<div class="bottom"></div>
+		</div>
+	</div>
+	<!--第3行-->
+	<div class="container4">
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery节点关系、添加删除节点</title>
+		<style type="text/css">
+			#box1{
+				background: deepskyblue;
+			}
+			#box2{
+				width: 50%;
+				background: hotpink;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	</head>
+	<body>
+		<!--节点关系
+		
+		父节点
+		parent 			返回父元素
+		parents 		返回所有父元素
+		parentUntil 	从本身的父元素，到括号里写的为止，中间的父元素
+		
+		子节点
+		children 		返回子元素（不包含后代），括号里写筛选器，可以不屑
+		find  			返回子元素（包含后代），括号里写筛选器，必须要写
+		
+		兄弟节点
+		siblings() 		返回不包含本身的所有兄弟元素
+		next() 			返回下一个兄弟节点
+		prev() 			返回上一个兄弟节点
+		nextAll() 		返回后面所有的兄弟节点
+		prevAll()  		返回前面所有的兄弟节点
+		nextUntil() 	返回后面的兄弟节点，直到括号里写的筛选器（不包含）
+		prevUntil() 	返回下一个兄弟节点-->
+		
+		<div id="box1">
+			<div id="box2">
+				<p>床前明月光</p>
+				<p>疑是地上霜</p>
+				<p>举头望明月</p>
+				<p>低头思故乡</p>
+				<span>啦啦啦</span>
+			</div>
+			<div id="box3">
+				<p>白日依山尽</p>
+				<p id="p1">黄河入海流</p>
+				<p>欲穷千里目</p>
+				<p>更上一层楼</p>
+			</div>
+			<div id="box4"></div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			$("#box2").click(function(e){
+				console.log($(this).parent())
+				console.log($(this).parents())
+				console.log($(this).parentsUntil("html"))
+				//parentsUntil() 获得当前匹配元素集合中每个元素的祖先元素，直到（但不包括）被选择器、DOM 节点或 jQuery 对象匹配的元素。
+				e.stopPropagation()
+//定义和用法
+//不再派发事件。
+//终止事件在传播过程的捕获、目标处理或起泡阶段进一步传播。
+//调用该方法后，该节点上处理该事件的处理程序将被调用，
+//事件不再被分派到其他节点。
+			})
+			
+			$("#box1").click(function(e){
+				console.log($(this).children("#box2"))
+				console.log($(this).find("p"))
+				e.stopPropagation()
+			})
+			
+			$("p").click(function(e){
+				console.log($(this).siblings("p"))
+				console.log($(this).next())
+				console.log($(this).nextAll())
+				//下面的只做了解，其他的要求自己熟练掌握
+				console.log($(this).nextUntil())
+				//括号里面的不要加
+				//nextUntil() 获得每个元素所有跟随的同胞元素，
+				//但不包括被选择器、DOM 节点或已传递的 jQuery 对象匹配的元素。
+				e.stopPropagation()
+			})
+			
+			$("#p1").click(function(e){
+				
+				var p2 = $(this).parent().prev().children().eq(2).text()
+				//prev() 获得匹配元素集合中每个元素紧邻的前一个同胞元素，
+				//通过选择器进行筛选是可选的。
+				console.log(p2)
+				e.stopPropagation()
+			})
+		</script>
+		
+		<!--元素的添加和删除
+		
+		appendTo  	把元素插入到某元素的最后（会删除原来的元素）（插入子元素）
+		prependTo 	把元素插入到某元素的最前面
+		
+		append 		在元素内部最后面插入什么
+		prepend 	在元素内部最前面插入什么
+		
+		after 		在元素本身的后面插入什么（插入兄弟元素）
+		before 		在元素本身的前面插入什么-->
+		
+		<button id="btn1">把最后一行变成第一行</button>
+		<button id="btn2">把第一行变成最后一行</button>
+		<button id="btn3">在box2的后面添加一行</button>
+		<button id="btn4">在box2的前面添加一行</button>
+		<button id="btn5">在黄河入海流前面添加一行</button>
+		<button id="btn6">在黄河入海流后面添加一行</button>
+		<script type="text/javascript">
+			
+			$("#btn1").click(function(){
+				$("#box2").children().last().prependTo("#box2")
+			})
+			
+			$("#btn2").click(function(){
+				$("#box2").children().first().appendTo("#box2")
+			})
+			$("#btn3").click(function(){
+				$("#box2").append("<p>啊啊啊啊啊啊</p>")
+			})
+			$("#btn4").click(function(){
+				$("#box2").prepend("<p>啊啊啊啊啊啊</p>")
+			})
+			$("#btn5").click(function(){
+				$("#p1").before("<p>啊啊啊啊啊啊</p>")
+			})
+			$("#btn6").click(function(){
+				$("#p1").after("<p>啊啊啊啊啊啊</p>")
+			})
+		</script>
+		
+		
+		remove 删除元素
+		<button id="btn7">删除最后一行</button>
+		<script type="text/javascript">
+			
+			$("#btn7").click(function(){
+				$("#box3").children().last().remove()
+			})
+			
+		</script>
+		
+		
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+<!-- https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=jsonp&cb= -->
+
+<script src="jquery3.3.1.js"></script>
+<script type="text/javascript">
+    $.ajax({
+        type:'get',
+        url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+        dataType:'jsonp',
+        jsonp:'cb',
+        data:{
+            wd:'json'
+        }
+    }).done(function(resp){
+        alert(resp.s)
+    })
+</script>
+</body>
+</html>

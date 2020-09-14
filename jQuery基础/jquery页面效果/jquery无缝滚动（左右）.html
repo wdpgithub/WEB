@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;padding: 0;list-style: none;
+			}
+			li{width: 150px;height: 100px;float: left;}
+			
+			ul{
+				width: 750px;
+				height: 100px;
+			}
+			.wrap{
+				width: 450px;
+				overflow: hidden;
+				margin: 0 auto;
+				text-align: center;
+			}
+			span{
+				display: inline-block;
+				background: deepskyblue;
+				color: #fff;
+				text-align: center;
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<ul>
+				<li style="background: deepskyblue;">1</li>
+				<li style="background: hotpink;">2</li>
+				<li style="background: yellowgreen;">3</li>
+				<li style="background: violet;">4</li>
+				<li style="background: orange;">5</li>
+			</ul>
+		<span id="left">&lt;</span>
+		<span id="right">&gt;</span>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			
+			function left(){
+				//从右向左滚
+				$(".wrap ul").animate({
+					"marginLeft":-150
+				},500,function(){
+					//已经藏起来的第一个放到最后去
+					$(".wrap ul li").first().appendTo(".wrap ul")
+					$(".wrap ul").css("margin-left",0)	
+				})
+			}
+			function right(){
+				$(".wrap ul li").last().prependTo(".wrap ul")
+				$(".wrap ul").css("margin-left",-150)
+				$(".wrap ul").animate({
+					"marginLeft":0
+				},500)
+
+
+			}
+			//var timer = setInterval(left,1000)
+//			$(".wrap").hover(function(){
+//				clearInterval(timer)
+//			},function(){
+//				timer = setInterval(left,1000)
+//			})
+			$("#left").click(function(){
+				left()
+			})
+			$("#right").click(function(){
+				right()
+			})
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

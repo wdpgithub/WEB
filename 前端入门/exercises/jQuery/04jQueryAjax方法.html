@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="utils/jquery3.3.1.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //jQuery中的Ajax方法
+        $.get("students.json",function(data){
+            var x=JSON.parse(data);
+            //console.log(x.students[1].name)
+
+            for (var i = 0; i <x.students.length; i++) {
+                $("<div><p>" + x.students[i].name +"</p><p>" + x.students[i].age +"</p></div>").css({
+                    "width":"200px",
+                    "height":"200px",
+                    "background":"black",
+                    "color":"white",
+                    "line-height":"50px",
+                    "text-align":"center",
+                    "float":"left",
+                    "margin-right":"2px",
+                    "cursor":"pointer"
+                }).appendTo("body");
+            }
+        })
+        //事件代理
+        $('body').delegate('div','click',function(){
+            window.location.href ="details.html?id=" +$(this).index('div');
+        })
+    })
+</script>

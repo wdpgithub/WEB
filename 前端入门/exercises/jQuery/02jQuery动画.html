@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="utils/animate.css">
+    <style type="text/css">
+        *{margin:0; padding: 0;}
+        .box{width:100px;height: 100px;background:red;position:relative;top: 0;left:0;}
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+<script src="utils/jquery3.3.1.js"></script>
+<script type="text/javascript">
+
+    $(function(){
+        play();
+        function play(){
+            $('.box').animate({
+                'top':'1081px',
+                'left':'2809px'
+            },1000,function(){
+                $('.box').animate({
+                    'top':'2008px',
+                    'left':'2680px'
+                },1000,function(){
+                    $('.box').animate({
+                        'top':0,
+                        'left':0
+                    },1000,function(){
+                        play();
+                    })
+                })
+            })
+        }
+    })
+</script>
+
+
+
+
+<!--
+如何制作动画
+    1.css动画
+
+    2.js  定时器
+
+    3.jQuery中的animate
+
+    语法:(selector).animate({终点时刻的样式},动画完成的时间,回调函数(可选参数))
+
+    停止动画  .stop()
+
+
+ -->

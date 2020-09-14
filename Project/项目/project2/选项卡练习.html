@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="js/jquery.min.js"></script>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.News-box{
+				width: 300px;
+				height: 300px;
+				border: 1px solid #000;
+				display: none;
+			}
+			.show{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input class="show" type="button" value="1" />
+			<input type="button" value="2" />
+			<input type="button" value="3" />
+			<input type="button" value="4" />
+			<input type="button" value="5" />
+			<input type="button" value="6" />
+			<div class="show News-box" style="display: block;">111</div>
+			<div class="News-box">222</div>
+			<div class="News-box">333</div>
+			<div class="News-box">444</div>
+			<div class="News-box">555</div>
+			<div class="News-box">666</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			$("body").find("input").click(function(){
+				var $index = $(this).index();
+				$("input").removeClass("show");
+				$(this).addClass("show");
+				$(".News-box").css({
+					"display":"none"
+				})
+				$(".News-box").eq($index).css({
+					"background":"red",
+					"display":"block"
+				});
+			})
+			
+			
+			
+		})
+	</script>
+</html>

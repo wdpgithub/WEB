@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		/*注释: 初始化样式*/
+		*{margin: 0;padding: 0;}
+		.head{
+			width: 1136px;
+			height: 126px;
+			background-color: #96B97D;
+			margin: 0 auto;
+		}
+		.main{
+			width: 1136px;
+			height: 500px;
+			border: 1px solid red;
+			margin: 0 auto;
+		}
+		.left{
+			width: 200px;
+			height: 500px;
+			background-color: red;
+			float: left;
+		}
+		.center{
+			width: 736px;
+			height: 500px;
+			background-color: #96B97D;
+			float: left;
+		}
+		.right{
+			width: 200px;
+			height: 500px;
+			background-color: blue;
+			float: left;
+		}
+		.footer{
+			width: 1136px;
+			height: 126px;
+			background-color: #96B97D;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		
+		菜鸟教程布局: 头部,导航,主体内容(左,中间,右边)  底部
+		标签起名:id,class  两个属性
+		区别: id唯一! 给js添加动态效果使用!
+		      class:名字可以重复! 名字相同的为1组! 1组可以样式相同!!!
+	-->
+	<div class="head">头部页面可复用</div>
+	<!--主体-->
+	<div class="main">
+		<div class="left">
+			左边菜单
+		</div>
+		<div class="center">
+			中间不断变化页面
+		</div>
+		<div class="right">
+			右边可复用
+		</div>
+	</div>
+	<div class="footer">
+		可复用的底部~!
+	</div>
+	
+
+</body>
+</html>

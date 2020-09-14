@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        基于原型的继承
+            1.原型(prototype)
+
+            2.基于原型额继承
+                <1>Object.create()
+                <2>原型继承图示
+
+            3.原型链
+
+
+            问题：会产生引用类型值的问题
+     */
+
+    function Person(){
+    }
+
+    Person.prototype.name = 'xiaoR';
+    Person.prototype.age = 18;
+    Person.prototype.sayHello = function(){
+        alert(this.name);
+    }
+
+
+    //构造函调用所经历的步骤
+        //1.创建一个对象
+        //2.this指针指向这个对象(将构造函数的作用域赋给这个对象)
+        //3.执行构造函数内的代码(为这个对象添加属性)
+        //4.待构造函数返回
+        var p = new Person();//调用构造函数  new表达式是配合构造函数使用的
+
+        p.sayHello();//xiaoR
+        alert(p.age);//18
+
+        /*当访问一个对象属性的时候,首先在这个对象本身进行查找
+        如果找到,就直接返回这个属性,且停止查找
+        如果没找到,会在原型上找,也就是__proto__指向的那个对象*/
+
+
+        function Student(){
+
+        }
+
+        Student.prototype = Object.create(Person.prototype);
+
+        var s = new Student();//xiaoR
+        s.sayHello();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

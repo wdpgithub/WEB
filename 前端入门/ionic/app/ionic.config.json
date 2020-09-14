@@ -1,0 +1,7 @@
+{
+  "name": "ttt",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,14 @@
+ul{
+    border:1px solid red;
+}
+ul li{
+    border-bottom: 1px solid red;
+}
+.button{
+    border: none;
+    background-color: aquamarine;
+    color: blueviolet;
+    padding: 20px;
+    font-size: 30px;
+    outline: none;
+}

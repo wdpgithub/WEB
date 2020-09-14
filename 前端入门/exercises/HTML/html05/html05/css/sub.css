@@ -1,0 +1,26 @@
+/*二级导航*/
+a{text-decoration: none;color: #000;}
+/*宽高,边框,居中*/
+.nav{
+	width: 600px;
+	height: 40px;
+	border: 1px solid red;
+	margin: 0 auto;
+}
+/*li: 宽高,水平垂直居中,浮动,滑过背景变红, 显示二级菜单  !*/
+.nav ul li{
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	float: left;
+}
+.nav ul li:hover{
+	background-color: red;
+	color: yellow;
+}
+.nav ul li:hover .sub{
+	display: block;
+}
+/*隐藏子菜单*/
+.nav .sub{display: none;}

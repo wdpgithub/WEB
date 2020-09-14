@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        ECMA标准  ECMAjavascript
+
+        ECMA5第五版
+        ECMA6
+
+
+
+        严格模式
+        [注]从字面意思理解,即在这种严格模式下,浏览器会对js的要求更加的苛刻
+
+         "use strict"写在哪个作用域下,这个作用域下的所有代码都会遵从严格模式.
+         [注]不要轻易在全局变量范围开头增加 "use strict";建议在作用域内使用。
+
+    */
+
+    /*function m1(){
+        max=10;//如果在给变量赋值的时候,没有使用var声明该变量,那么当做全局变量进行处理
+    }
+
+     */
+    function m1(){
+        "use strict"
+         var max =10;
+    }
+    m1();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

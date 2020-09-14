@@ -1,0 +1,93 @@
+/* pages/personal/personal.wxss */
+.per{
+  width: 100%;
+  height: 400rpx;
+  margin: auto;
+  background:#D6687E;
+}
+.per_top{
+  width: 76%;
+  height: 200rpx;
+  margin: auto;
+  color: #fff;
+}
+.per_top .aaa{
+  width:200rpx;
+  height: 200rpx;
+  border-radius:50%;
+  float: left;
+}
+.my_details{
+  float: left;
+  margin-left: 22rpx;
+}
+.per_top .my_name{
+  line-height: 105rpx;
+  width: 140rpx;
+  display: block;
+  margin-left: 10rpx;
+}
+.my_addr .my_info{
+  font-size: 26rpx;
+}
+.my_addr image{
+ width:40rpx;
+  height:42rpx;
+  margin-right:10rpx;
+  margin-top:10rpx;
+
+}
+.per_bot{
+  width: 90%;
+  height: 200rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.per_fle{
+  width: 20%;
+  height: 60%;
+  margin-top: 7%;
+}
+.per_fle text{
+  width: 100%;
+  display: block;
+  color: #fff;
+  text-align: center;
+  line-height: 44rpx;
+}
+.tx_1{
+  font-weight: bold;
+  font-size: 34rpx;
+}
+.tx_2{
+  font-size: 30rpx;
+}
+.collect{
+  width: 100%;
+  height: 88rpx;
+  border-bottom: 1px solid #ECECEC;
+  display: flex;
+  vertical-align: middle;
+  margin-top: 40rpx;
+}
+.collect image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+}
+.collect text{
+  color: #333333;
+  font-size: 35rpx;
+  line-height: 50rpx;
+  display: block;
+  letter-spacing: 4rpx;
+}
+.cou_1{
+  width: 180rpx;
+  text-align: center;
+}
+.cou_2{
+  width: 460rpx;
+  text-align: right;
+}

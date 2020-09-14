@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        innerHTML 标签键的使用内容
+     */
+    window.onload =function(){
+        var oBtn = document.getElementById("btn");
+        var oDiv = document.getElementById("div1");
+
+        oBtn.onclick = function(){
+            //获取div标签间的内容
+            //alert(oDiv.innerHTML);
+
+            //设置div标签的内容
+            oDiv.innerHTML="<h1>替换文本</h1>";
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="div1"><em>斜体</em></div>
+    <input type="button" id="btn" value="按钮" name="">
+</body>
+</html>

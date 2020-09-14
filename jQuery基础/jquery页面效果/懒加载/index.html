@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>jQuery点击按钮加载更多</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			body {
+				background: #333;
+				font-size: 14px;
+				font-family: "微软雅黑";
+				padding-top: 30px;
+			}
+			
+			a {
+				color: #333;
+				text-decoration: none;
+			}
+			
+			.hidden {
+				display: none;
+			}
+			
+			.myweb {
+				width: 800px;
+				height: auto;
+				margin: 0 auto;
+				overflow: hidden;
+				text-align: left;
+				background: #fff;
+				padding: 5px;
+			}
+			
+			.myweb ul.list {
+				overflow: hidden;
+			}
+			
+			.myweb ul.list li {
+				width: 150px;
+				height: 150px;
+				margin: 5px;
+				float: left;
+				overflow: hidden;
+			}
+			
+			.myweb ul.list li img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.myweb ul.list p {
+				text-align: center;
+				padding: 10px;
+			}
+			
+			.myweb .more {
+				overflow: hidden;
+				padding: 10px;
+				text-align: center;
+			}
+			
+			.myweb .more a {
+				display: block;
+				width: 80px;
+				padding: 8px 0;
+				color: #fff;
+				margin: 0 auto;
+				background: #333;
+				text-align: center;
+				border-radius: 3px;
+			}
+			
+			.myweb .more a:hover {
+				text-decoration: none;
+				background: red;
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="myweb">
+			<ul class="hidden">
+				<li><img src="images/lanren01.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren02.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren03.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren04.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren05.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren06.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren07.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren08.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren09.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren10.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren11.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren12.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren13.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren14.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren15.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren16.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren17.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren18.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren19.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren20.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren21.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren22.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren23.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren24.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren25.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren26.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren27.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren28.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren29.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren30.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren31.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren32.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren33.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren34.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren35.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren36.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren37.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren38.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren39.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren40.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren41.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren42.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren43.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren44.jpg" width="150" height="150" /></li>
+				<li><img src="images/lanren45.jpg" width="150" height="150" /></li>
+			</ul>
+			<ul class="list">数据加载中，请稍后...</ul>
+			<div class="more">
+				<a href="javascript:;" onClick="lanren.loadMore();">加载更多</a>
+			</div>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script>
+			var _content = []; //临时存储li循环内容
+			var lanren = {
+				_default: 10, //默认显示图片个数
+				_loading: 5, //每次点击按钮后加载的个数
+				init: function() {
+					var lis = $(".myweb .hidden li");
+					$(".myweb ul.list").html("");
+					for(var n = 0; n < lanren._default; n++) {
+						lis.eq(n).appendTo(".myweb ul.list");
+					}
+					for(var i = lanren._default; i < lis.length; i++) {
+						_content.push(lis.eq(i));
+					}
+					$(".myweb .hidden").html("");
+				},
+				loadMore: function() {
+					var mLis = $(".myweb ul.list li").length;
+					for(var i = 0; i < lanren._loading; i++) {
+						var target = _content.shift();
+						if(!target) {
+							$('.myweb .more').html("<p>全部加载完毕...</p>");
+							break;
+						}
+						$(".myweb ul.list").append(target);
+						
+					}
+				}
+			}
+			lanren.init();
+		</script>
+	</body>
+
+</html>

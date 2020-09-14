@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        /*
+            字符串的概念：
+            [注]在JS中将所有单引号或者双引号括起来的都叫做字符串。
+
+
+            字符串创建方式：
+         */
+            // 1.通过new运算符创建
+            // var str=new String("hello");
+            // alert(typeof str);//oobject 对象有属性和函数
+
+            //2.new可以省略
+            // var str=String("hello");
+            // alert(str);
+
+            //3通过常量创建字符串
+            //var str="hello";
+            //alert(str);
+
+
+            /*
+            字符串的属性
+            length 返回的是当前字符串中字符的个数
+             */
+            //var str="hello";
+           // alert(str.length);
+
+
+
+
+
+            /*
+                访问字符串的字符
+
+                charAt()
+                [格式]字符串。charAt(下标)
+                [返回值]对应下标的字符
+                [注]我们可以直接通过字符下标取访问该字符
+             */
+            var str="hello";
+            //alert(str.charAt(0));
+            alert(str[0]);
+
+
+            /*
+            [注]ECMscript中的字符串是不可变的，也就是说，字符串一旦创建，它们的值就不能改变，要改变某变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新的值的字符串填充该变量，
+
+            [注]+号可以作为字符串拼接符存在
+             */
+
+            /*var str="hello";
+            //str[1]="x";
+            str="hxllo";
+            alert(str);
+            */
+
+
+            var arr="hello"+"world";
+            alert(arr);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.wrap{
+				width: 323px;
+				height: 430px;
+				border: 1px solid red;
+				margin: 100px 0 0 100px;
+				position: relative;
+				cursor: move;
+			}
+			.mask{
+				width: 150px;
+				height: 150px;
+				background:grey ;
+				opacity: 0.7;
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			.mirror{
+				width: 323px;
+				height: 430px;
+				background: url(2.jpg) no-repeat 0 0;
+				position: absolute;
+				top: 0;
+				left: 423px;
+				display: none;
+			}
+			.wrap:hover .mask{
+				display: block;
+			}
+			.wrap:hover .mirror{
+				display: block;
+			}
+		</style>
+		<script src="jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<img src="1.jpg" alt="" />
+			<div class="mask"></div>
+			<div class="mirror"></div>
+		</div>
+		<script type="text/javascript">
+			var wrap=$('.wrap');
+			var mask=$('.mask');
+			var mirror=$('.mirror')
+			var mask_left=0;
+			var mask_top=0;
+//			获取大盒子的左边距离
+			var wrap_left=wrap.offset().left;
+//			获取大盒子的上边距离
+			var wrap_top=wrap.offset().top;
+			var mirror_x=0;
+			var mirror_y=0;
+			
+			
+			wrap.mousemove(function(ev){
+//				蒙板距离大盒子左边框线的距离
+				mask_left=ev.pageX-wrap_left-mask.width()/2
+//				蒙板距离大盒子上边框线的距离
+				mask_top=ev.pageY-wrap_top-mask.height()/2
+				if(mask_top<0){
+					mask_top=0
+				}
+				if(mask_left<0){
+					mask_left=0
+				}
+				if(mask_left>wrap.width()-mask.width()){
+					mask_left=wrap.width()-mask.width()
+				}
+				if(mask_top>wrap.height()-mask.height()){
+					mask_top=wrap.height()-mask.height()
+				}
+				mask.css({left:mask_left+'px',top:mask_top+'px'})
+				
+				mirror_x=-mask_left*750/323;
+				mirror_y=-mask_top*1000/430
+				mirror.css({'background-positionX':mirror_x+'px','background-positionY':mirror_y+'px'})
+				
+			})
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

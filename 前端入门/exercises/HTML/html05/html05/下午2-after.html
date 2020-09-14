@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 200px;
+				height: 200px;
+				border: 3px solid red;
+				margin:  300px;
+			}
+			/* 给元素内层,  结束标签之前添加空内容!!! clear:both;---只能控制内层!   */
+			.box:after{
+				content: " . ";
+				visibility: hidden;
+			}
+			.box:before{
+				content: ".张三aaaa";
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="box">
+			<p>1111111111111</p>
+			<p>22222</p>
+		</div>
+	</body>
+
+</html>

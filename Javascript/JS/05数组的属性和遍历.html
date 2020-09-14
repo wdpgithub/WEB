@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        /*
+            数组的长度
+            arr.length访问    数组元素的个数
+            [注]length属性，不只读的，可以设置的。
+         */
+        // var arr=["red","blue","green"];
+        // // alert(arr.length);
+        // arr.length=2;
+        // alert(arr);
+
+        /*
+            数组元素的访问和赋值，都是通过数组的下标完成
+            [注]下标就是索引，即元素的序号，从0开始，下标最大值：数组的长度(length)-1。
+            [注]下标可以是变量或者表达式
+         */
+        // var arr=[10,20,30,40,50];
+        // alert(arr[1+2]);
+
+
+        /*
+            数组遍历：数组和循环结合使用。JS中数组和循环是绝配
+         */
+        //for循环
+        //以下为通过循环给数组的每个元素赋值，赋成下标的平方
+        // var arr=[];
+        // for (var i = 0; i < 10; i++) {
+        //     arr[i]=i*i;
+        // }
+        // alert(arr);
+        //以下爱我i通过循环给数组的每一个元素赋值，随机数。
+        /*
+            随机数
+            Math.random()   可以随机0~1之间任意数
+         */
+        // var arr=[];
+        // for (var i = 0; i < 10; i++) {
+        //     arr[i]=Math.random();
+        // }
+        // alert(arr);
+
+
+        // var arr=["red","blue","green"];
+        // for (var i = 0; i < arr.length; i++) {
+        //     document.write(arr[i]+"<br>");
+        // };
+
+
+
+        /*
+            for……in进行遍历 快速遍历    将数组中每一个元素从头到尾进行遍历
+            [格式]
+            for (var 变量 in 数组) {
+                  // statement
+              }
+        [注]forin效率要比for循环的效率高
+         */
+        for(var i in arr){
+            //i 第一次遍历的下标
+            document.write(arr[i]+"<br>");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

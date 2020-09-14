@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #outer{width: 200px;height: 200px;background:red;}
+        #inner{width: 100px;height: 100px;background:blue;}
+    </style>
+    <script type="text/javascript">
+    /*
+        事件流描述的是页面接收事件的顺序
+
+        事件流的三个阶段:捕获,目标,冒泡
+        <1、事件捕获阶段，即由最顶层元素（一般是从window元素开始，有的浏览器是从document开始，至于其中的差别我稍后会更新）开始，逐次进入dom内部，最后到达目标元素，依次执行绑定在其上的事件
+        <2>、处于目标阶段，检测机制到达目标元素，按事件注册顺序执行绑定在目标元素上的事件。
+        <3>、事件冒泡阶段，从目标元素出发，向外层元素冒泡，最后到达顶层（window或document），依次执行绑定再其上的事件。
+
+        阻止冒泡
+
+        事件委托机制:利用事件冒泡的原理;把本应添加个某元素上的事件委托给它的父级(外层)
+     */
+    </script>
+
+</head>
+<body>
+    <div id="outer">
+        <div id="inner"></div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var outer = document.getElementById("outer");
+    var inner = document.getElementById("inner");
+    outer.onclick = function(){
+        console.log("outer");
+    }
+    inner.onclick = function(e){
+        var evt = e || event;
+        console.log("inner");
+        //阻止冒泡
+        //evt.cancelBubble = true;//现代浏览器和IE
+        evt.stopPropagation();//现代浏览器
+
+    }
+</script>

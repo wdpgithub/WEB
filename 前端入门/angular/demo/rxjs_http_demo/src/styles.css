@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+
+
+*{font-family: "Segoe UI", "Helvetica Neue", "Helvetica", Arial, sans-serif; margin: 0;padding: 0; list-style: none;outline: none;}
+.line_hei_40{ line-height: 40px;}
+.mar_body{ margin: 20px 0px;}
+.hei_20{height: 20px;}

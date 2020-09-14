@@ -1,0 +1,21 @@
+<!--pages/course/course.wxml-->
+<!-- <view wx:for="{{courses}}"  wx:for-item="item" class='qc'>
+    <image src='{{item.url}}'></image>
+    <view class='det_box'>
+      <text class='blo tit'>{{courses.title}}</text>
+      <text class='blo det'>{{courses.details}}</text>
+    </view>   
+</view> -->
+<view wx:for="{{courses}}"  wx:for-item="item" class='cour_box'>
+    <image src='{{item.url}}'></image>
+    <view class='cour_de'>
+      <text class='blo tit'>{{item.title}}</text>
+      <text class='blo det'>{{item.details}}</text>
+    </view>
+    <view class='cour_de2'>
+      <text class='blo tit2'>{{item.title2}}</text>
+      <text class='blo det2'>{{item.details2}}</text>
+      <text class='blo det3'>{{item.details3}}</text>
+    </view>    
+</view>
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <ul class="a">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="b">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="box"></div>
+    <button>点击</button>
+</body>
+</html>
+<script src="utils/jquery3.3.1.js"></script>
+<script type="text/javascript">
+    /*$(function(){
+        $('p').html("显示文字")
+    })
+    $('.b li').css('background-color','red');//设置某个值
+    $('.b li').css({
+        'background':'red',
+        'width':'200px',
+        'height':'300px'
+        'list-stylee':'none'
+    })
+    $('.b li').css('background-color');//获取这个值*/
+
+
+
+
+    $('.box').css({
+        'background':'red',
+        'width':'200px',
+        'height':'200px'
+    })
+
+    // var a = true;
+    $("button").click(function() {
+        //     $('.box').show();
+        // if(a==true){
+        //     $('.box').hide();
+        // }else{
+        // }
+        // a=!a;
+
+        // $('.box').toggle();
+        // 1.hide() + show() = toggle()//显示隐藏效果
+
+
+        // 2.slideUp() + slideDown() = slideToggle()//渐变效果
+            $('.box').stop().slideToggle(2000);
+        // 3.fadeIn() + fadeOut() = fadetoggle()//透明度效果
+        // $('.box').fadeToggle(2000);
+        // addClass() + removeClass() = toggleClass()//切换类名
+    });
+</script>
+<!--
+   jQuery语法
+    语法:$('css选择器').具体操作.具体操作……
+
+
+
+    $('选择器').hover    //鼠标移入 移出
+
+    hide() + show() = toggle()//显示隐藏效果
+
+    slideUp() + slideDown() = slideToggle()//渐变效果
+
+    fadeIn() + fadeOut() = fadetoggle()//透明度效果
+
+    addClass() + removeClass() = toggleClass()//切换类名
+
+    1.$(选择器).eq(下标)  //返回下标所对应的元素
+
+    2.$(选择器).index(筛选的选择器)  //返回符合条件的元素所对应的下标
+ -->
+
+
+

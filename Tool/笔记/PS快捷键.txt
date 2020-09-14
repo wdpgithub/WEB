@@ -1,0 +1,65 @@
+Shift +Tab 隐藏/调出历史记录和图层面板
+Tab 隐藏/调出控制面板
+Ctrl +N 新建画布
+Ctrl +Delete填充前景色
+Alt +Delete 填充背景色
+D键默认前景色和背景色
+X键切换前景色和背景色
+Z:缩放工具
+Ctrl++ 放大
+Ctrl-- 缩小
+按住alt键拨动滚轮放大缩小
+Ctrl+K调出PS后台勾掉用滚轮缩放后可以直接波动
+鼠标滚轮缩放
+Ctrl +0(零)按屏幕大小缩放
+空格键 抓手工具
+Ctrl+O或者拖拽 打开图片
+Ctrl+W 关闭
+Ctrl+alt +W 关闭全部 
+Ctrl+S 保存
+Ctrl_Shift+S另存为
+保存格式PSD文件 方便修改占的内存大
+JPG格式 图片格式
+PNG格式 图片透明格式
+TIF格式 支持大文件格式 分层格式
+矩形选框工具 M
+椭圆选框工具 M
+多种工具共用一种快捷键的可同时按Shift加此快捷键选取
+Ctrl Shift +N 新建图层
+Ctrl+Shift+alt+N 新建图层
+按住Shift+alt键以中心画正图形选框
+按住Shift键以对角画正图形选框
+Ctrl +D 取消选区
+移动工具 V
+用移动工具选中对象 按住Alt键拖拽复制,按住Shift键保持水平垂直、45度角
+多种工具公用一个快捷键的可同时按[Shift]加此快捷键选取
+Ctrl +R 调出/隐藏标尺
+Ctrl +; 调出/隐藏参考线
+Ctrl +' 调出/隐藏网格
+Alt+ Ctrl + ; 锁定/解锁参考线
+Ctrl +T 自由变换(按住Shift +alt键以中心等比放大缩小对象, 按住shift键以对角等比放大缩小对象,按住Alt键可以任意移动对象的中心节点)
+Alt +V+E 新建参考线
+多种工具共用一个快捷键的可同时按[shift]加此快捷键选取
+Ctrl +Alt +T 记录对象的方向位置
+Ctrl+Shift +Alt +T 再次变换
+Ctrl +E 合并图层
+Ctrl + shift +E 合并可见图层
+Ctrl+Z 后退一步
+Ctrl +Alt +Z 后退多步
+Ctrl +Shift +Z 返回
+历史记录
+Ctrl +G 编组
+Ctrl+Shift +G 删除组
+Ctrl +[ 向下一层
+Ctrl +] 向上一层
+Ctrl+Shift +] 移至顶层
+Ctrl +Shift +[ 移至底层
+多种工具共用一个快捷键的可同时按[Shift]加此快捷键选取
+选区的布尔运算：
+按住Alt键 减选选区
+按住Shift键 加选选区
+按住Shift +Alt键 与选区相交的地方保留
+Ctrl +J 原位复制
+
+
+

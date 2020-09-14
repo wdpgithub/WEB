@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../vue.js" ></script>
+    <style type="text/css">
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+        <table border="1" cellspacing="0" cellpadding="0" width="500">
+            <tr>
+                <td>操作</td>
+                <td>商品名</td>
+                <td>价格</td>
+                <td>数量</td>
+                <td>总价/td>
+                </tr>
+                <tr v-for="(v,i) in arr">
+                    <td><input type="checkbox" v-model="v.isTrue" /> </td>
+                    <td>{{v.brand}}</td>
+                    <td>{{v.price}}</td>
+                    <td><button @click="minus(v)">-</button>{{v.num}}<button @click="plus(v)">+</button> </td>
+                    <td>{{v.num*v.price}}</td>
+                </tr>
+            </table>
+            <p>商品总价:{{total}}</p>
+        </div>
+    </body>
+    </html>
+    <script type="text/javascript">
+        new Vue({
+            el:'#app',
+            data:{
+                arr:[
+                {isTrue:false,brand:'iphone6',price:1000,num:0},
+                {isTrue:false,brand:'iphone7',price:3000,num:0},
+                {isTrue:false,brand:'iphone8',price:4000,num:0}
+                ]
+            },
+            methods:{
+                minus(v){
+                    if(v.num>0){
+                        v.num--
+                    }
+                },
+                plus(v){
+                    v.num++
+                }
+            },
+            computed:{
+                total(){
+                    var totalPrice=0;
+                    for (var i = 0; i < this.arr.length; i++) {
+                        if(this.arr[i].isTrue==true){
+                            totalPrice+=this.arr[i].price*this.arr[i].num
+                        }
+                    };
+                    return totalPrice
+                }
+            }
+
+
+        })
+    </script>

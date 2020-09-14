@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<style type="text/css">
+		.container{
+			width: 500px;
+			height: 500px;
+			border: 3px solid red;
+			margin: 300px;
+		}
+		.pub{width: 100px;height: 100px;}
+		.box1{background-color: red;}
+		.box2{background-color: blue; 
+				/*微调:原点是,标签原有位置!!!!!*/
+				position: relative;
+				top:-40px;  /*位置是负数,反向移动!!!*/
+				left: -20px;
+		}
+		.box3{background-color: green;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="pub box1"></div>
+		<div class="pub box2"></div>
+		<div class="pub box3"></div>
+	</div>
+</body>
+</html>

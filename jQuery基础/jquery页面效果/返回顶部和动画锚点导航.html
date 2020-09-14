@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.wrap {
+				height: 3000px;
+			}
+			
+			.top {
+				width: 150px;
+				height: 150px;
+				background: pink;
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				display: none;
+			}
+			
+			.mainheader {
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				background: #333;
+				opacity: 0.8;
+				width: 100%;
+				height: 80px;
+				line-height: 80px;
+			}
+			.sp{ float: left; width: 100px; text-align: center; color: #fff; cursor: pointer;}
+			.sp:hover{ background: #008000;}
+			.heidiv{ height: 900px; font-size: 100px;}
+			.clear_both_300{ clear: both; height: 300px; background: yellowgreen;}
+			.active{ background: #008000;}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h1>头头头</h1>
+			<div class="mainheader">
+				<div id="d0" class="sp">锚点1</div>
+				<div id="d1" class="sp">锚点2</div>
+				<div id="d2" class="sp">锚点3</div>
+			</div>
+			<div class="clear_both_300"></div>
+			<div id="div0" class="heidiv">锚点的书签1</div>
+			<div id="div1" class="heidiv">锚点的书签2</div>
+			<div id="div2" class="heidiv">锚点的书签3</div>
+			<div class="clear_both_300"></div>
+			<div class="clear_both_300"></div>
+			<div class="clear_both_300"></div>
+		</div>
+		<div class="top">返回头部</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			window.onscroll = function() {
+				//bom事件
+				//console.log($("body").scrollTop())
+				var hhh = $(document).scrollTop();
+				if(hhh > 1000) {
+					$(".top").fadeIn(1000)
+				} else {
+					$(".top").fadeOut(1000)
+				}
+				
+				
+//				$(".heidiv").each(function(index){
+//					var bianliangheight = $("#div"+index).offset().top-100
+//					if(hhh>=bianliangheight){
+//						$("#d"+index).addClass("active").siblings().removeClass("active")
+//					}else if(hhh<300){
+//						$(".sp").removeClass("active")
+//					}
+//				})
+				$(".heidiv").each(function(asd){
+					var bianliangheight=$("#div"+asd).offset().top-80
+					if(hhh>=bianliangheight){
+						$("#d"+asd).addClass("active").siblings().removeClass("active")
+					}else if(hhh<320){
+						$(".sp").removeClass("active")
+					}
+				})
+			}
+			
+			$(".top").click(function() {
+				$("html,body").animate({
+					scrollTop: 0
+				}, 500)
+			})
+			
+			var number_i;
+			var hei;
+			$(".sp").click(function(){
+				number_i = $(this).index();
+				//alert(number_i);
+				//白盒测试
+				 hei=$("#div"+number_i).offset().top
+			
+					$("html,body").animate({
+						scrollTop:hei
+					},500)
+				$(this).addClass("active").siblings().removeClass("active")
+				//console.log(hei)
+			})
+			
+//			$("#sc0").click(function(){
+//				$("html,body").animate({
+//					scrollTop: 500
+//				}, 500)
+//			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>从组件接收过来的数据:{{msg1}}</p>
+        <my-col @haha="getMessage"></my-col>
+    </div>
+    <template id="box">
+        <div>
+            <button @click="send">发送</button>
+        </div>
+    </template>
+    <script type="text/javascript">
+    //子传父
+    //1.在子组件里面定义一个方法,这个方法用于发送自定义事件(haha): this.$emit('haha',this.msg2)
+    //2.在组件元素上面监听自定义事件(haha);让这个自定义事件等于父级里面的一个方法父级函数会有一个默认的参数用于接收组件发送的值
+        new Vue({
+            el:"#app",
+            data:{
+                msg1:''
+            },
+            methods:{
+                getMessage(val){
+                    console.log(this)
+                    this.msg1=val
+                }
+            },
+            components:{
+                myCol:{
+                    template:"#box",
+                    data(){
+                        return {
+                            msg2:'hello world'
+                        }
+                    },
+                    methods:{
+                        send(){
+                            this.$emit('haha',this.msg2)
+                            console.log(this);
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

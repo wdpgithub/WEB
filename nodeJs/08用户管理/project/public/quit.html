@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <button id="btn">退出</button>
+
+    <script type="text/javascript">
+        $('#btn').click(function(){
+            $.ajax({
+                type:'get',
+                url:'/VueHandler/AdminHandler?action=quit',
+                success:function(data){
+                    console.log(data);
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>

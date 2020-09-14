@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #box{width: 50px;height: 50px;background:black;position: absolute;top: 0;left: 0;cursor: pointer;}
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
+<script type=text/javascript>
+ var box=document.getElementById("box");
+ //鼠标按住不放事件
+ box.onmousedown=function(e){
+    var diffX=e.pageX-box.offsetLeft;
+    var diffY=e.pageX-box.offsetTop;
+    //鼠标移动事件
+    document.onmousemove=function(e){
+        box.style.left=e.pageX-diffX+"px";
+        box.style.top=e.pageY-diffY+"px";
+    }
+ }
+ //鼠标抬起事件
+ document.onmouseup=function(){
+    this.onmousemove=null;
+ }
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		/*div[class]{color:red}
+		多个类名中,其中一个是div2
+		div[class~=div2]{color: blue;}*/
+		
+		/* >子 */
+		.wai >h1{
+			color: red;
+		}
+		
+		div.box1 {
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+		}
+		
+		/*并列同时选多个*/
+		.wai , .nei{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="box1">
+		111111111111
+	</div>
+	<div class="box2  div2 ">
+		22222222222222
+	</div>
+	<div>
+		33333
+	</div>
+	
+	
+	<div class="wai">
+		<h1 >小狗</h1>
+		<div class="nei">
+			<h1 >小猫</h1>
+			<h1 >小猫</h1>
+		</div>
+		<h1 >小猪</h1>
+	</div>
+</body>
+</html>

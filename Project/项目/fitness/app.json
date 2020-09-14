@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/yj/yj",
+    "pages/personal/personal",
+    "pages/course/course",
+    "pages/artical/artical",
+    "pages/qicai/qicai"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "Daily Fitness",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#ffffff",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#2c2c2c",
+    "list": [
+      {
+        "pagePath": "pages/artical/artical",
+        "text": "首页",
+        "iconPath": "pages/images/a1.png",
+        "selectedIconPath": "pages/images/a2.png"
+      },
+      {
+        "pagePath": "pages/qicai/qicai",
+        "text": "健身器材",
+        "iconPath": "pages/images/b1.png",
+        "selectedIconPath": "pages/images/b2.png"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程",
+        "iconPath": "pages/images/c1.png",
+        "selectedIconPath": "pages/images/c2.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "navigationBarBackgroundColor": "yellow",
+        "text": "个人主页",
+        "iconPath": "pages/images/e1.png",
+        "selectedIconPath": "pages/images/e2.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        /*
+            [注]声明在当前函数中的变量好人当前函数的形参，作用域都限制在该函数内，当函数调用结束以后，这些函数变量和形参，会被释放。
+         */
+        /*var a=10;
+        function show(a){
+            a=5;
+            alert(a);
+        }
+        alert(a);//10
+        show(a);//5
+        alert(a);//10*/
+
+
+
+
+        /*
+            数组  复合数据类型/引用数据类型
+            [注]所有的复合数据类型都不直接存储在我们的函数中，存储在堆段。
+            [注]函数运行的内存空间是预先分配好的，一旦被分配好内存空间，就不能进行改变了。
+            [注]在堆段，我们可以想要使用内存，就随便分配多少内存。
+            [注]所有的复合数据类型，存储的都是门牌号，也就是地址。所以这类型的数据，我们叫做引用数据类型
+         */
+        var arr=[10,20];
+        function show(arr){
+            arr.push(30,40);
+            alert(arr);
+        }
+        alert(arr);//10,20
+        show(arr);//10,20,30,40
+        alert(arr);//10,20,30,40
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

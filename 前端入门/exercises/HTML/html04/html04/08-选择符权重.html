@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		
+		/*了解! 强制权重最高!  10000, 禁止使用!!!*/
+		h1{color: yellow !important;}
+		.box1  #box2  h1{color: red;} /* 10+ 100 + 1   111 */
+		#box1  .box2   .mao{color: blue;} /* 100  +10 + 10   120*/
+		
+	</style>
+</head>
+<body>
+	
+	<div class="box1" id="box1">
+		<div class="box2" id="box2">
+			<!-- 行内: 1000-->
+			<h1 class="mao" id="mao" style="color:green">小猫</h1>
+		</div>
+	</div>
+</body>
+</html>

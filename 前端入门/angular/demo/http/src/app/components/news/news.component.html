@@ -1,0 +1,11 @@
+<ul *ngIf="arr.length>0">
+  <li *ngFor="let item of arr">
+    {{item}}
+  </li>
+</ul>
+<p *ngIf="arr.length==0">没有数据</p>
+
+<input type="button" class="button" (click)="getDate()" value="点我获取" />
+<br>
+<br>
+<input type="button" class="button" (click)="changeDate()" value="点我改变" />

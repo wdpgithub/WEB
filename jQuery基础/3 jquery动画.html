@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<style type="text/css">
+			#box1 {
+				background: red;
+				width: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		animate()方法
+
+		<pre>
+backgroundPosition
+borderWidth
+borderBottomWidth
+borderLeftWidth
+borderRightWidth
+borderTopWidth
+borderSpacing
+margin
+marginBottom
+marginLeft
+marginRight
+marginTop
+outlineWidth
+padding
+paddingBottom
+paddingLeft
+paddingRight
+paddingTop
+height
+width
+maxHeight
+maxWidth
+minHeight
+minWidth
+font
+fontSize
+bottom
+left
+right
+top
+letterSpacing
+wordSpacing
+lineHeight
+textIndent
+		</pre>
+		<div id="box1">boxasdsadsad</div>
+		<button id="btn1">动画1</button>
+		<script type="text/javascript">
+//			$("#btn1").click(function() {
+//				$("#box1").animate({
+//					"width": 200,
+//					"height": 100
+//				}, 1000, function() {
+//					console.log("执行完了")
+//				})
+//			
+//			})
+			$("#btn1").click(function(){
+//				$("#box1").animate({
+//					"width":200,
+//					"height":100
+//				},1000,function(){
+//					console.log("finished")
+//				})
+				$("#box1").animate({
+					width:200,
+					height:300
+				},1000)
+
+			});
+		</script>
+
+		停止动画
+		<style type="text/css">
+			#box2 {
+				background: #00f;
+				height: 100px;
+				width: 200px;
+				position: absolute;
+				color: #fff;
+			}
+		</style>
+		<button id="start">开始</button>
+		<button id="stop">停止</button>
+		<button id="stop2">停止所有</button>
+		<button id="stop3">停止但要完成</button>
+		<p><b>“开始”</b> 按钮会启动动画。</p>
+		<p><b>“停止”</b> 按钮会停止当前活动的动画，但允许已排队的动画向前执行。</p>
+		<p><b>“停止所有”</b> 按钮停止当前活动的动画，并清空动画队列；因此元素上的所有动画都会停止。</p>
+		<p><b>“停止但要完成”</b> 会立即完成当前活动的动画，然后停下来。</p>
+
+		<div id="box2">翡翠</div>
+
+		<script type="text/javascript">
+			$("#start").click(function() {
+				$("#box2").animate({
+					left: '100px'
+				}, 5000);
+				$("#box2").animate({
+					fontSize: '3em'
+				}, 5000);
+			});
+
+			$("#stop").click(function() {
+				$("#box2").stop();
+				//仅仅停止第一个animate
+			});
+
+			$("#stop2").click(function() {
+				$("#box2").stop(true);
+				//直接全部停止而已
+			});
+
+			$("#stop3").click(function() {
+				$("#box2").stop(true, true);
+				//只求结果
+			});
+		</script>
+
+		<!--jquery链式写法：对同一个元素进行多个步骤执行 延时执行 delay()-->
+		<style type="text/css">
+			.yanchi01{ color: red; position: absolute; left: -3000px; top: 20px; font-size: 100px;}
+			.yanchi02{ color: red; position: absolute; left: -3000px; top: 200px; font-size: 100px;}
+			.clear_both_100{ clear: both; height: 100px;}
+			.ddd{ font-size: 100px;position: absolute; top: 0px; left: 0px;}
+		</style>
+		<div class="yanchi01">字体慢慢的进来1</div>
+		<div class="yanchi02">字体慢慢的进来2</div>
+		<button class="ddd">点我</button>
+		<script type="text/javascript">
+			$(function(){
+				$(".ddd").click(function(){
+					$(".yanchi01").animate({left:0},2000)
+					$(".yanchi02").delay(1000).animate({left:100},2000)
+				})
+			})
+		</script>
+		<div class="clear_both_100"></div>
+		<button id="btn6">写个大动画</button>
+		<script type="text/javascript">
+			$("#btn6").click(function() {
+//				$("#box2").animate({
+//					"height": 300
+//				}, 1000).delay(1000).animate({
+//					"width": 300
+//				}, 1000).slideUp(500).delay(3000).fadeIn(500).css("background-color", "blue")
+				$("#box2").animate({"height":300},1000).delay(1000)
+				.animate({"width":300},1000)
+				.slideUp(500)
+				.delay(3000)
+				.fadeIn(500)
+			})
+		</script>
+
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+    .box{
+            width: 100px;
+            height: 100px;
+            background:rgb(112, 114, 91);
+        }
+    </style>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <!-- v-model :双向数据绑定-->
+        <input type="text" v-model="msg" >
+        <div class="box" v-if="isTrue"></div>
+        <!-- v-if和v-show之间的区别v-if控制的是元素节点增加和删除  v-show控制节点的css属性(display:none/block) -->
+        <p v-else="isTrue">hello world</p>
+        <p v-if='age>20'>今年的年龄大于20岁</p>
+        <p v-if='age==20'>今年的年龄20岁</p>
+        <p v-else='age<20'>今年的年龄小于20岁</p>
+        <p v-show="isTrue">hello</p>
+        <ul>
+            <!-- v-for="(数组的每一项,数组的每一项的索引值) in arr" -->
+            <li v-for="(x,i) in arr">{{x}}{{i}}</li>
+        </ul>
+        <ul>
+            <li v-for="(v,k,i) in obj">{{v}}{{k}}{{i}}</li>
+        </ul>
+        <table border="1" cellpadding="0" cellspacing="0" width="300" height="150">
+           <tr>
+               <td>姓名</td>
+               <td>年龄</td>
+               <td>手机号</td>
+           </tr>
+            <tr v-for=" x in arr2">
+               <td>{{x.name}}</td>
+               <td>{{x.age}}</td>
+               <td>{{x.tel}}</td>
+           </tr>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+            // el:挂载
+            el:"#app",
+            // data:储存数据
+            data:{
+                msg:'hello world',
+                isTrue:true,
+                age:20,
+                arr:['a','b','c'],
+                obj:{
+                    name:"clash",
+                    age:20,
+                    tel:1234567876
+                },
+                arr2:[
+                {
+                    name:"clash",
+                    age:20,
+                    tel:1234567876
+                },
+                {
+                    name:"clash",
+                    age:20,
+                    tel:1234567876
+                },
+                {
+                    name:"clash",
+                    age:20,
+                    tel:1234567876
+                }
+
+                ]
+            }
+
+        })
+    </script>
+</body>
+</html>

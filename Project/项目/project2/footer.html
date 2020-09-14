@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>footer</title>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="footer-wrap">
+			<ul>
+				<li>
+					<h1 id="a">ABOUT US</h1>
+					<p id="b">They're sick, they're homeless, they don't have enough food to feed themselves, and we have to do something to save these poor children.</p>
+				</li>
+				<li>
+					<h1 id="a">NAVIGATION</h1>
+					<a href="kinds.html">﹥Kinds</a>
+					<a href="causes.html">﹥Causes</a>
+					<a href="stories.html">﹥Stories</a>
+					<a href="Activities.html">﹥Activities</a>
+					<a href="News.html">﹥News</a>
+					<a href="About.html">﹥About us</a>
+				</li>
+				<li>
+					<h1 id="a">Contact Line</h1>
+					<i class="fa fa-phone"></i><span> +800-8201-830</span><br />
+					<br />
+					<i class="fa fa-envelope"></i><span> mail@728836725</span><br />
+					<br />
+					<i class="fa fa-map-marker"></i><span> 1234k Avenue, 4th block,
+New York City.</span>
+				</li>
+				
+			</ul>
+			<div class="hand"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$(".footer-wrap ul li a").hover(function(){
+			$(this).css("color","orange")
+		},function(){
+			$(this).css("color","#999999")
+		})
+	})
+</script>

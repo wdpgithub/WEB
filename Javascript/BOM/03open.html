@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        window.open()
+        open(1,2,3)
+
+
+        1.要加载URL
+        2.窗口的名称或者窗口的目标
+        3.一串具有特殊意义的字符串
+     */
+    window.onload = function(){
+        var oBtn = document.getElementById("btn");
+        oBtn.onclick = function(){
+            //open("http://www.baidu.com");
+            //[注]如果只有第一个参数,调用open方法会打开新窗口,加载URL
+            //open("http://www.baidu.com","百度");
+            //[注]第二个参数,是给打开的新窗口起有一个名字,然后以后再去加载url,就在这个已经起好名字的目标加载url.
+
+            open("http://www.baidu.com","百度","width=400,height=400,top=200,left=200");
+        }
+    }
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn" name="">
+</body>
+</html>

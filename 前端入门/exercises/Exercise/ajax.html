@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 400px;
+				height: 600px;
+				background: blue;
+				color: white;
+				font-size: 32px;
+				float: left;
+			}
+			.phneName{
+				height: 200px;
+				text-align: center;
+				line-height: 200px;
+			}
+			.phnePrice{
+				height: 400px;
+				text-align: center;
+				line-height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+
+	</body>
+</html>
+<script>
+    var myBody=document.getElementsByTagName("body")[0];
+
+    var box=[];
+    box.length=4;
+
+    for(var i=0;i<box.length;i++){
+    	box[i]=document.createElement("div");
+	    var phneName=document.createElement("div");
+	    var phnePrice=document.createElement("div");
+	    box[i].className="box";
+	    phneName.className="phneName";
+	    phnePrice.className="phnePrice";
+	    box[i].appendChild(phneName);
+	    box[i].appendChild(phnePrice);
+	    myBody.appendChild(box[i]);
+    }
+
+	//AJAX请求分5步走
+
+	//1.创建一个ajax对象
+
+	var ajax=new XMLHttpRequest();
+
+	//2.发起请求
+	ajax.open("GET","products.json");
+
+	//3.发送请求
+	ajax.send();
+
+	//4.监听请求的状态
+	ajax.onreadystatechange=function(res){
+		//5.判断请求状态的结果,从而决定请求是否成功
+		if(ajax.readyState==4&&ajax.status==200){
+			var results=JSON.parse(res.target.responseText)
+			for(var i=0;i<box.length;i++){
+				box[i].children[0].innerHTML=results.products[i].name;
+			    box[i].children[1].innerHTML=results.products[i].price;
+			}
+		}
+	}
+//	var phones={
+//		"name":"小米6",
+//		"price":298888800
+//	}
+//
+//  phneName.innerHTML=phones.name;
+//	phnePrice.innerHTML=phones.price;
+
+</script>
+
+<!--1.AJAX
+
+2.回到顶部------onscroll------滚轮事件
+
+3.关于JS中节点的各种操作-->
+
+
+
+

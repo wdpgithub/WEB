@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+    function aa(){
+        console.log("函数的定义");
+    }
+    aa();
+    //比较大小
+    function Max(num1,num2){
+    if(num1>num2){
+        alert(num1)
+    }else{
+        alert(num2)
+    }
+}
+Max(210,80);
+    //三个数比较大小
+    //第一种方法
+function Max2(num1,num2,num3){
+    if(num1>num2){
+        if(num1>num3){
+            alert(num1)
+        }else{
+            alert(num3)
+        }
+    }else{
+        if(num2>num3){
+            alert(num2)
+        }else{
+           alert(num3)
+        }
+    }
+}
+Max2(9,40,2000)
+    //第二种方法
+function Max3(num1,num2,num3){
+    if(num1>num2&&num1>num3){
+        alert(num1)
+    }
+    if(num2>num1&&num2>num3){
+        alert(num2)
+    }
+    if(num3>num1&&num3>num2){
+        alert(num3)
+    }
+}
+Max3(31,1,8);
+
+
+</script>

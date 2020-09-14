@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <input id="use" type="text" name="" placeholder="输入你猜的价格">
+    <p id="tip">文字出现在这里</p>
+    <input id="guess" type="button" name="" value="踩一下">
+</body>
+</html>
+<script type="text/javascript">
+    var  use=document.getElementById("use");
+    var  tip=document.getElementById("tip");
+    var guess=document.getElementById("guess")
+    var price=Math.ceil(Math.random()*500)
+    console.log(price);
+    guess.onclick=function(){
+        //比较用户猜的价格和商品实际价格的关系
+        if (use.value>price) {
+            tip.innerHTML="你猜的价格太大了"
+        };
+        if (use.value<price) {
+            tip.innerHTML="你猜的价格太小了"
+        };
+        if (use.value==price) {
+            tip.innerHTML="你猜的价格正确了"
+        };
+    }
+</script>

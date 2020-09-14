@@ -1,0 +1,26 @@
+<!-- <p>
+  father works!
+</p>
+
+<app-son (outer)="runParent($event)"></app-son> -->
+
+
+
+
+<button (click)='obj.wnRun()'>father_click</button>
+
+<p>子组件的数据：{{obj.message}}</p>
+
+
+
+<app-son01 #obj ></app-son01>
+<!--    #  对象名 -->
+<!-- 对象里面的素有数据变量和方法，均可以通过对象属性语法进行调用 -->
+
+
+<app-son02 #viewChild></app-son02>
+
+
+
+
+

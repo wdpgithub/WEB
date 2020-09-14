@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.wrap{
+				width: 700px;
+				height: 300px;
+				position: relative;
+				overflow: hidden;
+			}
+			.wrap div{
+				position: absolute;
+				top: 0;
+			}
+			.wrap div:nth-child(1){
+				left: 0;
+			}
+			.wrap div:nth-child(2){
+				left: 100px;
+			}
+			.wrap div:nth-child(3){
+				left: 200px;
+			}
+			.wrap div:nth-child(4){
+				left: 300px;
+			}
+			.wrap div:nth-child(5){
+				left: 400px;
+			}
+			.wrap div:nth-child(6){
+				left: 500px;
+			}
+			.wrap div:nth-child(7){
+				left: 600px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+
+			<div><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4262228094,3998648546&fm=26&gp=0.jpg"></div>
+			<div><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3362685598,875603201&fm=26&gp=0.jpg" alt="" /></div>
+			<div><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4023984486,4062656674&fm=26&gp=0.jpg" alt="" /></div>
+			<div><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3548355611,2512690171&fm=26&gp=0.jpg" alt="" /></div>
+			<div><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2465362711,788834863&fm=26&gp=0.jpg" alt="" /></div>
+			<div><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=954923004,3580046758&fm=26&gp=0.jpg" alt="" /></div>
+			<div><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2432484554,533176950&fm=26&gp=0.jpg" alt="" /></div>
+
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		$(".wrap div").hover(function(){
+			var index  = $(this).index() //获取到当前的索引值
+			for(i=0;i<=index;i++){
+				$(".wrap div").eq(i).stop().animate({
+					"left" : i * 50
+				})
+			}
+			for(i=$(".wrap div").length-1;i>index;i--){
+				$(".wrap div").eq(i).stop().animate({
+					"left" : i * 50 + 350
+				})
+			}
+		},function(){
+			for(i=0;i<$(".wrap div").length;i++){
+				$(".wrap div").eq(i).stop().animate({
+					"left" : i * 100
+				})
+			}
+		})
+		
+	</script>
+
+</html>

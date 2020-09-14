@@ -1,0 +1,25 @@
+<input type="text" [(ngModel)]="username">
+<button (click)="getDate()">add</button>
+
+<h3>状态1：</h3>
+<ul *ngIf="todolist.length>0">
+  <li *ngFor="let item of todolist; let i=index" [hidden]="item.stat==1">
+      {{item.name}}--{{item.stat}}---
+      <button (click)="deleate(i)">×</button>
+      <button (click)="changestat(i,1)">change</button>
+  </li>
+</ul>
+
+
+<h3>状态2：</h3>
+<ul>
+  <li 
+  *ngFor="let item of todolist; let i=index" 
+  [hidden]="item.stat==0">
+    {{item.name}}--{{item.stat}}---
+    <button (click)="deleate(i)">×</button>
+    <button (click)="changestat(i,0)">change</button>
+  </li>
+</ul>
+
+<p *ngIf="todolist.length==0">对不起没有数据</p>

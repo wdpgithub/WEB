@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+
+
+
+   //1. 计算n+(n-1)+(n-2)+(n-3)+(n-4)……0的值
+function myCount(n){
+    var res=0;
+    for (var i = 1;i<=n; i++) {
+       res+=i;
+
+    }
+    alert(res);
+}
+myCount(30);
+   // 判断n这个数是否时质数
+function zhishu(n){
+    var num=0;
+    for(var i=1;i<=n;i++){
+        if (n%i) {
+            num++;
+            console.log("i");
+        };
+    }
+    if (num==2) {
+        alert("他是个质数")
+    }else{
+        alert("他不是个质数")
+    }
+}
+zhishu(20);
+
+   //3. 计算m和n的最大公约数
+function maxYue(num1,num2){
+    var maxYueshu=0;
+    if(num1>num2){
+        for (var i = 0; i <=num2; i++) {
+            if (num2%i==0&&num1%i==0) {
+                maxYueshu=i;
+            };
+            console.log(i);
+        };
+    }else{
+        for (var i = 0; i <= num1; i++) {
+            if (num1%i==0&&num2%i==0) {
+                maxYueshu=i;
+            };
+            console.log(i);
+        };text.css
+    }
+    alert(maxYueshu);
+}
+maxYue(100,48);
+
+   // 4. 写一个计算器，传入三个参数，输出结果
+function cal(num1,num2,yunsuan){
+    var res=0;
+    if (yunsuan=="+") {
+        res=num1+num2
+    };
+    if (yunsuan=="-") {
+        res=num1-num2
+    };
+    if (yunsuan=="*") {
+        res=num1*num2
+    };
+    if (yunsuan=="/") {
+        res=num1/num2
+    };
+    alert(res);
+}
+cal(20,5,"-")
+</script>

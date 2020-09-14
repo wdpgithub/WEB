@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        /*
+            [注]选择排序法
+            [原理]通过比较首先选出最小的数放在第一位置上，然后在其余的数中选择次小数放在第二个位置，以此类推，知道所有的事数成为有序序列
+            [注]打擂台法
+         */
+        var arr=[9,5,3,6,7,2];
+        for(var i=0;i<arr.length-1;i++){
+            for(var j=i+1;j<arr.length;j++){
+                if (arr[i]>arr[j]) {
+                    var tmp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=tmp;
+                }
+            }
+        }
+        alert(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

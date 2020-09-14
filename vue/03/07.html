@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            width: 200px;
+            height: 200px;
+            background:red;
+        }
+    </style>
+    <script src="../vue.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <div id="app">
+        <div class="box" v-if='isTrue'>
+
+        </div>
+    <com1 @haha="change"></com1>
+    </div>
+
+    <template id="com1">
+        <div>
+            <button @click="sendMessage">点击</button>
+        </div>
+    </template>
+    <script type="text/javascript">
+        new Vue ({
+            el:'#app',
+            data:{
+                isTrue:true
+            },
+            methods:{
+                change(){
+                    this.isTrue=!this.isTrue
+                }
+            },
+            components:{
+                com1:{
+                    template:'#com1',
+                    methods:{
+                        sendMessage(){
+                            this.$emit('haha')
+                        }
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

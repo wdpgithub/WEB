@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#contanier{
+				width:400px;
+				height: 150px;
+				background: yellowgreen;
+				text-align: center;
+				line-height: 150px;
+				font-size: 100px;
+				color: white;
+				overflow: hidden;
+
+			}
+			#contanier a{
+				display: inline-block;
+				transform:rotate(45deg);
+			}
+
+
+		</style>
+	</head>
+	<body>
+
+
+		<div id="contanier">
+
+			<a id="checkNum">1098</a>
+
+		</div>
+		<input id="userCheckNum" type="text"  placeholder="验证码"/>
+		<input type="button" id="checking" value="验证"/>
+
+
+
+
+	</body>
+</html>
+
+<script>
+
+	var contanier=document.getElementById("contanier");
+	var checkNumX=document.getElementById("checkNum");
+	var checking=document.getElementById("checking");
+	var userCheckNum=document.getElementById("userCheckNum");
+	var colors=["red","black","white","blue","orange"];
+	var fontFamilys=["微软雅黑","宋体","黑体"];
+	var checkNum=0;
+
+	doRandomNum();
+
+	contanier.onclick=function(){
+         doRandomNum();
+	}
+
+	checking.onclick=function(){
+		if((userCheckNum.value-0)==checkNum){
+			alert("正确!!!!!!")
+		}else{
+			alert("错误!!!!!")
+		}
+	}
+
+    function  doRandomNum(){
+    	//1.生成随机验证码
+		checkNum=Math.ceil(Math.random()*8999+1000);
+		var randomColor=Math.floor(Math.random()*colors.length);
+		var textDeg=Math.ceil(Math.random()*90-45);
+		var textFontSize=Math.ceil(Math.random()*40+60);
+		var radndomFamily=Math.floor(Math.random()*fontFamilys.length);
+		checkNumX.style.color=colors[randomColor];
+		checkNumX.style.transform="rotate("+textDeg+"deg)";
+		checkNumX.style.fontSize=textFontSize+"px";
+		checkNumX.style.fontFamily=fontFamilys[radndomFamily];
+		//2.把生成的验证码放上去
+		checkNumX.innerHTML=checkNum;
+    }
+console.log(window);
+</script>

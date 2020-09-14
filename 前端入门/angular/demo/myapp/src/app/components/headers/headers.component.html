@@ -1,0 +1,16 @@
+<p>
+  headers works!
+</p>
+
+<h1>
+  <font color="red">{{message}}</font>
+</h1>
+<div class="myhead" [innerHTML]="h"></div>
+<div>{{h}}</div>
+<ul>
+  <li *ngFor="let item of list; let i=index">
+    <h1>信息：{{item.mesg}}--变量{{i}}</h1>
+    <p>状态:{{item.stat}}</p>
+  </li>
+</ul>
+

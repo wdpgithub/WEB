@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        箭头函数
+
+        1.只含有1个表达式
+        2.含有多条语句
+        3.this的指向问题
+     */
+
+    //ES5
+    /*var foo = function(){
+        return 1;
+    }
+    console.log(foo());*/
+
+    //ES6
+    /*let foo = () =>1;
+    console.log(foo());*/
+
+   /* let foo = (a) =>a;
+    console.log(foo(10));//10*/
+
+    /*let foo = (a) =>{
+        let b = 10;
+        return a+b;
+    }
+    console.log(foo(10));*/
+
+
+    /*var foo =()=>{
+        console.log(this);//window
+    }
+    foo();*/
+
+
+
+    var name = "window";
+    /*var  obj = {
+        "name":"john",
+        "sayhello":function(){
+            console.log(this.name);//john
+        }
+    }
+    obj.sayhello();*/
+    //this 指向定义时所在的作用域,而不是执行时所在的作用域
+     /*var obj ={
+        "name":"john",
+        "sayhello":()=>{
+            console.log(this.name);//window
+        }
+     }*/
+
+     /*var obj ={};
+     obj.name = "john";
+     console.log(this);//window
+     obj.sayhello=()=>{
+        console.log(this.name);//window
+     }
+     obj.sayhello();*/
+
+     /*var  obj ={
+        "name":"john",
+        "sayhello":function(){
+            console.log(this);
+            setTimeout(()=>{console.log(this.name)},1000);//john
+        }
+     }*/
+     var  obj ={
+        "name":"john",
+        "sayhello":()=>{
+            console.log(this);
+            setTimeout(()=>{console.log(this.name)},1000);//window
+        }
+     }
+     obj.sayhello();
+</script>
+</head>
+<body>
+
+</body>
+</html>

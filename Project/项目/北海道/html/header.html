@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link type="text/css" rel="stylesheet" href="../css/header.css" />
+		<script type="text/javascript" src="../js/jquery-1.8.3.min.js">
+			
+		</script>
+	</head>
+	<body style="height: 4000px;">
+		<div class="header_wrap">
+			<div class="header_mask"></div>
+			<div class="header_box">
+				<ul>
+					<li>
+						<a href="../html/attraction.html" >有名な景色</a>
+						<span>
+							❤
+						</span>
+						<!--<ul>
+							<li>
+								<a href="#">小樽运河</a>
+							</li>
+							<li>
+								<a href="#">札幌电视塔</a>
+							</li>
+							<li>
+								<a href="#">白色恋人公园</a>
+							</li>
+						</ul>-->
+					</li>
+					<li>
+						<a href="../html/hotel.html">特色な旅館</a>
+						<span>
+							❤
+						</span>
+					</li>
+					<li>
+						<a href="../html/shopping$cate.html">美食</a>
+						<span>
+							❤
+						</span>
+					</li>
+					<li class="noborder" style="margin-top: -48px;">
+						<img src="../images/logo/xx2.png" />
+					</li>
+					<li>
+						<a href="../html/traffic.html">便利な交通</a>
+						<span>
+							❤
+						</span>
+					</li>
+					<li>
+						<a href="../html/entertainment.html">娯楽</a>
+						<span>
+							❤
+						</span>
+					</li>
+					<li>
+						<a href="../html/announcement.html">注意事項</a>
+						<span>
+							❤
+						</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+	<script type="text/javascript">
+		$(function(){
+
+			
+			$(window).scroll(function(){
+				
+				if($(window).scrollTop() >= 10){
+					$(".header_mask").css({
+						"background":"gray",
+						"opacity":"0.8"
+					})
+					$(".header_wrap").css({
+						"color":"gray",
+					})
+				}else{
+					$(".header_mask").css({
+						"background": "darkgray",
+						"opacity": "0.5",
+					})
+					$(".header_wrap").css({
+						"color":"#FFFFFF",
+					})
+				}
+				
+	
+			})
+			
+			
+			$(".header_box ul li").hover(function(){
+					$(this).css({
+						"color":"pink",
+						"border-bottom":"2px solid #FFFFFF"
+						});
+					$(this).children("a").css("color","pink");
+			},function(){
+				    $(this).css({
+				    	"color":"#FFF",
+				    	"border-bottom":"none"
+				    	});
+					$(this).children("a").css("color","#FFF");	
+			})
+			$(".header_box ul .noborder").hover(function(){
+				$(this).css("border","none");
+			})
+			
+			
+			
+		})
+	</script>

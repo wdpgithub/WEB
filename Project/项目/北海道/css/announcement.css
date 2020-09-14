@@ -1,0 +1,20 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.anno_box{
+	width: 1100px;
+	height: 1735px;
+	margin: auto;
+	padding-top: 130px;
+}
+.anno_box h2{
+	height: 200px;
+	color: rgb(27,171,243);
+	border-bottom: 1px solid rgb(174,214,240);
+}
+.anno_box p{
+	height:50px;
+	line-height: 50px;
+}

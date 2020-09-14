@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        setInterval()
+
+        [格式]setInterval(函数/匿名函数,毫秒数);
+        功能:每隔所传函数的毫秒数,就调用一次所传参数的函数
+        [返回值]当前页面上对于这个定时器的唯一标识,定时器的ID。
+
+
+        clearInterval() 取消定时器
+        参数:定时器的ID。
+
+        setInterval(function(){
+            //我们想要做的代码
+        },毫秒数)
+     */
+    var i = 0;
+   /* function show(){
+        document.write(i++ +"<br>");
+    }
+*/
+    //上述写法也可以写成下述写法
+    var show = function(){
+        document.write(i++ +"<br>");
+    }
+
+
+
+
+window.onload = function(){
+    var oBtn=document.getElementById("btn");
+    oBtn.onclick=function(){
+        //setInterval(show,1000);//函数传参
+        var timer = setInterval(function(){
+            if (i ==5) {
+                clearInterval(timer);
+            };
+            document.write(i++ +"<br>")
+        },1000);//函数传参
+
+    }
+
+
+}
+</script>
+</head>
+<body>
+    <input type="button" id="btn"  value="按钮" name="">
+</body>
+</html>

@@ -1,0 +1,164 @@
+/* 集团首页样式*/
+
+
+/*初始化,字体大小,间隙,超链接去下划线等...去掉列表符号---重置样式!! */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+	color: #000;
+}
+
+body {
+	font-size: 12px;
+}
+
+
+/*逐层写样式!  */
+
+.head {
+	width: 990px;
+	height: 88px;
+	background-color: #96B97D;
+	background-image: url('img/bg01.jpg');
+	margin: 0 auto;
+}
+
+
+/* 空格 表示包含!*/
+
+.head img {
+	margin-left: 80px;
+	margin-top: 24px;
+}
+
+.head .right {
+	float: right;
+	margin-right: 80px;
+	margin-top: 38px;
+}
+
+
+/*导航*/
+
+.nav {
+	width: 990px;
+	height: 34px;
+	margin: 0 auto;
+	line-height: 34px;/*添加行高,内容垂直居中*/
+}
+
+.nav a {
+	margin-left: 74px;
+}
+/*悬停样式,学名:伪类样式*/
+.nav a:hover {
+	text-decoration: underline;
+	color: red;
+}
+/*banner*/
+.banner{
+	width: 990px;
+	height: 384px;
+	margin: 0 auto;
+}
+.banner img{width: 100%;height: 384px;}
+
+/*主体内容*/
+.main{
+	width: 990px;
+	height: 210px;
+	margin: 0 auto;
+	border: 0px solid red;
+	margin-top: 18px;
+	margin-bottom: 30px;
+}
+/*左边:上下两部分*/
+.main .left{
+	width: 280px;
+	height: 210px;
+	float: left;
+}
+.main .left .top{
+	width: 280px;
+	height: 48px;
+	line-height: 48px;}
+.left .top img{vertical-align: middle;} /*图和在混合时! 字体需要垂直居中!*/
+.left .top .huadong{font-size: 16px;font-weight: bold;}
+.left .top .more{float: right;margin-right: 20px;}
+/*左下*/
+.left .bottom{
+	width: 280px;
+	height: 155px; 
+	border: 1px solid #ccc;
+	background-color: #F8F7F4;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+.left .bottom .list img{vertical-align: middle;}
+.left .bottom .list .one{margin-left: 20px;}
+/* ********left  end ********/
+
+/* 中间*/
+.main .center{
+	width: 418px;
+	height: 210px;
+	float: left;
+	margin-left: 32px;}
+.center .top{
+	width: 418px;
+	height: 30px;
+	border: 1px solid #CCCCCC;
+	line-height: 30px;
+	background-image: url('img/bg2.png');
+	border-radius: 10px;
+} 
+.center .top a{
+	width: 98px;
+	height: 30px;
+	display: inline-block; /*转换为行块*/
+	text-align: center;
+}
+.center .top a:hover{
+	background-image: url(img/bg03.png);
+	color: #fff;
+	font-weight: bold;
+}
+.center ul{list-style: none;margin-top: 20px;}
+/*背景:url(图片地址) 不平铺  位置*/
+.center ul li{
+	line-height: 26px;
+	background:url(img/img1.png) no-repeat left; 
+	padding-left: 20px;
+}
+.center ul li span{float: right;}
+/* 中间 end   */
+
+
+
+/**********center  end  */
+.main .right{
+	width: 223px;
+	height: 210px;
+	float: right;
+}
+.right img{
+	margin-top: 10px;
+}
+.right .xuanze{
+	width: 200px;
+}
+
+
+.footer{
+	width: 990px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #ccc;
+	margin: 0 auto;
+}
+

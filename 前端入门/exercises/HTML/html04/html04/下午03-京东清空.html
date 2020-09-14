@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/**
+	 * 	
+	 * 京东
+	 * 隔墙法:在元素后面添加一个 "点/空格" 转换为块! 不显示! 
+	 * 
+	 * */
+			
+			/*
+			.clearfix {
+				*zoom: 1
+			}
+			
+			.clearfix:after,
+			.clearfix:before {
+				content: " .";
+				display: table
+			}
+			
+			.clearfix:after {
+				height: 0;
+				line-height: 0;
+				visibility: hidden;
+				clear: both
+			}
+			
+			.clearfix:after,.clearfix:before {
+				content: " ";
+				display: table
+			}
+			
+			.clearfix:after {
+				height: 0;
+				line-height: 0;
+				visibility: hidden;
+				clear: both
+			}
+			*/
+			
+			.clearfix:after{visibility:hidden;clear:both;display:block;content:".";height:0;}.clearfix{*zoom:1}
+			
+			.box{width: 200px;height: 200px;border: 1px solid red;float: left;}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="box1 box">111</div>
+		<div class="box2 box clearfix">2222</div>
+		<div class="box  clearfix">3333</div>
+	</body>
+
+</html>

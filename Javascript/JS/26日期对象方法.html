@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        /*
+        参照物都是1970年
+
+        d.set/getTime() 设置/获取当前日期距离1970年的毫秒数
+         */
+
+        var d = new Date();
+     /*   // alert(d.getTime());
+        d.setTime(1000);
+        alert(d);
+*/
+       /* var d2 = new Date(1530712395163);
+        alert(d2);*/
+
+        /*
+            Date/parse("2018-04-30")
+
+            参数：是一个日期对象格式的字符串。
+            功能：返回这个日期，距离1970年的毫秒数
+         */
+
+        var time =Date.parse("2018-04-30");
+        var d =new Date(time);
+        alert(d);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.nav{
+				width: 400px;
+				height: 60px;
+			}
+			.nav li,.nav_detail li{
+				width: 100px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				color: white;
+				background: black;
+				float: left;
+			}
+			.nav_detail{
+				width: 100px;
+				height:0px;
+				overflow: hidden;
+			}
+			.nav_detail li{
+				float: none;
+			}
+
+
+
+		</style>
+	</head>
+	<body>
+
+		<ul class="nav">
+			<li>
+				<a>主页</a>
+				<ul class="nav_detail">
+					<li>主页0</li>
+					<li>会员0</li>
+				</ul>
+			</li>
+			<li>
+				<a>会员</a>
+			</li>
+			<li>
+				<a>登录</a>
+				<ul class="nav_detail">
+					<li>主页1</li>
+					<li>会员1</li>
+					<li>登录1</li>
+					<li>注册1</li>
+				</ul>
+			</li>
+			<li>
+				<a>注册</a>
+				<ul class="nav_detail">
+					<li>主页3</li>
+					<li>会员3</li>
+					<li>登录3</li>
+					<li>注册3</li>
+				</ul>
+			</li>
+		</ul>
+
+
+
+
+
+	</body>
+</html>
+<script>
+
+//	clearInterval(填定时器的名称);
+//	clearTimeout(填定时器的名称);
+
+	var nav=document.getElementsByClassName("nav")[0];
+	var speed=1;
+	var liHeight=60;
+
+	for(var i=0;i<nav.children.length;i++){
+		if(nav.children[i].children[0].nextElementSibling){
+			nav.children[i].children[0].onclick=function(){
+				if(this.nextElementSibling.style.height==liHeight*this.nextElementSibling.children.length+"px"){
+					var thats=this;
+					var xs=liHeight*thats.nextElementSibling.children.length;
+					var timers=window.setInterval(function(){
+						if(xs==0){
+							clearInterval(timers);
+						}else{
+							xs--;
+						}
+						thats.nextElementSibling.style.height=xs+"px";
+					},speed)
+				}else{
+					var that=this;
+					var x=0;
+					var timer=window.setInterval(function(){
+						if(x==liHeight*that.nextElementSibling.children.length){
+							clearInterval(timer);
+						}else{
+							x++;
+						}
+						that.nextElementSibling.style.height=x+"px";
+					},speed)
+				}
+			}
+		}
+	}
+
+
+
+//   1.定时器
+//
+//   JS中有两种定时器:
+//   循环定时器     单次定时器
+//
+//   setInterval(执行的函数,时间间隔)    setTimeout(执行的函数,时间间隔)
+
+//   var i=0;
+//   setInterval("xx()",400)
+//
+//   function  xx(){
+//   	if(i<=100){
+//   		console.log(i);
+//   	}
+//   	i++;
+//   }
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+

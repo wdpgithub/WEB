@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <input type="text"  v-model="msg">
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"hello world"
+            },
+            beforeCreate(){
+                //$el还没有挂载成功
+                //data还没有初始化完成
+                alert(this.$el)
+                alert(this.msg)
+            },
+            created(){
+                 //$el还没有挂载成功
+                //data已经初始化完成
+                alert(this.$el)
+                alert(this.msg)
+            },
+            berforeMount(){
+                //$el挂载成功
+                //data已经初始化完成
+                alert(this.$el)
+                alert(this.msg)
+            },
+            mounted(){
+                //$el挂载成功
+                //data已经初始化完成
+                //data里面的才会被渲染到页面里面去
+                //和window.onload相似
+                alert(this.$el)
+                alert(this.msg)
+            },
+            beforeUpdate(){
+                //用于数据更新触发
+                console.log('更新前')
+            },
+            updated(){
+                //用于数据更新触发
+                console.log("更新后");
+            },
+            beforeDestory(){
+                console.log("实例销毁之前");
+            },
+            destoryed(){
+                console.log("实例之后");
+            }
+
+
+        })
+    </script>
+</body>
+</html>

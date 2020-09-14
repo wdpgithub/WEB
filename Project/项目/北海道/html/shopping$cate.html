@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>美食篇</title>
+		<link type="text/css" href="../css/shopping$cate.css" rel="stylesheet" />
+		<script src="../js/jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="cate_box">
+			<div class="cate_bg">
+				<p style="padding-top: 250px;">北海道の美食篇</p>	
+			</div>
+			<p>当地特色美食</p>
+			<div class="range_box"></div>
+			<p>当地特产</p>
+			<div class="shopping_box"></div>
+		</div>
+		<div id="common"></div>
+		<div id="Footer"></div>
+	</body>
+	
+	<script type="text/javascript">
+		$(function(){
+			$("#header").load("header.html");
+			$("#common").load("public.html");
+			$("#Footer").load("footer.html");
+			$.get("../json/cate.json",function(data){
+				console.log(data);
+				for(var i = 0;i < data.cates.length;i++){
+					$("<div class='eat_box'><img src='"+data.cates[i].imgSrc+"' /><h1>"+data.cates[i].text1+"</h1><p>"+data.cates[i].text2+"</p></div>").appendTo(".range_box");
+				}
+				
+				
+				
+			})
+			
+			$.get("../json/goods.json",function(result){
+				console.log(result);
+				for(var i = 0;i < result.goods.length;i++){
+					$("<div class='buy_box'><img src='"+result.goods[i].imgSrc+"' /><h1>"+result.goods[i].text1+"</h1><p>"+result.goods[i].text2+"</p></div>").appendTo(".shopping_box");
+				}
+				
+				
+			})
+			
+			
+			
+			
+			
+			
+			
+			
+		})
+	</script>
+</html>

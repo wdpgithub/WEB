@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="myInput" name="">
+    <!-- <input type="text" value="请输入文字" name="" id="myInput"> -->
+</body>
+</html>
+<script type="text/javascript">
+    //1.onfocus    获取焦点
+    //2.onblur     失去焦点
+    //3.onchange   捕获改变
+    var myInput=document.getElementById("myInput");
+    myInput.style.border="1px solid blue";
+    myInput.onfocus=function(){
+        myInput.style.border="1px solid yellow";
+    }
+    myInput.onchange=function(){
+        myInput.style.border="1px solid blue";
+    }
+    myInput.onnblur=function(){
+        myInput.style.border="1px solid red";
+    }
+
+
+
+    // var myInput=document.getElementById("myInput");
+    // myInput.onblur=function(){
+    //     if (myInput.value=='') {
+    //         myInput.value="请输入文字";
+    //     };
+    // }
+    // myInput.onfocus=function(){
+    //     if (myInput.value=="请输入文字") {
+    //         myInput.value='';
+    //     };
+    // }
+
+
+</script>

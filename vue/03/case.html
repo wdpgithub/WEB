@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../vue.js"></script>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .header {
+            width: 100%;
+            height: 60px;
+            background-color: #b24e59;
+            color: white;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        .bigInp {
+            width: 80%;
+            height: 40px;
+            margin: 40px auto;
+            display: block;
+            border-radius: 10px;
+            outline: 0;
+            padding-left: 5px;
+        }
+
+        .wrap {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .list_left {
+            float: left;
+        }
+
+        .list_right {
+            float: right;
+        }
+
+        input[type=checkbox] {
+            position: relative;
+            top: 2px;
+        }
+
+        .add {
+            width: 80px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="header">头部</div>
+        <input type="text" class="bigInp" v-model="infor.msg" />
+        <list :haha="infor"></list>
+    </div>
+    <template id="list">
+        <div class="wrap">
+            <button class="add" @click="add">添加</button>
+            <ul>
+                <li v-for='(v,i) in arr'>
+                    <div class="list_left">
+                        <input type="checkbox" v-model="v.isTrue" />
+                        <span v-if="v.isShow">{{v.name}}</span>
+                        <input v-else type="text" v-model="v.name" />
+                    </div>
+                    <div class="list_right">
+                        <span @click="del(v,i)">删除</span>
+                        <span @click="modeify(v)">{{v.isModifiy?'确认':'编辑'}}</span>
+                    </div>
+                    <div style="clear:both;">
+
+                    </div>
+                    <li>
+            </ul>
+        </div>
+    </template>
+</body>
+
+</html>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            infor: {
+                msg: ''
+            }
+        },
+        components: {
+            list: {
+                template: '#list',
+                data() {
+                    return {
+                        arr: [{
+                                isTrue: false,
+                                isShow: true,
+                                name: '哈哈哈哈',
+                                isModifiy: false
+                            },
+                            {
+                                isTrue: false,
+                                isShow: true,
+                                name: '哈哈哈哈',
+                                isModifiy: false
+                            },
+                            {
+                                isTrue: false,
+                                isShow: true,
+                                name: '哈哈哈哈',
+                                isModifiy: false
+                            }
+                        ]
+                    }
+                },
+                methods: {
+                    modeify(v) {
+                        v.isModifiy = !v.isModifiy
+                        if (v.isModifiy == false) {
+                            v.isShow = true
+                        } else {
+                            v.isShow = false
+                        }
+                    },
+                    del(v, i) {
+                        if (v.isTrue == true) {
+                            this.arr.splice(i, 1)
+                        } else {
+                            alert('请选择后删除');
+                        }
+                    },
+                    add() {
+                        if (this.haha.msg == '') {
+                            alert('输入框不能为空')
+                        } else {
+                            var _this = this;
+                            var obj = {
+                                isTrue: false,
+                                isShow: true,
+                                name: _this.haha.msg,
+                                isModefiy: false
+                            }
+                            this.arr.push(obj);
+                            this.haha.msg = ''
+                        }
+                    }
+
+                },
+                props: ['haha']
+
+            }
+        }
+    })
+</script>

@@ -1,0 +1,108 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.cate_box{
+	width: 1180px;
+	height: 3830px;
+	margin: auto;
+}
+.cate_bg{
+	width: 100%;
+	height: 400px;
+	background: url(../images/food/xzgc-eat3.jpg);
+	background-size:cover;
+	margin:auto;
+}
+.cate_bg p{
+	color: white;
+	font-size: 30px;
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+	letter-spacing: 2px;
+}
+.cate_box .range_box{
+	width: 100%;
+	height: 1355px;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+.cate_box .range_box .eat_box{
+	width: 370px;
+	height: 360px;
+	border: 1px solid rgb(231,231,231);
+	overflow: hidden;
+	float: left;
+	margin: 30px 20px 0 0;
+	cursor: pointer;
+	border-radius: 5%;
+}
+.cate_box .range_box .eat_box:hover{
+	box-shadow: 3px 3px 3px pink;
+}
+.cate_box .shopping_box .buy_box:hover{
+	box-shadow: 3px 3px 3px pink;
+}
+.cate_box .range_box .eat_box img{
+	width: 100%;
+	height: 210px;
+}
+.cate_box .range_box .eat_box h1{
+	color: rgb(64,64,64);
+	font-weight: normal;
+	font-size: 22px;
+	text-align: center;
+	padding-top: 12px;
+	line-height: 8px;
+}
+.cate_box .range_box .eat_box p{
+	color: rgb(51,51,51);
+	font-size: 14px;
+	text-align: center;
+	line-height: 35px;
+}
+.cate_box>p{
+	text-align: center;
+	font-size: 30px;
+	color: rgb(51,51,51);
+	height: 100px;
+	line-height: 125px;
+	border-bottom: 2px solid rgb(228,228,228);
+	margin-bottom:40px;
+}
+.cate_box .shopping_box{
+	width: 100%;
+	height: 1770px;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+.cate_box .shopping_box .buy_box{
+	width: 370px;
+	height: 410px;
+	border: 1px solid rgb(231,231,231);
+	overflow: hidden;
+	float: left;
+	margin: 30px 20px 0 0;
+	border-radius: 5%;
+}
+.cate_box .shopping_box .buy_box img{
+	width: 370px;
+	height: 280px;
+}
+.cate_box .shopping_box .buy_box h1{
+	color: rgb(64,64,64);
+	font-weight: normal;
+	font-size: 22px;
+	text-align: center;
+	line-height: 38px;
+	padding-top: 15px;
+}
+.cate_box .shopping_box .buy_box p{
+	color: rgb(51,51,51);
+	font-size: 14px;
+	text-align: center;
+	line-height: 2px;
+}

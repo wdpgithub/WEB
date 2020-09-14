@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <bor1 @help='getMessage'></bor1>
+        <bor2 :msg2='msg'></bor2>
+    </div>
+    <template id="bor1">
+        <div>
+            <button @click="sendMessage">点击</button>
+        </div>
+    </template>
+    <template id="bor2">
+        <div>
+            <p>弟弟接收的数据:{{msg2}}</p>
+        </div>
+    </template>
+
+    <script type="text/javascript">
+        new Vue({
+            el:"#app",
+            data:{
+                msg:""
+            },
+            methods:{
+                getMessage(val){
+                    this.msg=val
+                }
+            },
+            components:{
+                bor1:{
+                    template:'#bor1',
+                    data(){
+                        return {
+                            msg1:"hello world"
+                        }
+                    },
+                    methods:{
+                        sendMessage(){
+                            this.$emit('help',this.msg1)
+                        }
+                    }
+                },
+                bor2:{
+                    template:'#bor2',
+                    props:['msg2']
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>

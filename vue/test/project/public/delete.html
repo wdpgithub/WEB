@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click='del'>批量删除</button>
+        <ul>
+            <li v-for="v in arr">
+                <input type="checkbox" v-model="v.isTrue" />{{v.name}}</li>
+        </ul>
+        <p>{{selectedPart}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                arr: ''
+            },
+            methods: {
+                getData() {
+                    var _this = this
+                    $.ajax({
+                        type: 'get',
+                        url: '/node/find',
+                        success: function (data) {
+                            _this.arr = data
+                        }
+                    })
+                },
+                del() {
+                    var _this = this
+                    $.ajax({
+                        type: 'post',
+                        url: "/node/del",
+                        data: {
+                            infor: JSON.stringify(_this.selectedPart)
+                        },
+                        success: function (data) {
+                            alert(data)
+                            _this.getData()
+                        }
+                    })
+                }
+            },
+            mounted() {
+                this.getData()
+            },
+            computed: {
+                selectedPart() {
+                    var data = []
+                    for (var i = 0; i < this.arr.length; i++) {
+                        if (this.arr[i].isTrue == true) {
+                            var selector = {}
+                            selector.name = this.arr[i].name
+                            data.push(selector)
+                        }
+                    }
+                    return data
+                }
+            }
+        })
+    </script>
+</body>
+<style>
+*{
+    color: aliceblue
+}
+</style>
+
+</html>

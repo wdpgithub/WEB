@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<style type="text/css">
+#tbox{ position:fixed; left:0px !important; top:0px !important; width:900px; height:30px; background-color:#333; color:#fff;}
+#tbox a{ float:left; margin-left:20px; background-color:red; display:inline-block; width:100px;}
+</style>
+</head>
+
+<body>
+<div class="row" id="main">
+  <h2 id="index_1">新年快乐</h2> 
+  <div class="mainpage mainpage1" style="height: 650px; background: red;"></div>
+</div>
+<div class="row">
+  <h2 id="index_2">圣延快乐</h2>
+  <div class="mainpage mainpage2" style="height: 650px; background: rosybrown;"></div>  
+</div>
+<div class="row">
+  <h2 id="index_3">时钟2014</h2>
+  <div class="mainpage mainpage3" style="height: 650px;background: rosybrown;"></div>
+</div>
+<div class="row">
+  <h2 id="index_4">时髦的圣诞老人</h2>
+  <div class="mainpage mainpage4" style="height: 650px;background: rosybrown;"></div>
+</div>
+<div class="row">
+  <h2 id="index_5">好大的礼物</h2>
+  <div class="mainpage mainpage5" style="height: 650px;background: rosybrown;"></div>
+</div>
+
+<div id="tbox"><!-- 这个必须有  id="tbox"-->
+    <a class="taoba" href="javascript:void(0)" title="1">1</a>
+    <!--javascript:void(0)为了让a点了，不到头部去-->
+    <a class="taoba" href="javascript:void(0)" title="2">2</a>
+    <a class="taoba" href="javascript:void(0)" title="3">3</a>
+    <a class="taoba" href="javascript:void(0)" title="4">4</a>
+    <a class="taoba" href="javascript:void(0)" title="5">5</a>
+    <a id="gotop" href="javascript:void(0)" title="回到顶部">回到顶部</a> <!-- 这个也是id="gotop"  -->
+</div>
+</body>
+<script>
+$(function($) {//$可以去除，但是没法形成闭包了，加了就只在这里面的变量才能互相读取
+   $(".index_nav li a").click(function(event) { //绑定按钮的单击事件  event是火狐等兼容性代码
+      var index=this.title //取得点击按钮的title属性，这里就是按钮的数字
+      var id='#index_'+index //取得需要跳转到的DIV的ID
+     $("html,body").animate({scrollTop: $(id).offset().top}, 1000); //一秒跳转到该ID的位置
+   });
+   $(".taoba").click(function(event) { //含义同上
+      var index=this.title
+      var id='#'+'index_'+index
+     $("html,body").animate({scrollTop: $(id).offset().top}, 1000);
+   });
+   function a(x,y){
+    l = $('#main').offset().left;
+    w = $('#main').width();
+    $('#tbox').css('left',(l + w + x) + 'px');
+    $('#tbox').css('bottom',y + 'px');
+  
+}//获取#tbox的div距浏览器底部和页面内容区域右侧的距离函数#main为页面的可视宽度
+  
+$(function() {  
+    $(window).scroll(function(){
+    t = $(document).scrollTop();
+  
+//    if(t>50){//显示或隐藏数字按钮
+//      $('#tbox').show();
+//    }else{
+//      $('#tbox').hide();
+//    }
+//    if(t > 50){ //显示或隐藏GOTOP按钮
+//        $('#gotop').fadeIn('slow');
+//    }else{
+//        $('#gotop').fadeOut('slow');
+//    }       
+})   
+  
+    a(10,100);//#tbox的div出现在的位置
+  
+    $('#gotop').click(function(){ 
+        $('body,html').animate({
+            scrollTop: 0
+        },
+        800);//点击回到顶部按钮，缓懂回到顶部,数字越小越快
+        return false;  
+    })
+});
+});
+</script>
+</html>

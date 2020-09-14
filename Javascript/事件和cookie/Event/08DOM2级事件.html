@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #outer{width: 200px;height: 200px;background:red;}
+        #inner{width: 100px;height: 100px;background:blue;}
+    </style>
+    <script type="text/javascript">
+    /*
+    DOM二级事件处理程序
+            添加事件监听器:addEventListener(事件名,处理函数,布尔值)
+            移除事件监听器:removeEventListener(事件名,处理函数)
+        IE下的事件监听器:attachEvent(事件名,处理函数)
+                    detachEvent(事件名,处理函数)
+     */
+    //布尔值(true表示在捕获阶段调用处理函数.fasle跳过捕获阶段在冒泡阶段调用)
+
+   /* <1>、事件捕获阶段，即由最顶层元素（一般是从window元素开始，有的浏览器是从document开始，至于其中的差别我稍后会更新）开始，逐次进入dom内部，最后到达目标元素，依次执行绑定在其上的事件
+    <2>、处于目标阶段，检测机制到达目标元素，按事件注册顺序执行绑定在目标元素上的事件。
+    <3>、事件冒泡阶段，从目标元素出发，向外层元素冒泡，最后到达顶层（window或document），依次执行绑定再其上的事件。*/
+    </script>
+</head>
+<body>
+     <div id="outer">
+        <div id="inner"></div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var outer = document.getElementById("outer");
+    var inner = document.getElementById("inner");
+    //添加普通事件    假如添加两个事件的话;后一个事件会覆盖前一个事件
+    // outer.onclick = foo;
+    // outer.onclick = bar;
+    //移除普通事件
+    //outer.onclick = null;
+
+
+
+    //添加DOM二级事件监听器
+    // inner.addEventListener("click",baz,true);
+    // outer.addEventListener("click",foo,true);
+    //outer.addEventListener("click",bar,false);
+    //移除事件监听器
+    /*removeEventListener("click",foo);
+    removeEventListener("click",bar);*/
+
+    //IE下的事件监听器
+    //添加
+    // outer.attachEvent("onclick", foo);
+    //移除
+    //outer.detachEvent("onclick", foo);
+
+    function foo(){
+        console.log("outer1");
+    }
+    function bar(){
+        console.log("outer2");
+    }
+    function baz(){
+        console.log("inner");
+    }
+
+    function addEvent(obj,type,fun){
+        if (obj.addEventListener) {
+            obj.addEventListener(type,fun,false);
+        }else{
+            obj.attachEvent("on"+type, fun);
+        }
+    }
+    function removeEvent(obj,type,fun){
+        if (obj.removeEventListener) {
+            obj.removeEventListener(type,fun,false);
+        }else{
+            obj.detachEvent("on"+type, fun);
+        }
+    }
+    addEvent(outer,"click",foo);
+    removeEvent(outer,"click",foo);
+</script>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{ margin: 0; padding: 0; list-style: none;}
+		.main {
+			width: 800px;
+			height: 1200px;
+			margin: auto;
+			line-height: 900px;
+			font-size: 100px;
+			text-align: center;
+			color: #fff;
+		}
+		
+		.red {
+			background: red;
+		}
+		
+		.blue {
+			background: blue;
+		}
+		
+		.fixed {
+			position: fixed;
+			bottom: 300px;
+			width: 100px;
+			z-index: 90;
+			text-align: center;
+			left: 50%;
+			margin-left: -520px;
+		}
+		
+		.fixed p,.fixed ul li {
+			background: #333;
+			color: #fff;
+			line-height: 40px;
+			font-size: 30px;
+			cursor: pointer;
+		}
+		.fixed ul li.active{
+			background: red;
+		}
+		
+		.fixed p.active {
+			background: red;
+		}
+	</style>
+
+	<body>
+		<div class="fixed">
+			<ul>
+				<li onclick="gofloor(1)" class="active">1</li>
+				<li onclick="gofloor(2)" >2</li>
+				<li onclick="gofloor(3)" >3</li>
+				<li onclick="gofloor(4)" >4</li>
+				<li onclick="gofloor(5)" >5</li>
+				<li onclick="gofloor(6)" >6</li>
+				<li onclick="gofloor(7)" >7</li>
+				<li onclick="gofloor(8)" >8</li>
+			</ul>
+			<p id="gototop">top</p>
+		</div>
+		<div class="main red">
+1
+		</div>
+		<div class="main blue">
+2
+		</div>
+		<div class="main red">
+3
+		</div>
+		<div class="main blue">
+4
+		</div>
+		<div class="main red">
+5
+		</div>
+		<div class="main blue">
+6
+		</div>
+		<div class="main red">
+7
+		</div>
+		<div class="main blue">
+8
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/indemode.js"></script>
+
+</html>

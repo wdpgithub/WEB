@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery</title>
+		<!--引用外部js方法-->
+		<script src="jquery-1.7.1.min.js"></script>
+		<script src="js.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--恭喜大家逃离js的地狱，来到jquery的天堂-->
+
+
+		<style type="text/css">
+			#box {
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+		<button id="btn">点击收起/展开</button>
+		<div id="box"></div>
+
+		<!--jQuery 是一个 JavaScript 凼数库。
+		函数库：第三方把一些常用的js方法，封装好了以后直接拿来用
+		极大地简化了 JavaScript 编程。
+		在页面中，head部分先引入js文件。
+		
+		jquery函数库，主要封装的是一些DOM操作的方法，控制文档中元素的显示/隐藏/动画等效果。
+		DOM：节点：元素节点、属性节点、文本节点
+		不能完全依赖jquery实现所有效果，比如 if() for()等ECMAScript的内容-->
+
+		<!--//原生JS的写法
+		window.onload = function(){
+			//当文档加载完成后执行
+		}
+		
+		//jquery的写法
+		$(function(){
+			//当文档加载完成后执行
+		})
+		
+		jquery的语法
+		
+		原生JS操作DOM
+		document.getElementById("lalala").innerText
+		
+		jQuery操作DOM
+		$("#lalala").slideToggle()
+		       选择器      对选中的DOM的操作
+		       
+		
+		jquery选择器
+		$("#lalala")  支持所有的CSS选择器-->
+
+		<!--<div id="box1">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+			<div>10</div>
+		</div>
+		<input type="text" name="" id="" value="111" />
+		<input type="button" name="" id="" value="111" />
+		<script type="text/javascript">
+			console.log($("#box1 div:first-child,#box1 div:last-child"))
+			console.log($("input[type='button']"))
+		</script>-->
+
+		<!--<style type="text/css">
+			#box1 div:first-child,
+			#box1 div:last-child {
+				background: green;
+			}
+		</style>-->
+
+		<!--jQuery事件 原生事件，减去一个on-->
+		<button class="btn2">点击事件</button>
+		<button id="btn3">移入事件</button>
+		<button id="btn4">移出事件</button>
+		<button id="btn5">移动事件</button>
+		<button id="btn6">移入移出事件</button>
+		<div class="text"></div>
+		<div class="html_div"></div>
+		<script type="text/javascript">
+			$(".btn2").click(function() {
+				$(".text").html("<font style='color:red'>点击事件</font>")
+			})
+			$("#btn3").mouseover(function() {
+				$(".text").html("移入事件")
+			})
+			$("#btn4").mouseout(function() {
+				$(".text").html("移出事件")
+			})
+			$("#btn5").mousemove(function(e) {
+				//var e = e || window.event  jQuery修复了这个兼容性问题
+				$(".text").html("移动事件" + e.offsetX + "," + e.offsetY)
+			})
+			//移入移出事件，原生中是两个事件，jquery整合到了一起
+//			$("#btn6").hover(function() {
+//				//移入的时候
+//				console.log("鼠标移入")
+//				//this在原生DOM事件中代表调用的DOM本身
+//				$(this).css("background", "red")
+//			}, function() {
+//				//移出的时候
+//				console.log("鼠标移出")
+//				$(this).css("background", "green")
+//			})
+			$("选择器").hover(function(){
+				//hover的移入
+			},function(){
+				//hover的移出
+			})
+			
+		</script>
+
+		<!--
+		1. jQuery的引入 
+		2. jQuery选择器的写法 $("CSS选择器")  jQuery ("CSS选择器")
+		3. jQuery事件的写法 $("CSS选择器").click(function(){}) 
+		4. hover事件，里面写两个function，中间用逗号,隔开 
+		5. $(this)，指向调用方法的DOM对象 
+		6. 如果代码写在head部分，要在外面套一个$(function(){}) 
+		作业1： 写一下各种事件（鼠标事件、键盘事件、表单事件）的jquery写法 
+		鼠标事件：单击、双击、移入、移出、hover、移动（返回鼠标位置） 
+		键盘事件：按下（返回键码） 
+		表单事件：获得焦点、失去焦点、改变值-->
+
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+	</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        document.getElementsByName()
+
+        参数:name的值
+        返回值:装有符合条件的于元素节点
+
+        [注]name属性一般情况下,只有文本输入框的元素节点才有
+
+     */
+    window.onload = function(){
+        var nodes = document.getElementsByName("hello");
+
+        alert(node.length);//object NodeList
+/*
+        var oDiv = document.getElementById("div1");
+        var nodes = oDiv.getElementsByName("hello");*/
+    }
+    </script>
+</head>
+<body>
+    <div name="hello"></div>
+    <span name="hello"></span>
+    <input name="hello">
+    <div id="div1">
+        <span name="hello"></span>
+    </div>
+
+</body>
+</html>

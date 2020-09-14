@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="msg1"/>
+        <input type="text" v-model="msg2"/>
+        <p>{{result}}</p>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el:"#app",
+            data:{
+                msg1:0,
+                msg2:0
+            },
+            computed:{
+                result(){
+                    return this.msg1*this.msg2
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+    </style>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div :style="myStyle">
+            <div :style="{width:'200px',height:'200px',position:'absolute',background:color}"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    new Vue({
+        el:"#app",
+        data:{
+            myStyle:{
+                width:window.innerWidth+"px",
+                height:window.innerHeight +"px",
+                background:"red",
+                position:"relative"
+            },
+            color:"yellow"
+        }
+    })
+</script>

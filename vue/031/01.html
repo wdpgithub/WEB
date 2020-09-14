@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js" type="text/javascript"></script>
+</head>
+<body>
+<div id='app'>
+    <com></com>
+    <com2></com2>
+</div>
+<template id="box">
+    <div>
+        <p>{{msg}}</p>
+    </div>
+</template>
+<template id="box2">
+    <div>
+        <p>{{msg1}}</p>
+    </div>
+</template>
+<script type="text/javascript">
+var a=Vue.extend({
+    template:'#box',
+    data(){
+        return {
+            msg:'hello world'
+        }
+    }
+})
+var b={
+    template:'#box2',
+    data(){
+        return {
+            msg1:'哈哈哈哈'
+        }
+    }
+}
+Vue.component('com',a)
+Vue.component('com2',b)
+    new Vue({
+        el:'#app',
+
+    })
+</script>
+</body>
+</html>

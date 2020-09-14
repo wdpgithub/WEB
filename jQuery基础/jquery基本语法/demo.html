@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{ }
+			*{margin: 0; padding: 0; list-style: none;
+				
+			}
+			
+			.demo01{
+				width: 200px;
+				height: 240px;
+				line-height: 40px;
+				background: yellow;
+			/*	position: relative;*/
+				/*overflow: hidden;*/
+			}
+			.demo02{
+				width: 60px;
+				height: 60px;
+				background: red;
+				position: absolute;
+				z-index: 2;
+				display: none;
+				
+			}
+			body{
+				cursor:url('cur.ico'),auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="demo01">demo01
+			<div class="demo02">02</div>
+		</div>
+		
+		<button class="btn">btn</button>
+		<input type="text" class="wangnoin" />
+		<span class="text">text</span>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+//		$("body").mousemove(function(e){
+////			$(this).text("x:"+e.pageX+"y:"+e.pageY)
+//$(".demo02").css("display","block")
+//			$(".demo02").css("left",e.pageX)
+//			$(".demo02").css("top",e.pageY)
+//		})
+		var html=""
+		$('.wangnoin').keyup(function(e){
+			console.log(e)
+			var texr = $(this).val()
+			if(e.key == "Enter"){
+				html+=texr
+				$(".text").text(html)
+				$(this).val(" ")
+			}
+			
+		})
+	</script>
+</html>

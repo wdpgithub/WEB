@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        //Person 对象
+        function  Person(name , age){//构造函数(constructor)
+            this.name = 'xiao2';
+            this.age = age;
+            this.sayHello = function(){
+                alert(this.name);
+            }
+        }
+        /*Person.prototype.sayHello = function(){//方法放在原型上
+            alert(this.name);
+        }*/
+
+
+        // 问题：不方便复用
+
+
+    //构造函数调用所经历的步骤
+        //1.创建一个对象   __proto__
+        //2.this指针指向这个对象(将构造函数的作用域赋给这个对象)
+        //3.执行构造函数内的代码(为这个对象添加属性)
+        //4.待构造函数返回
+        var p = new Person();//调用构造函数  new表达式是配合构造函数使用的
+
+
+         function Student(name, age, id){
+            Person.apply(this,[name, age])//类的继承 this指向子类   父类的this代表子类
+            // Person.call(this,name,age);
+            this.id = 'xiaoR';
+
+            this.study = function(){
+                alert(this.id + 'is learning');
+            }
+         }
+
+         var  s= new Student();
+         s.study();
+         //apply  call
+         var p2 = {name:'xiao2'};
+         Person.apply(p2)//person里的this指针指向p2
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        div{width: 200px;height: 200px;background-color:black;opacity: 1;top: 0;left:0;position: absolute;}
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script src="animate.js"></script>
+<script type="text/javascript">
+    var div = document.querySelector('div');
+    animate(div,{
+        height:500,
+        left:300,
+        top:300,
+        opacity:30
+
+    })
+</script>

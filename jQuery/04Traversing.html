@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <ul class="list">
+            <li class="item">
+                <p>1</p>
+            </li>
+            <li class="item">
+                <p>2</p>
+            </li>
+            <li class="item">
+                <p>3</p>
+            </li>
+            <li class="item">
+                <p>4</p>
+            </li>
+            <li class="item">
+                <p>5</p>
+            </li>
+        </ul>
+    </div>
+    <script src="jquery3.3.1.js"></script>
+    <script type="text/javascript">
+        var $li2 = $('li:eq(1)')
+        $li2.children().css('bcakground','red')
+        $li2.parent().css('color','red')
+        $li2.parents('div#container').append('<h2>新元素</h2>')
+
+        $('#container').find('p.vip').css({
+            background:'black',
+            color:'white'
+        })
+        $li2.next().css({fontSize:'25px'})
+        $li2.prev().css({fontSize:'50px'})
+
+
+        $li2.siblings().css('fontWeight','bold')
+    </script>
+</body>
+</html>

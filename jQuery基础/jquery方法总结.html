@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery方法总结</title>
+	</head>
+	<body>
+		1. 当页面加载完成后执行
+		$(function(){
+			
+		})
+		
+		2. 选择DOM
+		$("CSS选择器")
+		
+		3. 控制元素显示和隐藏
+		show() hide() toggle()
+		slideDown() slideUp() slideToggle()
+		fadeIn() fadeOut() fadeToggle() fadeTo()
+		语法：show(1000,function(){})
+				 动画时间    callback函数（回调函数）
+			  fadeTo(1000,0.5,function(){})
+		
+		4. 获取和设置DOM属性
+		attr() 获取和设置标签的属性，一个参数获取，两个参数设置
+									attr("type","password")
+		width() 获取和设置元素的宽，没有参数获取，一个参数设置
+		height()              高
+		html()               内部代码
+		text()               内部文字
+		val()                value属性
+		
+		css() 设置元素的CSS样式
+		语法1：.css("color","#f00")
+		语法2：.css({"color":"#f00","font-size":"20px"})
+		
+		offset() 获取元素到页面左上角的距离，返回一个对象
+					offset().top    offset().left
+		position() 获取元素到有定位属性的父元素的距离，返回一个对象
+					position().top    position().left
+		
+		addClass()  	给元素添加class类
+		removeClass() 	给元素删除class类
+		toggleClass() 	给元素切换class类（原来有，变成没有，原来没有变成有）
+		
+		
+		5. 动画
+		animate() 给元素添加动画，只有某些css属性支持动画效果
+		
+		语法：.animate({"width":"200px","height":"200px"},1000,function(){})
+						CSS样式 							动画时间     回调函数
+		scrollTop，只能在jquery里用，控制页面滚动的位置
+		
+		stop()，停止当前元素的动画，防止出现怼啊怼的效果
+		.stop().animate()
+		
+		delay()，延时动画，让后面的动画等待多久以后才执行
+		底累
+		
+		6. 元素的筛选
+		.eq() 		选择第几个某元素（从0开始数）
+		.first() 	选择第一个某元素
+		.last() 	选择最后一个某元素
+		.filter() 	选择符合筛选器的元素
+		.not() 		选择不符合筛选器的元素
+		
+		.index() 	获取元素在父元素的第几个位置（从0开始数）
+		
+		
+		7. 元素的节点关系
+		父节点
+		parent 			返回父元素
+		parents 		返回所有父元素
+		parentUntil 	从本身的父元素，到括号里写的为止，中间的父元素
+		
+		子节点
+		children 		返回子元素（不包含后代），括号里写筛选器，可以不屑
+		find  			返回子元素（包含后代），括号里写筛选器，必须要写
+		
+		兄弟节点
+		siblings() 		返回不包含本身的所有兄弟元素
+		next() 			返回下一个兄弟节点
+		prev() 			返回上一个兄弟节点
+		nextAll() 		返回后面所有的兄弟节点
+		prevAll()  		返回前面所有的兄弟节点
+		nextUntil() 	返回后面的兄弟节点，直到括号里写的筛选器（不包含）
+		prevUntil() 	返回下一个兄弟节点
+		
+		
+		8. 元素的添加和删除
+		
+		appendTo  	把元素插入到某元素的最后（会删除原来的元素）（插入子元素）
+		prependTo 	把元素插入到某元素的最前面
+		
+		append 		在元素内部最后面插入什么
+		prepend 	在元素内部最前面插入什么
+		
+		after 		在元素本身的后面插入什么（插入兄弟元素）
+		before 		在元素本身的前面插入什么
+		
+		remove 		删除元素
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,29 @@
+/* pages/qicai/qicai.wxss */
+.qc{
+  width: 90%;
+  height: 350rpx;
+  border: 1px solid #F3F3F3;
+  display: flex;
+  vertical-align: top;
+  margin:20rpx auto;
+}
+.qc image{
+  width: 40%;
+  height:300rpx; 
+  float: left;
+  margin-top: 20rpx;
+}
+.det_box{
+  float: left;
+  width: 50%;
+}
+.blo{
+  display: block;
+  margin-left: 20rpx;
+}
+.tit{
+  margin: 20rpx 0 20rpx 20rpx;
+}
+.det{
+  font-size: 25rpx;
+}

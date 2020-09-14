@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+    /*
+        浏览器的默认行为
+
+        javascript事件本身所具有的属性.例如a标签的跳转,submit按钮的提交,右键菜单,文本框的输入等
+
+        阻止默认行为的方式
+        <1>event.preventDefault();
+        <2>event.returnValue = false;
+        <3>return fasle;
+     */
+    </script>
+</head>
+<body>
+    <a href="">test</a>
+    <form action="">
+        <input type="text" name="">
+        <input type="submit" value="提交" name="">
+    </form>
+</body>
+</html>
+<script type="text/javascript">
+    var oForm = document.getElementsByTagName("form")[0];
+    var aInput = document.getElementsByTagName("input");
+    var oLink = document.getElementsByTagName("a")[0];
+    oLink.onclick = function(e){
+        var evt = e || event;
+        console.log("aaa");
+       // event.preventDefault();
+        event.returnValue = false;
+        // return fasle;
+    }
+    oForm.onsubmit = function(){//阻止submit按钮的提交
+        console.log("bbb");
+        return false;
+    }
+    aInput[0].onkeydown = function(){//阻止文本框的输入
+       return false;
+    }
+    document.oncontextmenu = function(){//阻止右键菜单
+        // return false;
+        console.log("ddd");
+    }
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box01{
+				width: 100px;height: 100px;background: red; 
+				
+			}
+			.box02{
+				width: 100px;height: 100px;background: red; 
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box01">
+			box01
+		</div>
+		
+		<input type="text" id="ino01"  />
+		<input type="radio" />
+		<input type="file" />
+		<span class="text">点我</span>
+		<button id="btn01">show()</button>
+		
+		<div class="box02">
+			box02
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+			$("#btn01").click(function(){
+				$(".box01").fadeTo(1000, 0.5)
+			})
+			
+			$(".text").click(function(){
+				$("#ino01").attr("type","file")
+				
+			})
+			var width= 200
+			var height=100
+			$(".box02").click(function(){
+				$(this).css({
+					"background":"black",
+					"width":width,
+					"height":height,
+					"color":"white",
+				})
+				console.log( typeof(  $(this).height()  )  )
+				
+			})
+		})
+	</script>
+</html>

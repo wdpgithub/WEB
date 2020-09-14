@@ -1,0 +1,10 @@
+<input type="text"   [(ngModel)]="message"  (keyup)="keyt($event)"/>
+
+<input type="text" (keyup)="jp($event)" [(ngModel)]="message01"/>
+
+<!-- <h1>{{message}}</h1> -->
+<ul>
+  <li *ngFor="let item of messagarr">
+    {{item}}
+  </li>
+</ul>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        body{overflow:hidden;}
+        div{width:100px;height: 100px;background:black;position: absolute;left:0;right: 0;}
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script type="text/javascript">
+    var speedX = 5;
+    var speedY = 7;
+    var div = document.querySelector('div');
+    //移动
+     function move(){
+        var currentLeft = parseInt(window.getComputedStyle(div).left);
+        var curentTop = parseInt(window.getComputedStyle(div).top);
+        check_border_conllison(div);
+        var left = currentLeft + speedX;
+        var top = curentTop + speedY;
+
+        div.style.left = left + 'px';
+        div.style.top = top + 'px';
+     }
+     setInterval(function(){
+        move()
+     },20);
+
+//碰撞
+function check_border_conllison(el){
+        console.log(el);
+    var style = window.getComputedStyle(el);
+    var left = parseInt(style.left);
+    var top = parseInt(style.top);
+    var w = parseInt(style.width);
+    var h = parseInt(style.height);
+    if(left < 0){
+        left = 0;
+        speedX*=-1;
+    }
+    if (left > window.innerWidth-w) {
+        left = window.innerWidth-w;
+        speedX*=-1;
+    };
+    if (top < 0) {
+        top = 0;
+        speedY *= -1;
+    };
+    if (top > window.innerHeight-h) {
+        top = window.innerHeight-h;
+        speedY *= -1;
+    };
+    el.style.top = top + 'px';
+    el.style.left = left +'px';
+}
+
+
+
+
+</script>

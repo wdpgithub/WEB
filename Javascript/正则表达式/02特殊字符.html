@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        //.除了换行符之外的所有单个字符
+        var reg = /g..gle/gi;
+        var str = "googleg--gle";
+        console.log(reg.test(str));
+        console.log(str.match(reg));
+        //*重复多次匹配,匹配任意次(0-n);
+         var reg = /g*gle/gi;
+         var str = "gggle";
+         console.log(reg.test(str),str.match(reg));
+         //+至少有一次重复匹配
+        var reg = /g+gle/gi;
+        var str = "gggle";
+         console.log(reg.test(str),str.match(reg));
+         //?进行0或者1次匹配
+        var reg = /g?gle/gi;
+         var str = "ggle";
+         console.log(reg.test(str),str.match(reg));
+         //[]表示可以出现的范围[0-9]等
+        var reg = /[a-z]/gi;
+         var str = "abc1";
+         console.log(reg.test(str),str.match(reg));
+         //\w数字字母下划线等同于[0-9a-zA-Z_] \W 非数字字母下划线
+        var reg = /\w/gi;
+        var str = "abc13";
+        console.log(reg.test(str),str.match(reg));
+        //\d 表示数字[0-9] \D 非数字
+        var reg = /\d+/gi;
+        var str = "1234abc";
+        console.log(reg.test(str),str.match(reg));
+        //\s 匹配空格
+        var reg = /\s+/gi;
+        var str = "good good   study!";
+        console.log(str.replace(reg,""));
+        //{m,n}//至少匹配m次,至多匹配n次
+        var reg = /go{3,6}gle/gi;
+        var str = "goooogle";
+        console.log(reg.test(str),str.match(reg));
+        // /^ 匹配开始 $/匹配结尾
+        var reg = /^g.+g$/gi;
+        var str = "gooogleg";
+        console.log(reg.test(str),str.match(reg));
+        // | 或
+        var reg = /google|baidu|bing|yaodao/gi;
+        var str = "www.baidu.com";
+        console.log(reg.test(str),str.match(reg));
+        // () 分组将内容作为一个整体进行匹配
+        var reg = /(google){4,6}/gi;
+        var str =  "googleaaagooglegooglegooglegoogle";
+        console.log(reg.test(str),str.match(reg));
+        console.log(RegExp.$1);
+        //$1 $2
+        var reg = /(.*)\s(.*)/;
+        var str = "taobao baidu";
+        console.log(str.replace(reg,"$2 $1"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

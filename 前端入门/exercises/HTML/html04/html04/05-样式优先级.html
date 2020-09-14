@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	
+	<style type="text/css">
+		/*内部   蓝色*/
+		.box2{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+	</style>
+	
+	<!--box2 外部 黄色-->
+	<link rel="stylesheet" type="text/css" href="css/waibu.css"/>
+	
+</head>
+<body>
+	
+	<!--
+		优先级别最高:行内!
+	-->
+	
+	<div class="box1" style="width: 100px;height: 100px;background-color: red;"></div>
+	
+	
+	<div class="box2"></div>
+</body>
+</html>

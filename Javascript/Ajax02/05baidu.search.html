@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+<input type="text" name="">
+<ul></ul>
+</body>
+</html>
+<script src="jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+    function Gate(date){
+        var script = document.querySelector('#jsonp');
+        script.parentNode.removeChild(script);
+        $('ul').html('');
+        for(var i = 0; i <date.s.length; i++){
+            $('<li>'+date.s[i]+'</li>').appendTo("ul")
+        }
+     }
+    function Gatelist(wd){
+         var script = document.createElement('script');
+         script.id = 'jsonp';
+         script.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?cb=Gate&wd=' +wd;
+         document.body.appendChild(script);
+     }
+     $('input').keyup(function(){
+        var wd = $(this).val();
+        Gatelist(wd);
+     });
+</script>

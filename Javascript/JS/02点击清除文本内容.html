@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload=function(){
+            var oBtn=document.getElementById("btn");
+            var oTxt=document.getElementById("txt");
+
+            oTxt.value是字符串要减0
+
+            //给按钮添加事件驱动函数
+            oBtn.onclick=function(){
+                //要将文本中内容清空
+                //oTxt.value="";
+
+                // 输出文本中的内容
+                alert(oTxt.value);
+                //修改文本中的内容
+                oTxt.value="修改后的内容"
+
+            }
+    }
+    </script>
+</head>
+<body>
+    <input type="text" value="默认的文字"  id="txt" name="">
+    <input type="button" value="清空"  id="btn" name="">
+
+</body>
+</html>

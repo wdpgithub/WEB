@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<!--
+		使用属性丰富标签效果!
+		属性: 表示对象(人/物体) 的名词或形容词的介绍!
+		人: 身高,体重,年龄,性别....
+		网页中: 可以把标签当成一个物体/对象,标签也有自己名词或形容词介绍(属性)
+		  比如: 宽,高,边框,背景色,颜色,对齐方式,浮动,外间距,内间距
+		       width, height,border,backgroun-color,align/text-align,float,margin,padding
+		 
+		添加属性控制效果:
+		<起始标签   属性1="值1"  属性2="值2" ...></结束标签>
+		万能方案: 样式关键字 style
+		<起始标签   style="属性:值;属性:值;.."></结束标签>
+	-->
+	<img src="img/img1.jpg" width="100px" height="100px"/>
+	<img src="img/img1.jpg" style="width: 100px;height: 100px;"/><br />
+	
+	<!--
+		属性直接添加在标签中,适用范围小!
+	-->
+	<h1 color="red" align="center">静夜思</h1>
+	<img src="img/img1.jpg" align="center"/>
+	<p color="red">段落</p>
+	<hr color="red" />
+	
+	<!-- 万能: 添加css样式!!  行内样式/内联样式! 缺点: 只对当前标签有效!!!  -->
+	<h1 style="color:red;text-align: center;">静夜思1</h1>
+	<h1>静夜思2</h1>
+
+
+	<div id=""><h1>静夜思</h1><p>aaaaaaaaaaaaaa</p><p>aaaaaaaaaaaaaa</p><div >
+				<h2>aaa</h2>
+		</div>
+	</div>
+
+</body>
+</html>

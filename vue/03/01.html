@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <he></he>
+        <ha></ha>
+    </div>
+    <script type="text/javascript">
+        //全局注册的可以供各个实例去使用
+        //创建组件
+        var a = Vue.extend({ //1.0版本
+            template: `<p>{{msg}}</p>`,
+            data() {
+                return {
+                    msg: "hello world"
+                }
+            }
+        })
+
+        var b = { //2.0版本
+            template: `<h2>{{msg}}</h2>`,
+            data() {
+                return {
+                    msg: "你好 世界"
+                }
+            }
+
+        }
+        //全局组件注册
+        Vue.component('he', a)
+        Vue.component('ha', b)
+
+        new Vue({
+            el: "#app",
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

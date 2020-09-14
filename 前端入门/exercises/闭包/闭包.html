@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#x{
+				width: 300px;
+				height: 800px;
+				background: black;
+			}
+			#x .y{
+				width: 200px;
+				height: 100px;
+				background: yellow;
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--闭包
+
+		简而言之，闭包是可以访问其他函数私有内容的方法
+
+		本质上讲，闭包是函数之间通信的桥梁
+		-->
+
+
+
+		<div id="x">
+			<div class="y">1</div>
+			<div class="y">2</div>
+			<div class="y">3</div>
+			<div class="y">4</div>
+			<div class="y">5</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+	</body>
+</html>
+<script>
+
+//	函数的作用域
+
+//	(function(){
+//		var x=10;
+//		var y=5;
+//		function child(){
+//			console.log(x+y);
+//		}
+//		return child;
+//	})()()
+//
+//	console.log(x);
+
+
+//  事件的绑定有几种方法:
+//  1.行内绑定
+//  <p onclick="function01()"></p>
+//
+//  2.JS中通过对象绑定
+//  var  x=document.getElementBy....
+//  x.事件名=function(){
+//
+//  }
+//
+//  3.事件监听
+//  x.addEventListener("监听的事件",function(){},规定该事件在冒泡阶段触发还是在捕获阶段触发(布尔值,默认值是false,表示在冒泡阶段触发))
+//
+//
+
+    var x=document.getElementById("x");
+    var y=document.getElementsByClassName("y")[0];
+
+    x.addEventListener("click",function(e){
+    	if(e.target.className=="y"){
+    		console.log(e.target.innerHTML);
+    	}
+    },false) //在冒泡阶段被触发
+//  y.addEventListener("click",function(){
+//  	console.log(2)
+//  },true) //在捕获阶段被触发
+
+
+
+
+
+
+
+
+
+
+
+</script>

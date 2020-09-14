@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.box1{
+			width: 300px;
+			height: 250px; /*padding可调整间隙!  会把标签撑开!  */
+			background-color: pink;
+			margin: 300px;
+			overflow:hidden;
+			overflow-y: scroll;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin-top: 50px;
+			line-height: 100px; /*注意:多行字! 就相当于每行字体行高都是100px*/
+		}
+		
+		
+	</style>
+</head>
+<body>
+	
+	<!--margin: 父子调整外间距时小Bug!
+		调整父子的缝隙!
+		(1) padding推荐使用! --会撑开所在块!    [常用]
+		(2) 加边框!
+		(3) 父标签添加overflow属性   ===本质上就是限制div的区域!![加墙法!]  [常用]
+		
+	-->
+	<div class="box1">
+		<div class="box2">  你好你好你好你好你好你好</div>
+		<h1>aaaaaaaaaaaaaaaaa</h1>
+		<h1>aaaaaaaaaaaaaaaaa</h1>
+		<h1>aaaaaaaaaaaaaaaaa</h1>
+		<h1>aaaaaaaaaaaaaaaaa</h1>
+		<h1>aaaaaaaaaaaaaaaaa</h1>
+	</div>
+	
+	
+	<div class="box3">
+		你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+	</div>
+</body>
+</html>

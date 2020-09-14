@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.slider {
+			width: 1000px;
+			height: 600px;
+			overflow: hidden;
+			margin: auto;
+			position: relative;
+		}
+
+		.fl_left {
+			float: left;
+		}
+
+		.slider ul {
+			width: 3000px;
+			position: relative;
+			display: inline-block;
+		}
+
+		.slider ul li,
+		.slider ul li img {
+			width: 1000px;
+			height: 600px;
+		}
+
+		.next {
+			background: #ff0000;
+			color: #fff;
+			font-size: 80px;
+			border: 1px solid #000;
+			position: absolute;
+			bottom: 10px;
+			right: 20px;
+		}
+
+		.slider ol {
+			position: absolute;
+			left: 50%;
+			bottom: 0px;
+			width: 90px;
+			height: 30px;
+			margin-left: -45px;
+		}
+
+		.slider ol li {
+			float: left;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background: red;
+			overflow: hidden;
+			line-height: 30px;
+			text-align: center;
+			color: #fff;
+			cursor: pointer;
+
+		}
+	</style>
+</head>
+
+<body>
+	<div class="slider">
+		<ul>
+			<li class="fl_left"><img src="images/images01.jpg" /></li>
+			<li class="fl_left"><img src="images/images02.jpg" /></li>
+			<li class="fl_left"><img src="images/images03.jpg" /></li>
+		</ul>
+		<div style="clear: both; height: 20px;"></div>
+		<button class="next">next</button>
+		<ol>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ol>
+	</div>
+</body>
+<script src="../jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function () {
+		var index = 0;
+		var time = null;
+
+		function lunboauto() {
+			index++;
+			if (index > 2) {
+				index = 0;
+			}
+			var number_w = index * 1000
+			$(".slider ul").animate({
+				left: -number_w
+			}, 1000)
+		}
+		time = setInterval(lunboauto, 5000)
+
+		$(".next").click(function () {
+			clearInterval(time);
+			index++;
+			if (index > 2) {
+				index = 0;
+			}
+			var number_w = index * 1000
+			$(".slider ul").animate({
+				left: -number_w
+			}, 1000)
+			time = setInterval(lunboauto, 5000)
+		})
+		$(".slider ol li").click(function () {
+			clearInterval(time);
+			index = $(this).index();
+
+			var numb = index * 1000;
+			//console.log(numb)
+			$(".slider ul").animate({
+				left: -numb
+			}, 1000)
+			time = setInterval(lunboauto, 5000)
+		})
+	})
+</script>
+
+</html>

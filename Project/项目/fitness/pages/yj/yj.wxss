@@ -1,0 +1,9 @@
+/* pages/yj/yj.wxss */
+.yj_box{
+  width: 100%;
+}
+.yj_box image{
+  width: 100%;
+  height: 400rpx;
+  margin-top: 20rpx;
+}

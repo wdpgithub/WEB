@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<button>删除节点</button>
+<script src="jquery3.3.1.js"></script>
+<script type="text/javascript">
+    var $el = $("<div><h2>新元素</h2></div>")
+    // $('body').append($el)
+    $el.appendTo("body")
+    var $newFirst = $('<li>0</li>');
+    $('ul').prepend($newFirst)
+    // $newFirst.prependTo("ul")
+
+
+    $('li:eq(3)').after('<li>3.5</li>')
+    $('<li>4.5</li>').insertAfter("li:eq(5)")
+
+$('button').click(function(){
+    // $('li:last').remove()
+    $('li:last').empty()
+})
+</script>
+</body>
+</html>

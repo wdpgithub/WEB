@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.wrap {
+				width: 1000px;
+				margin: 0 auto;
+				padding: 20px;
+				background: #ccc;
+			}
+			
+			.tu {
+				width: 850px;
+				height: 500px;
+				/*background: red;*/
+				float: left;
+			}
+			
+			.tu img {
+				width: 850px;
+				height: 500px;
+			}
+			
+			.gun {
+				width: 130px;
+				height: 500px;
+				float: right;
+			}
+			
+			.gun .shang {
+				height: 28px;
+				position: relative;
+				border: 1px solid #999;
+				background: #bbb;
+			}
+			
+			.gun .shang:after {
+				content: "";
+				display: block;
+				width: 0;
+				height: 0;
+				border: 8px solid transparent;
+				border-bottom: 8px solid #fff;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			
+			.gun .xia {
+				height: 28px;
+				position: relative;
+				border: 1px solid #999;
+				background: #bbb;
+			}
+			
+			.gun .xia:after {
+				content: "";
+				display: block;
+				width: 0;
+				height: 0;
+				border: 8px solid transparent;
+				border-top: 8px solid #fff;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			
+			.gun .gundong {
+				margin: 10px 0;
+				height: 420px;
+				overflow: hidden;
+			}
+			
+			.gun .gundong li {
+				width: 130px;
+				height: 76px;
+				margin-bottom: 10px;
+			}
+			
+			.gun .gundong li img {
+				width: 130px;
+				height: 76px;
+			}
+			
+			.zi {
+				height: 60px;
+				/*background: blue;*/
+				margin-top: 20px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="tu"><img src="http://assets.jq22.com/plugin/pc-8d6c4378-e65a-11e4-8429-00163e001348.png" alt="" /></div>
+			<div class="gun">
+				<div class="shang"></div>
+				<div class="gundong">
+					<ul>
+						<li><img src="http://assets.jq22.com/plugin/pc-8d6c4378-e65a-11e4-8429-00163e001348.png" alt="JQuery新浪1630个表情插件" /></li>
+						<li><img src="http://assets.jq22.com/plugin/pc-1c851db6-d87b-11e4-8ed1-00163e001348.png" alt="JQuery新浪16301个表情插件" /></li>
+						<li><img src="http://assets.jq22.com/plugin/pc-5c244f00-d6e1-11e4-bb89-00163e001348.jpg" alt="JQuery新浪1630个表情插件2" /></li>
+						<li><img src="http://assets.jq22.com/plugin/pc-d4b59444-935a-11e4-b290-00163e001348.png" alt="JQuery新浪1630个表情插件3" /></li>
+						<li><img src="http://assets.jq22.com/plugin/pc-3ead6932-9354-11e4-b290-00163e001348.png" alt="JQuery新浪1630个表情插件4" /></li>
+						<li><img src="http://assets.jq22.com/plugin/pc-fc0d5768-7ddc-11e4-afd9-00163e001348.png" alt="JQuery新浪1630个表情插件5" /></li>
+						<li><img src="http://assets.jq22.com/plugin/pc-cc2607ae-7835-11e4-bbf9-00163e001348.png" alt="JQuery新浪1630个表情插件6" /></li>
+						<li><img src="http://assets.jq22.com/plugin/pc-eeb41de4-709a-11e4-9b28-00163e001348.jpg" alt="JQuery新浪1630个表情插件7" /></li>
+					</ul>
+				</div>
+				<div class="xia"></div>
+			</div>
+			<div style="clear: both;"></div>
+			<div class="zi">JQuery新浪1630个表情插件</div>
+		</div>
+
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			function shang() {
+				$(".gundong ul").animate({
+					"marginTop": -86
+				}, 500, function() {
+					$(".gundong ul li").first().appendTo(".gundong ul")
+					$(".gundong ul").css("margin-top", 0)
+					$(".tu img").attr("src", $(".gundong ul li img").first().attr("src"))
+					$(".zi").text($(".gundong ul li img").first().attr("alt"))
+				})
+			}
+
+			function xia() {
+				$(".gundong ul li").last().prependTo(".gundong ul")
+				$(".gundong ul").css("margin-top", -86)
+				$(".gundong ul").animate({
+					"marginTop": 0
+				}, 500, function() {
+					$(".tu img").attr("src", $(".gundong ul li img").first().attr("src"))
+					$(".zi").text($(".gundong ul li img").first().attr("alt"))
+				})
+			}
+
+			var timer = setInterval(shang, 1000)
+			$(".wrap").hover(function() {
+				clearInterval(timer)
+			}, function() {
+				timer = setInterval(shang, 1000)
+			})
+
+			$(".shang").click(function() {
+				shang()
+			})
+			$(".xia").click(function() {
+				xia()
+			})
+			$(".gundong li img").click(function() {
+				$(".tu img").attr("src", $(this).attr("src"))
+				$(".zi").text($(this).attr("alt"))
+			})
+		</script>
+
+	</body>
+
+</html>

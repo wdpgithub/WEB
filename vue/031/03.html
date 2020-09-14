@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="msg2" >
+        <com2 :haha="msg2"></com2>
+    </div>
+    <template id="box2">
+        <div>
+           <!--  <p>{{ms}}</p>
+            <p>{{msg1}}</p> -->
+            <p>{{haha}}</p>
+            <grand-son></grand-son>
+        </div>
+    </template>
+    <template id="box1">
+        <div>
+            <p>{{msg3}}</p>
+        </div>
+    </template>
+    <script type="text/javascript">
+
+        new Vue({
+            el:'#app',
+            data:{
+                msg2:"火狐"
+            },
+            components:{
+                com2:{
+                    template:'#box2',
+                    data(){
+                        return {
+                            msg1:""
+                        }
+                    },
+                    props:['haha'],
+                    computed:{
+                        ms(){
+                            this.msg1=this.haha
+                            return this.msg1
+                        }
+                    },
+                    components:{
+                        grandSon:{
+                            template:'#box1',
+                            data(){
+                                return {
+                                    msg3:'哈哈哈'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

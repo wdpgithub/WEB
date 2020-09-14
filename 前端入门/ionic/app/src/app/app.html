@@ -1,0 +1,21 @@
+<ion-menu [content]="content" side="left">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>潘家列表</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+    
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content [class]="selectedTheme"></ion-nav>
+<!-- <ion-nav [root]="rootPage"></ion-nav> -->

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		.box1{
+			width: 406px;
+			height: 406px;
+			border: 1px dashed #000;
+			margin: 300px 300px;
+		}
+		.box2{
+			width: 350px;
+			height: 350px;
+			/*border: 1px solid red;*/   /* margin问题: 父标签无边框! 子marin-top:不管用!! overflow:hidden;*/
+			margin:30px;
+			background-color: #5F9EA0;
+		}
+		.box3{
+			width: 320px;
+			height: 320px;
+			background-color: #FFA0DF;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="box2">
+			<div class="box3">
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

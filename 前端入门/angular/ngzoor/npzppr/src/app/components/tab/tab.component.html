@@ -1,0 +1,17 @@
+<!-- <nz-tabset [nzType]="'card'" [nzTabBarExtraContent]="extraTemplate">
+  <nz-tab *ngFor="let tab of arrty" [nzTitle]="titleTemplate">
+    <ng-template #titleTemplate>
+      <div>
+        {{ tab.title }}
+        <i class="anticon anticon-close" (click)="closeTab(tab)"></i>
+      </div>
+    </ng-template>
+   <div style="font-size:40px">{{ tab.contant }}</div>
+  </nz-tab>
+</nz-tabset> -->
+<!-- <ng-template #extraTemplate>
+  <i class="ant-tabs-new-tab anticon anticon-plus" (click)="newTab()"></i>
+</ng-template> -->
+<router-outlet></router-outlet> 
+
+

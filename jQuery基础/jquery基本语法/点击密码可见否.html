@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text"  class="inp"/>
+		<button class="eye">眼睛</button>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(".eye").click(function(){
+			if($(".inp").attr("type")=="text"){
+				$(".inp").attr("type","password")
+				
+			}else{
+				$(".inp").attr("type","text")
+			}
+		})
+	</script>
+</html>
